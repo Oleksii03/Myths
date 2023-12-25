@@ -1,16 +1,26 @@
+.header__wrapper {
+  background-color: var(--black-background-color);
+}
+
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 
   &__container {
     display: flex;
+    align-items: center;
     padding: 8px;
-  }
 
-  &__logo {}
+    background-color: var(--black-background-color);
+  }
 }
 
 .logo-header {
   display: flex;
   align-items: center;
+  column-gap: 6px;
 
   &__img {
     width: 48px;
@@ -18,7 +28,7 @@
   }
 
   &__text {
-    font-size: 14px;
+    font-size: 16px;
     line-height: calc(24 / 16);
     letter-spacing: 0.15px;
     color: #fff;
@@ -27,6 +37,18 @@
 
 .header__search-box {
   margin-left: auto;
+
+  display: flex;
+  align-items: center;
+  gap: 0 6px;
 }
 
-.header-btm-menu
+.header__search-icon {
+  padding: 8px;
+}
+
+.header-btm-menu {
+  background-color: transparent;
+  border: none;
+  padding: 8px;
+}
