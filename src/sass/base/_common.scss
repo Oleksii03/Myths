@@ -1,5 +1,10 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
+@font-face {
+  font-family: GWENT;
+  src: url(../fonts/GWENT-font.ttf);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -18,6 +23,7 @@ li {
 
 img {
   display: block;
+  width: 100%;
 }
 
 button {
@@ -34,4 +40,19 @@ p {
   margin: 0;
 }
 
-body {}
+body {
+  // font-family: 'Roboto', sans-serif;
+  // font-family: 'Sofia Sans', sans-serif;
+
+  // line-height: calc(lh / fs);
+  font-family: GWENT;
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: var(--white-base-color);
+
+  background-color: var(--black-background-color);
+  background-image: url(../images/base/main-gradient.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+}
