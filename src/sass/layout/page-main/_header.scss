@@ -1,0 +1,32 @@
+.header {
+
+  &__container {
+    display: flex;
+    padding: 8px;
+  }
+
+  &__logo {}
+}
+
+.logo-header {
+  display: flex;
+  align-items: center;
+
+  &__img {
+    width: 48px;
+    height: 48px;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.15px;
+    color: #fff;
+  }
+}
+
+.header__search-box {
+  margin-left: auto;
+}
+
+.header-btm-menu
