@@ -9,6 +9,9 @@
   width: 100%;
 
   &__container {
+    margin: 0 auto;
+    max-width: 1148px;
+
     display: flex;
     align-items: center;
     padding: 8px;
@@ -32,6 +35,20 @@
     line-height: calc(24 / 16);
     letter-spacing: 0.15px;
     color: #fff;
+
+    &_desc {
+      display: none;
+    }
+
+    @media (min-width: 834px) {
+      &_mob {
+        display: none;
+      }
+
+      &_desc {
+        display: block;
+      }
+    }
   }
 }
 
