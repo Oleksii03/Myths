@@ -25,16 +25,14 @@
   align-items: center;
   column-gap: 6px;
 
-  &__img {
-    width: 48px;
-    height: 48px;
+  &__icon {
+    padding: 8px;
   }
 
   &__text {
     font-size: 16px;
     line-height: calc(24 / 16);
     letter-spacing: 0.15px;
-    color: #fff;
 
     &_desc {
       display: none;
@@ -61,6 +59,7 @@
 }
 
 .header__search-icon {
+  cursor: pointer;
   padding: 8px;
 }
 
@@ -68,4 +67,53 @@
   background-color: transparent;
   border: none;
   padding: 8px;
+}
+
+// NAVIGATION-TAB
+
+.nav-header {
+  margin-left: 108px;
+
+  &__list-tab {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+
+    font-style: normal;
+    line-height: calc(24 / 16);
+    letter-spacing: 0.15px;
+
+    cursor: pointer;
+  }
+
+  &__item-tab {
+    span {
+      color: var(--yellow-text-color);
+    }
+
+    position: relative;
+  }
+
+}
+
+.tab-inner {
+  position: absolute;
+  top: 25px;
+  left: 0;
+
+  background-color: #1D2021;
+  padding: 8px 0px;
+
+  width: 200px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.30), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+}
+
+.tab-inner__item {
+  width: 100%;
+}
+
+.tab-inner__link {
+  display: block;
+  padding: 8px 16px;
 }

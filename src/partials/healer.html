@@ -1,12 +1,41 @@
 <div class="header__wrapper js-header-wrapper">
   <header class="header">
     <div class="header__container js-header-container">
+      <!-- logo -->
       <a href="#" class="header__logo logo-header">
-        <img class="logo-header__img" src="./images/base/leading-icon.png" alt="">
+        <svg class="logo-header__icon" width="40" height="40">
+          <use href="./images/sprite.svg#icon-logo-hed"></use>
+        </svg>
         <span class="logo-header__text logo-header__text_mob">Укр. міфологія у іграх</span>
         <span class="logo-header__text logo-header__text_desc">Українська міфологія у іграх Відьмак</span>
       </a>
+      <!--/ logo -->
 
+      <!-- navigation -->
+      <nav class="header__nav nav-header">
+
+        <ul class="nav-header__list-tab">
+
+          <li class="nav-header__item-tab">
+            <span>Головна</span>
+
+            <ul class="nav-header__list-tab-inner tab-inner js-tab-inner is-hidden">
+              <li class="tab-inner__item"><a class="tab-inner__link" href="#">Бестіарій</a></li>
+              <li class="tab-inner__item"><a class="tab-inner__link" href="#">Персонажі</a></li>
+              <li class="tab-inner__item"><a class="tab-inner__link" href="#">Глосарій</a></li>
+            </ul>
+          </li>
+
+          <svg width="24" height="24">
+            <use href="./images/sprite.svg#icon-Icon-arr-nav"></use>
+          </svg>
+
+        </ul>
+
+      </nav>
+      <!--/ navigation -->
+
+      <!-- search-box -->
       <div class="header__search-box">
         <svg class="header__search-icon" width="40" height="40">
           <use href="./images/sprite.svg#icon-search-Icon"></use>
@@ -17,6 +46,7 @@
           </svg>
         </button>
       </div>
+      <!--/ search-box -->
     </div>
   </header>
 </div>
