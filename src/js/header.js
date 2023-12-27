@@ -3,9 +3,11 @@ const headerContainer = document.querySelector('.js-header-container').clientHei
 
 const tabMenu = document.querySelector('.js-tab-menu');
 const dropdown = document.querySelector('.js-tab-list');
+const svgRotate = document.querySelector('.js-svg-rotate');
 
 const mobMenuBtn = document.querySelector('.js-header-btm-menu');
 const mobMenu = document.querySelector('.js-mob-menu');
+
 
 (() => headerWrapp.style.height = headerContainer + 'px')();
 
@@ -14,6 +16,7 @@ tabMenu.addEventListener('click', (e) => {
 
   if (target.classList.contains('dropdown')) {
     dropdown.classList.toggle('is-hidden');
+    svgRotate.classList.toggle('active-rotate');
     return;
   }
 

@@ -117,11 +117,18 @@
     letter-spacing: 0.15px;
 
     cursor: pointer;
-
-    &>svg {
-      fill: #004395;
-    }
   }
+}
+
+.nav-header__svg {
+  fill: var(--accent-text-color);
+  transform: rotate(90deg);
+  transition: all 250ms linear;
+}
+
+.active-rotate {
+  transform: rotate(0deg);
+  fill: var(--white-base-color);
 }
 
 .nav-header__item-tab {
