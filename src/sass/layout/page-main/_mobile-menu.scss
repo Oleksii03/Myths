@@ -27,11 +27,21 @@
     border-radius: 16px;
     border: none;
     background-color: #E9C400;
+
+    @media (min-width: 1128px) {
+      display: none;
+    }
   }
+
+  transition: all 300ms linear;
+}
+
+.is-hidden-mob-menu {
+  transform: translateY(-110%);
 }
 
 .mob-menu__container {
-  overflow-y: auto;
+  overflow-y: scroll;
   padding: 40px;
 }
 
@@ -39,6 +49,10 @@
   display: flex;
   flex-direction: column;
   row-gap: 32px;
+
+  @media (min-width: 1128px) {
+    align-items: center;
+  }
 }
 
 .mob-menu__link {
@@ -86,15 +100,41 @@
   &__list {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
 
     @media (min-width: 1128px) {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px 0;
     }
   }
 }
 
-.socials-menu__icon {
-  width: 56px;
-  height: 56px;
+.socials-menu__link {
+  background-color: #af3333;
   padding: 16px;
+  display: flex;
+  border-radius: 16px;
+
+  &_patreon {
+    background-color: #323536;
+  }
+
+  &_telegram {
+    background-color: #004395;
+  }
+
+  &_TikTok {
+    background-color: #544600;
+  }
+
+  &_Twitter {
+    background-color: #005311;
+  }
+}
+
+.socials-menu__icon {
+  width: 24px;
+  height: 24px;
 }
