@@ -84,7 +84,7 @@
 
   display: flex;
   align-items: center;
-  gap: 0 6px;
+  gap: 0 8px;
 }
 
 .header__search-icon {
@@ -117,6 +117,10 @@
     letter-spacing: 0.15px;
 
     cursor: pointer;
+
+    &>svg {
+      fill: #004395;
+    }
   }
 }
 
@@ -131,8 +135,9 @@
 
 .tab-inner {
   position: absolute;
-  top: 25px;
+  top: 30px;
   left: 0;
+  z-index: 10;
 
   background-color: #1D2021;
   padding: 8px 0px;
@@ -217,7 +222,6 @@
     &:hover svg {
       fill: var(--accent-text-color);
     }
-
   }
 }
 
