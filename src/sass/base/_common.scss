@@ -16,7 +16,8 @@ a {
 
 ul,
 ol,
-li {
+li,
+menu {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -53,9 +54,4 @@ body {
   font-weight: 800;
   color: var(--white-base-color);
   letter-spacing: 0.15px;
-
-  background-image: radial-gradient(at center, rgb(212, 103, 31), rgb(28, 27, 27) 70%);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: cover;
 }

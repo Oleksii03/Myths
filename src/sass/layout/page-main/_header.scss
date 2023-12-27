@@ -2,6 +2,8 @@
   background-color: var(--black-background-color);
 }
 
+// ------------------------------------
+
 .header {
   position: fixed;
   top: 0;
@@ -17,6 +19,18 @@
     padding: 8px;
 
     background-color: var(--black-background-color);
+
+    @media (min-width: 360px) {
+      max-width: 360px;
+    }
+
+    @media (min-width: 834px) {
+      max-width: 770px;
+    }
+
+    @media (min-width: 1128px) {
+      max-width: 1128px;
+    }
   }
 }
 
@@ -59,6 +73,8 @@
 
 // ----/-LOGO-----
 
+// ------search-box----------
+
 .header__search-box {
   margin-left: auto;
 
@@ -78,12 +94,15 @@
   padding: 8px;
 }
 
+
+// --------search-box---------------
+
 // ----NAVIGATION-TAB
 
 .nav-header__list-tab {
   display: none;
 
-  @media (min-width: 768px) and (max-width: 1127px) {
+  @media (min-width: 834px) and (max-width: 1127px) {
     margin-left: 108px;
     display: flex;
     align-items: center;
@@ -146,9 +165,6 @@
 
 
 // ----NAVIGATION-DESC
-
-// .header__nav {}
-
 .nav-header__list {
   display: none;
 
@@ -200,9 +216,5 @@
 
   }
 }
-
-// .nav-header__item_header__link_subscribe {}
-
-// .nav-header__link_subscribe {}
 
 // ----/NAVIGATION-DESC
