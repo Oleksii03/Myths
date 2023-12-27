@@ -17,6 +17,17 @@
     padding-top: 16px;
     padding-right: 16px;
   }
+
+  &__btn-subscribe {
+    display: flex;
+    padding: 10px 24px;
+    justify-content: center;
+    align-items: center;
+    line-height: 150%;
+    border-radius: 16px;
+    border: none;
+    background-color: #E9C400;
+  }
 }
 
 .mob-menu__container {
@@ -40,6 +51,10 @@
     font-weight: 800;
     line-height: calc(28 / 22);
     color: #968E98;
+
+    @media (min-width: 1128px) {
+      display: none;
+    }
 
     &_active {
       color: var(--accent-text-color);
@@ -66,9 +81,19 @@
 
 .socials-menu {
   margin: 40px 0;
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media (min-width: 1128px) {
+      grid-template-columns: 1fr;
+    }
+  }
 }
 
 .socials-menu__icon {
-  width: 24px;
-  height: 24px;
+  width: 56px;
+  height: 56px;
+  padding: 16px;
 }
