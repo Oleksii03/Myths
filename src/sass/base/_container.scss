@@ -5,12 +5,17 @@
     max-width: 360px;
   }
 
-  @media (min-width: 836px) {
-    max-width: 790px;
-    padding: 0 10px;
+  @media (min-width: 580px) {
+    padding: 0 5px;
+    max-width: 570px;
   }
 
-  @media (min-width: 1920px) {
-    max-width: 1148px;
+  @media (min-width: 790px) {
+    padding: 0 10px;
+    max-width: 770px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1128px;
   }
 }

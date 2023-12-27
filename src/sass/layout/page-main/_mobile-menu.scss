@@ -9,14 +9,14 @@
     position: relative;
   }
 
-  &__btn-close {
-    background-color: transparent;
-    border: none;
-    display: flex;
-    margin-left: auto;
-    padding-top: 16px;
-    padding-right: 16px;
-  }
+  // &__btn-close {
+  //   background-color: transparent;
+  //   border: none;
+  //   display: flex;
+  //   margin-left: auto;
+  //   padding-top: 16px;
+  //   padding-right: 16px;
+  // }
 
   &__btn-subscribe {
     display: flex;
@@ -28,21 +28,39 @@
     border: none;
     background-color: #E9C400;
 
-    @media (min-width: 1128px) {
+    @media (min-width: 1200px) {
       display: none;
     }
   }
+
+  @media (min-width: 790px) and (max-width: 1199px) {
+    border-radius: 0 0 10px 10px;
+  }
+
+  opacity: 1;
 
   transition: all 300ms linear;
 }
 
 .is-hidden-mob-menu {
+  opacity: 0;
   transform: translateY(-110%);
+
+  @media (min-width: 790px) and (max-width: 1199px) {
+    opacity: 0;
+    transform: translateY(-150%);
+  }
 }
 
 .mob-menu__container {
-  overflow-y: scroll;
   padding: 40px;
+
+  @media (min-width: 790px) and (max-width: 1199px) {
+    display: flex;
+    column-gap: 24px;
+
+    padding: 15px;
+  }
 }
 
 .mob-menu__nav {
@@ -50,7 +68,12 @@
   flex-direction: column;
   row-gap: 32px;
 
-  @media (min-width: 1128px) {
+  @media (min-width: 790px) {
+    display: none;
+  }
+
+  @media (min-width: 1200px) {
+    display: flex;
     align-items: center;
   }
 }
@@ -67,7 +90,7 @@
     line-height: calc(28 / 22);
     color: #968E98;
 
-    @media (min-width: 1128px) {
+    @media (min-width: 1200px) {
       display: none;
     }
 
@@ -86,10 +109,10 @@
     fill: var(--accent-text-color);
   }
 
-  &-btn-close {
-    width: 32px;
-    height: 32px;
-  }
+  // &-btn-close {
+  //   width: 32px;
+  //   height: 32px;
+  // }
 }
 
 // ----mob-menu-socials-------------------
@@ -97,17 +120,29 @@
 .socials-menu {
   margin: 40px 0;
 
+  @media (min-width: 790px) and (max-width: 1199px) {
+    margin: 0;
+  }
+
   &__list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px 24px;
 
-    @media (min-width: 1128px) {
+    @media (min-width: 790px) and (max-width: 1199px) {
+      display: flex;
+    }
+
+    @media (min-width: 1200px) {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 24px 0;
     }
+  }
+
+  @media (min-width: 1200px) {
+    margin-bottom: 0;
   }
 }
 
