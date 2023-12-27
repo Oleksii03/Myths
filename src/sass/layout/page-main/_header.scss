@@ -20,6 +20,8 @@
   }
 }
 
+// -----LOGO-----
+
 .logo-header {
   display: flex;
   align-items: center;
@@ -33,6 +35,11 @@
     font-size: 16px;
     line-height: calc(24 / 16);
     letter-spacing: 0.15px;
+
+    @media (min-width: 1128px) {
+      font-size: 18px;
+      line-height: calc(24 / 16);
+    }
 
     &_desc {
       display: none;
@@ -49,6 +56,8 @@
     }
   }
 }
+
+// ----/-LOGO-----
 
 .header__search-box {
   margin-left: auto;
@@ -90,7 +99,7 @@
 
 .nav-header__item-tab {
   span {
-    color: var(--yellow-text-color);
+    color: var(--accent-text-color);
   }
 
   position: relative;
@@ -123,7 +132,7 @@
   }
 }
 
-// nav-hidden
+//----- nav-hidden
 
 .is-hidden {
   opacity: 0;
@@ -131,7 +140,10 @@
   pointer-events: none;
 }
 
+//----/ nav-hidden
+
 // ----/NAVIGATION-TAB
+
 
 // ----NAVIGATION-DESC
 
@@ -160,7 +172,33 @@
 .nav-header__link {
   padding: 10px 16px;
   font-size: 18px;
-  line-height: calc(24 / 18);
+  line-height: calc(24 / 16);
+  transition: color 250ms linear;
+
+  &:hover {
+    color: var(--accent-text-color);
+  }
+
+  &_subscribe {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    column-gap: 8px;
+    padding: 10px 24px;
+    background-color: #004395;
+    border-radius: 16px;
+
+    &>svg {
+      fill: var(--white-base-color);
+      transition: fill 250ms linear;
+    }
+
+
+    &:hover svg {
+      fill: var(--accent-text-color);
+    }
+
+  }
 }
 
 // .nav-header__item_header__link_subscribe {}
