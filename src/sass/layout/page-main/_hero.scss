@@ -15,6 +15,10 @@
   line-height: 120%;
   color: var(--accent-text-color);
 
+  @media (min-width: 465px) {
+    width: 100%;
+  }
+
   @media (min-width: 580px) {
     width: auto;
     padding: 0;
