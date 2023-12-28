@@ -9,21 +9,13 @@
     position: relative;
   }
 
-  // &__btn-close {
-  //   background-color: transparent;
-  //   border: none;
-  //   display: flex;
-  //   margin-left: auto;
-  //   padding-top: 16px;
-  //   padding-right: 16px;
-  // }
-
   &__btn-subscribe {
     display: flex;
     padding: 10px 24px;
     justify-content: center;
     align-items: center;
-    line-height: 150%;
+    column-gap: 8px;
+
     border-radius: 16px;
     border: none;
     background-color: #E9C400;
@@ -34,7 +26,8 @@
   }
 
   @media (min-width: 790px) and (max-width: 1199px) {
-    border-radius: 0 0 10px 10px;
+    top: 55px;
+    border-radius: 10px;
   }
 
   opacity: 1;
@@ -48,7 +41,7 @@
 
   @media (min-width: 790px) and (max-width: 1199px) {
     opacity: 0;
-    transform: translateY(-150%);
+    transform: translateY(-170%);
   }
 }
 
