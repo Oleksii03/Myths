@@ -5,10 +5,15 @@
 // ------------------------------------
 
 .header {
+  background-color: var(--black-background-color);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+
+  @media (min-width: 1200px) {
+    background-color: transparent;
+  }
 
   &__container {
     margin: 0 auto;
@@ -34,6 +39,7 @@
 
     @media (min-width: 1200px) {
       max-width: 1128px;
+      border-radius: 0 0 8px 8px;
     }
   }
 }

@@ -4,6 +4,7 @@
   right: 0;
 
   background-color: #191C1D;
+  border-radius: 0 0 10px 10px;
 
   &__wrapp {
     position: relative;
@@ -26,7 +27,7 @@
   }
 
   @media (min-width: 790px) and (max-width: 1199px) {
-    top: 55px;
+    top: 52px;
     border-radius: 10px;
   }
 
@@ -83,13 +84,18 @@
     line-height: calc(28 / 22);
     color: #968E98;
 
-    @media (min-width: 1200px) {
-      display: none;
-    }
-
     &_active {
       color: var(--accent-text-color);
     }
+  }
+
+  @media (min-width: 1200px) {
+    flex-direction: column;
+    row-gap: 6px;
+
+    font-family: Sofia Sans;
+    font-weight: 500;
+    line-height: 150%;
   }
 }
 
@@ -100,12 +106,16 @@
 
   &_active {
     fill: var(--accent-text-color);
-  }
 
-  // &-btn-close {
-  //   width: 32px;
-  //   height: 32px;
-  // }
+    @media (min-width: 1200px) {
+      background-color: #544600;
+      width: 74px;
+      height: 44px;
+
+      padding: 10px;
+      border-radius: 20px;
+    }
+  }
 }
 
 // ----mob-menu-socials-------------------
