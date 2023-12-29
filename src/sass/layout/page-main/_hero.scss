@@ -105,7 +105,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  column-gap: 8px;
+  column-gap: 15px;
 
   text-align: center;
 
@@ -122,6 +122,8 @@
     background-color: var(--accent-text-color);
     border-radius: 20px;
     color: #3A3000;
+
+    flex-grow: 1;
 
     @media (max-width: 340px) {
       width: 130px;
@@ -151,6 +153,7 @@
     background-color: transparent;
     border-radius: 20px;
     outline: 1px solid #968E98;
+    flex-grow: 1;
 
     color: var(--accent-text-color);
 
