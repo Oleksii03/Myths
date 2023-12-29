@@ -51,6 +51,9 @@
 }
 
 .body-content {
+  display: flex;
+  flex-direction: column;
+
   padding: 16px;
   background-color: var(--dark-gray-color);
 
@@ -109,6 +112,10 @@
 
   @media (max-width: 790px) {
     font-size: 14px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-top: auto;
   }
 
   &__active {
