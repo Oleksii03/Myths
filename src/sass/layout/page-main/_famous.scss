@@ -37,11 +37,15 @@
   gap: 0 8px;
   width: 100%;
 
-  padding: 8px 0px;
+  padding-bottom: 8px;
 
-  overflow: auto;
+  overflow-x: auto;
 
   scroll-snap-type: x mandatory;
+
+  @media (min-width: 580px) {
+    gap: 0 16px;
+  }
 }
 
 .slide {
@@ -51,14 +55,21 @@
   scroll-snap-stop: always;
 
   height: 220px;
+
+  @media (min-width: 580px) {
+    flex: 0 0 256;
+  }
 }
 
-.slide__link {
-  display: block;
-  height: 100%;
-  object-fit: cover;
-}
 
 .slider-famous__img {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 30px;
   height: 100%;
+
+  @media (min-width: 580px) {
+    object-position: top;
+    border-radius: 45px;
+  }
 }
