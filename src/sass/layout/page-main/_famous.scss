@@ -2,6 +2,34 @@
   padding: 16px;
 }
 
+.famous__more {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+
+  font-family: var(--secondary-font);
+  font-weight: 400;
+}
+
+.famous__title {
+  font-size: 22px;
+  line-height: 133.333%
+}
+
+.famous__link {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 150%;
+  color: #ADC6FF;
+
+  gap: 0 8px;
+  padding: 6px 8px 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #968E98;
+}
+
 .slider-famous {
   display: flex;
   column-gap: 6px;
