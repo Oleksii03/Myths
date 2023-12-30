@@ -11,6 +11,8 @@
   "author": "Oleksii03",
   "license": "ISC",
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "lodash.throttle": "^4.1.1",
     "modern-normalize": "^1.1.0"
   },
