@@ -1,0 +1,54 @@
+.beasts {
+  padding: 20px 0;
+}
+
+.list-beasts {
+  display: grid;
+  row-gap: 16px;
+}
+
+.list-beasts__item {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.list-beasts__link {
+  display: flex;
+  align-items: center;
+  background-color: var(--dark-gray-color);
+}
+
+.list-beasts__logo {
+  margin-left: 16px;
+  border-radius: 50%;
+}
+
+.list-beasts__content {
+  padding-left: 16px;
+}
+
+.list-beasts__title {
+  font-size: 22px;
+  margin-bottom: 4px;
+  line-height: 127.273%;
+}
+
+.list-beasts__sub-title {
+  color: #968E98;
+
+  font-family: var(--secondary-font);
+
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+}
+
+.list-beasts__picture {
+  margin-left: auto;
+}
+
+.list-beasts__img {
+  width: 86px;
+  height: 88px;
+  object-fit: cover;
+}
