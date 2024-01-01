@@ -1,33 +1,6 @@
 .famous {
-  padding: 16px;
-}
-
-.famous__more {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 24px;
-
-  font-family: var(--secondary-font);
-  font-weight: 400;
-}
-
-.famous__title {
-  font-size: 22px;
-  line-height: 133.333%
-}
-
-.famous__link {
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  line-height: 150%;
-  color: #ADC6FF;
-
-  gap: 0 8px;
-  padding: 6px 8px 6px 12px;
-  border-radius: 8px;
-  border: 1px solid #968E98;
+  padding-top: 16px;
+  padding-bottom: 20px;
 }
 
 // ---slider--------------
@@ -52,6 +25,7 @@
   }
 }
 
+
 .slide {
   flex: 0 0 136;
 
@@ -72,8 +46,12 @@
     border-radius: 15px;
   }
 
+  @media (min-width: 790px) {
+    flex: 1 1 auto;
+  }
+
   @media (min-width: 1200px) {
-    flex-grow: 1;
+    flex: 1 0 256px;
 
     &:hover {
       // transform: scale(1.1);

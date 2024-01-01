@@ -49,10 +49,12 @@
 .logo-header {
   display: flex;
   align-items: center;
-  column-gap: 6px;
+  column-gap: 10px;
 
   &__icon {
-    padding: 8px;
+    display: inline-block;
+
+    border-radius: 50%;
   }
 
   &__text {
