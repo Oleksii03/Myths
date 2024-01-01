@@ -4,7 +4,12 @@
 
 .list-beasts {
   display: grid;
-  row-gap: 16px;
+  gap: 16px 0;
+
+  @media (min-width: 790px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
 }
 
 .list-beasts__item {
@@ -45,10 +50,30 @@
 
 .list-beasts__picture {
   margin-left: auto;
+
+  &_dark {
+    filter: brightness(0.5);
+  }
+
+  @media (min-width: 1200px) {
+    // flex-grow: 1;
+  }
 }
 
 .list-beasts__img {
   width: 86px;
   height: 88px;
   object-fit: cover;
+  object-position: center;
+
+  @media (min-width: 580px) and (max-width:789px) {
+    width: 150px;
+    height: 100px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 272px;
+    height: 104px;
+    object-position: 50% 37%;
+  }
 }
