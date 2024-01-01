@@ -10,6 +10,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
+
+  @media (min-width: 1200px) {
+    gap: 16px 24px;
+  }
 }
 
 .list-beasts__item {
@@ -21,15 +25,57 @@
   display: flex;
   align-items: center;
   background-color: var(--dark-gray-color);
+
+  &_dark {
+    @media (min-width: 1200px) {
+
+      background-image: linear-gradient(to right,
+          rgba(0, 0, 0, 0.64),
+          rgba(0, 0, 0, 0.64)), url(../images/beasts-main/item-tab-4.jpg);
+      height: 104px;
+      background-repeat: no-repeat;
+      background-position: 70% 25%;
+    }
+  }
 }
 
 .list-beasts__logo {
   margin-left: 16px;
   border-radius: 50%;
+
+  &_arr {
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
+
 }
 
 .list-beasts__content {
   padding-left: 16px;
+
+  &_dark {
+    @media (min-width: 1200px) {
+      position: relative;
+      margin: 0 auto;
+
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 32px;
+      /* 133.333% */
+
+      &::after {
+        position: absolute;
+        top: 0;
+        right: -50;
+        content: '\27F6';
+        font-size: 30px;
+
+        transform: rotate(-45deg);
+      }
+    }
+  }
 }
 
 .list-beasts__title {
@@ -52,11 +98,11 @@
   margin-left: auto;
 
   &_dark {
-    filter: brightness(0.5);
-  }
+    filter: brightness(0.4);
 
-  @media (min-width: 1200px) {
-    // flex-grow: 1;
+    @media (min-width: 1200px) {
+      display: none;
+    }
   }
 }
 
