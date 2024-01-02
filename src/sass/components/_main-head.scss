@@ -6,6 +6,10 @@
 
   font-family: var(--secondary-font);
   font-weight: 400;
+
+  @media (max-width: 579px) {
+    padding: 0 15px;
+  }
 }
 
 .all__title {

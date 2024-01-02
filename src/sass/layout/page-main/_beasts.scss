@@ -49,8 +49,10 @@
   border-radius: 50%;
 
   &_arr {
+    margin: 0;
+
     @media (min-width: 790px) {
-      display: none;
+      // display: none;
     }
   }
 
@@ -60,8 +62,14 @@
   padding-left: 16px;
 
   &_dark {
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+
     @media (min-width: 790px) {
-      position: relative;
+      // position: relative;
       margin: 0 auto;
 
       font-size: 24px;
@@ -107,7 +115,7 @@
     display: none;
 
     @media (min-width: 790px) {
-      display: block;
+      display: flex;
     }
   }
 
