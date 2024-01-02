@@ -1,18 +1,21 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
-::-webkit-scrollbar {
-  width: 12px;
+@media (min-width: 1200px) {
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--black-background-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #a2a09a57;
+    border-radius: 16px;
+    border: 5px solid var(--black-background-color);
+  }
 }
 
-::-webkit-scrollbar-track {
-  background: var(--black-background-color);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #a2a09a57;
-  border-radius: 16px;
-  border: 5px solid var(--black-background-color);
-}
 
 @font-face {
   font-family: GWENT;
