@@ -71,10 +71,10 @@
 
       &::after {
         position: absolute;
-        top: 0;
-        right: -50;
+        top: -3px;
+        right: -65px;
         content: '\27F6';
-        font-size: 30px;
+        font-size: 35px;
 
         transform: rotate(-45deg);
       }
