@@ -9,8 +9,12 @@ const svgRotate = document.querySelector('.js-svg-rotate');
 const mobMenuBtn = document.querySelector('.js-header-btm-menu');
 const mobMenu = document.querySelector('.js-mob-menu');
 
+const backdrop = document.querySelector('.js-backdrop');
+
 
 (() => headerWrapp.style.height = headerContainer + 'px')();
+
+// --------Tab-Menu----------------------------------------
 
 tabMenu.addEventListener('click', (e) => {
   const { target } = e;
@@ -27,6 +31,8 @@ tabMenu.addEventListener('click', (e) => {
 
 });
 
+// -------/-Tab-Menu----------------------------------------
+
 // -------mobMenu----------------------------
 
 mobMenuBtn.addEventListener('click', onOpenMobMenu);
@@ -39,4 +45,7 @@ function onOpenMobMenu (e) {
   }
 
   mobMenu.classList.toggle('is-hidden-mob-menu');
+  backdrop.classList.toggle('backdrop--hidden');
 }
+
+// ------/-mobMenu----------------------------

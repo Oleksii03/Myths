@@ -2,11 +2,12 @@
   position: absolute;
   top: 48px;
   right: -8px;
-  z-index: 5;
+  z-index: 4;
+
 
   background-color: #191C1D;
   border-radius: 0 0 10px 10px;
-  border: 1px solid #968E98;
+  // border: 1px solid #968E98;
   border-top: none;
 
   &__wrapp {
