@@ -208,6 +208,14 @@
   &_Twitter {
     background-color: #005311;
   }
+
+  @media (min-width: 1200px) {
+    transition: transform 250ms linear;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }
 
 .socials-menu__icon {
