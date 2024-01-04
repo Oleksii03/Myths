@@ -117,18 +117,28 @@
     }
 
     @media (min-width: 1200px) {
+      transition: color 250ms linear;
+
       font-size: 16px;
-      // display: none;
     }
   }
 
   @media (min-width: 1200px) {
+
     flex-direction: column;
     row-gap: 6px;
 
     font-family: Sofia Sans;
     font-weight: 500;
     line-height: 150%;
+
+    &:hover .mob-menu__icon {
+      fill: var(--accent-text-color);
+    }
+
+    &:hover &-text {
+      color: var(--accent-text-color);
+    }
   }
 }
 
@@ -136,6 +146,7 @@
   width: 24px;
   height: 24px;
   fill: #968E98;
+  transition: fill 250ms linear;
 
   &_active {
     fill: var(--accent-text-color);
@@ -210,7 +221,7 @@
   }
 
   @media (min-width: 1200px) {
-    transition: transform 250ms linear;
+    transition: transform 250ms;
 
     &:hover {
       transform: scale(1.2);
