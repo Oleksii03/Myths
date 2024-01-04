@@ -248,3 +248,19 @@
 }
 
 // ----/NAVIGATION-DESC
+
+.menu-Icon__open {
+  background-color: var(--black-background-color);
+}
+
+.menu-Icon__open span {
+  display: block;
+  width: 23px;
+  height: 2px;
+
+  background-color: var(--white-base-color);
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}

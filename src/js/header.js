@@ -43,6 +43,11 @@ mobMenuBtnClose.addEventListener('click', (e) => {
   onOpenMobMenu();
 });
 
+backdrop.addEventListener('click', (e) => {
+  onOpenMobMenu();
+});
+
+
 function onOpenMobMenu (e) {
 
   mobMenu.classList.toggle('is-hidden-mob-menu');
