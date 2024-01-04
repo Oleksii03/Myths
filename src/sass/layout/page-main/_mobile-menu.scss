@@ -12,6 +12,10 @@
 
   overflow-y: auto;
 
+  opacity: 1;
+
+  transition: all 300ms linear;
+
   // &__wrapp {
   //   position: relative;
   // }
@@ -41,9 +45,6 @@
     height: auto;
   }
 
-  opacity: 1;
-
-  transition: all 300ms linear;
 
   @media (min-width: 1200px) {
     top: 0;
@@ -63,6 +64,10 @@
 
   @media (min-width: 790px) and (max-width: 1199px) {
     opacity: 0;
+    transform: translateY(-170%);
+  }
+
+  @media (ьшт-width: 1200px) {
     transform: translateY(-170%);
   }
 }
