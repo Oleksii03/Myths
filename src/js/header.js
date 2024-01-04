@@ -7,6 +7,7 @@ const dropdown = document.querySelector('.js-tab-list');
 const svgRotate = document.querySelector('.js-svg-rotate');
 
 const mobMenuBtn = document.querySelector('.js-header-btm-menu');
+const mobMenuBtnClose = document.querySelector('.js-mob-menu-btn-close');
 const mobMenu = document.querySelector('.js-mob-menu');
 
 const backdrop = document.querySelector('.js-backdrop');
@@ -37,6 +38,9 @@ tabMenu.addEventListener('click', (e) => {
 // -------mobMenu----------------------------
 
 mobMenuBtn.addEventListener('click', onOpenMobMenu);
+mobMenuBtnClose.addEventListener('click', (e) => {
+  onOpenMobMenu();
+});
 
 function onOpenMobMenu (e) {
 
@@ -46,6 +50,7 @@ function onOpenMobMenu (e) {
   if (!tabMenuInner.classList.contains('is-hidden')) {
     tabMenuInner.classList.add('is-hidden');
     svgRotate.classList.remove('active-rotate');
+    return;
   }
 
 }
