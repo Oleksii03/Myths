@@ -124,7 +124,7 @@
   margin-left: auto;
 
   &_dark {
-    // filter: brightness(0.4);
+    filter: brightness(0.4);
 
     @media (min-width: 790px) {
       display: none;

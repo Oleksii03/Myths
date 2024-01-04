@@ -20,7 +20,8 @@ tabMenu.addEventListener('click', (e) => {
   const { target } = e;
 
   if (!mobMenu.classList.contains('is-hidden-mob-menu')) {
-    mobMenu.classList.add('is-hidden-mob-menu');;
+    mobMenu.classList.add('is-hidden-mob-menu');
+    backdrop.classList.add('backdrop--hidden');
   }
 
   if (target.classList.contains('dropdown')) {
@@ -39,13 +40,14 @@ mobMenuBtn.addEventListener('click', onOpenMobMenu);
 
 function onOpenMobMenu (e) {
 
+  mobMenu.classList.toggle('is-hidden-mob-menu');
+  backdrop.classList.toggle('backdrop--hidden');
+
   if (!tabMenuInner.classList.contains('is-hidden')) {
     tabMenuInner.classList.add('is-hidden');
     svgRotate.classList.remove('active-rotate');
   }
 
-  mobMenu.classList.toggle('is-hidden-mob-menu');
-  backdrop.classList.toggle('backdrop--hidden');
 }
 
 // ------/-mobMenu----------------------------
