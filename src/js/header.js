@@ -38,6 +38,7 @@ tabMenu.addEventListener('click', (e) => {
 // -------mobMenu----------------------------
 
 mobMenuBtn.addEventListener('click', onOpenMobMenu);
+
 mobMenuBtnClose.addEventListener('click', (e) => {
   onOpenMobMenu();
 });
