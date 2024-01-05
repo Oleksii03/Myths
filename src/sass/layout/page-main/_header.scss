@@ -108,7 +108,8 @@
 .header-btm-menu {
   background-color: transparent;
   border: none;
-  padding: 8px;
+  // padding: 7px;
+  transition: all 250ms linear;
 }
 
 
@@ -249,18 +250,43 @@
 
 // ----/NAVIGATION-DESC
 
+
+
 .menu-Icon__open {
   background-color: var(--black-background-color);
+  padding: 7px;
 }
 
 .menu-Icon__open span {
+  // transition: all 50ms linear;
+
   display: block;
-  width: 23px;
+  width: 25px;
   height: 2px;
+  border-radius: 3px;
 
   background-color: var(--white-base-color);
 
   &:not(:last-child) {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+  }
+
+}
+
+.transform-btn>span {
+  position: relative;
+
+  &:nth-child(1) {
+    top: 8;
+    transform: rotate(45deg);
+  }
+
+  &:nth-child(2) {
+    opacity: 0;
+  }
+
+  &:nth-child(3) {
+    top: -8;
+    transform: rotate(-45deg);
   }
 }

@@ -8,6 +8,7 @@ const svgRotate = document.querySelector('.js-svg-rotate');
 
 const mobMenuBtn = document.querySelector('.js-header-btm-menu');
 const mobMenuBtnClose = document.querySelector('.js-mob-menu-btn-close');
+const transformBtn = document.querySelector('.js-transform-btn');
 const mobMenu = document.querySelector('.js-mob-menu');
 
 const backdrop = document.querySelector('.js-backdrop');
@@ -41,10 +42,12 @@ mobMenuBtn.addEventListener('click', onOpenMobMenu);
 
 mobMenuBtnClose.addEventListener('click', (e) => {
   onOpenMobMenu();
+  onTransformBtnClose();
 });
 
 backdrop.addEventListener('click', (e) => {
   onOpenMobMenu();
+  onTransformBtnClose();
 });
 
 
@@ -62,3 +65,9 @@ function onOpenMobMenu (e) {
 }
 
 // ------/-mobMenu----------------------------
+
+transformBtn.addEventListener('click', onTransformBtnClose);
+
+function onTransformBtnClose (e) {
+  transformBtn.classList.toggle('transform-btn');
+}
