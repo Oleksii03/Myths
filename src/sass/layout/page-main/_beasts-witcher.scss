@@ -1,3 +1,51 @@
 .beasts-witcher {
   padding: 20px 0;
 }
+
+.beasts-witcher__list {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+
+  overflow-x: auto;
+
+  scroll-snap-type: x mandatory;
+}
+
+.beasts-witcher__item {
+  flex-shrink: 0;
+  border-radius: 15px;
+  overflow: hidden;
+
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.beasts-witcher__img {
+  width: 156px;
+  height: 144px;
+
+  object-fit: cover;
+  object-position: top;
+}
+
+.beasts-witcher__content {
+  padding: 16px;
+  background-color: var(--dark-gray-color);
+}
+
+.beasts-witcher__title {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+}
+
+.beasts-witcher__sub-title {
+  font-family: var(--secondary-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 142.857%;
+  letter-spacing: 0.25px;
+
+  color: #968E98;
+}

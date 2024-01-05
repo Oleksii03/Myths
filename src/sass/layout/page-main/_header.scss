@@ -105,6 +105,8 @@
   padding: 8px;
 }
 
+// ------search-box-btn---------
+
 .header-btm-menu {
   background-color: transparent;
   border: none;
@@ -112,6 +114,44 @@
   transition: all 250ms linear;
 }
 
+.menu-Icon__open {
+  background-color: var(--black-background-color);
+  padding: 7px;
+}
+
+.menu-Icon__open span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  border-radius: 3px;
+
+  background-color: var(--white-base-color);
+
+  &:not(:last-child) {
+    margin-bottom: 6px;
+  }
+
+}
+
+.transform-btn>span {
+  position: relative;
+
+  &:nth-child(1) {
+    top: 8;
+    transform: rotate(45deg);
+  }
+
+  &:nth-child(2) {
+    opacity: 0;
+  }
+
+  &:nth-child(3) {
+    top: -8;
+    transform: rotate(-45deg);
+  }
+}
+
+// -----/-search-box-btn---------
 
 // --------search-box---------------
 
@@ -249,44 +289,3 @@
 }
 
 // ----/NAVIGATION-DESC
-
-
-
-.menu-Icon__open {
-  background-color: var(--black-background-color);
-  padding: 7px;
-}
-
-.menu-Icon__open span {
-  // transition: all 50ms linear;
-
-  display: block;
-  width: 25px;
-  height: 2px;
-  border-radius: 3px;
-
-  background-color: var(--white-base-color);
-
-  &:not(:last-child) {
-    margin-bottom: 6px;
-  }
-
-}
-
-.transform-btn>span {
-  position: relative;
-
-  &:nth-child(1) {
-    top: 8;
-    transform: rotate(45deg);
-  }
-
-  &:nth-child(2) {
-    opacity: 0;
-  }
-
-  &:nth-child(3) {
-    top: -8;
-    transform: rotate(-45deg);
-  }
-}
