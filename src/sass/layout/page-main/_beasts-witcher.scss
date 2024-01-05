@@ -26,7 +26,7 @@
 
 .beasts-witcher__item {
   flex-shrink: 0;
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
 
   scroll-snap-align: center;
@@ -42,6 +42,14 @@
 
   @media (min-width: 580px) {
     width: 100%;
+  }
+
+  @media (min-width: 790px) {
+    object-position: center -25px;
+
+    &_top {
+      object-position: top;
+    }
   }
 }
 
@@ -78,4 +86,62 @@
     font-size: 16px;
     line-height: 150%;
   }
+}
+
+// ---all-section--------------------
+
+.all-beasts-witcher {
+  display: none;
+
+  @media (min-width: 790px) and (max-width: 1199px) {
+    display: block;
+    height: 100px;
+    margin-top: 16px;
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background-color: var(--dark-gray-color);
+
+    background-image: linear-gradient(to right,
+        rgba(0, 0, 0, 0.469),
+        rgba(0, 0, 0, 0.469)), url(../images/beasts-witcher/journal-spriggan.png);
+
+    background-repeat: no-repeat;
+    background-position: 50% 12%;
+
+    &__title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 16px;
+
+      padding: 30px 0;
+
+      font-size: 22px;
+      line-height: 127.273%;
+    }
+
+    &__icon-arr {
+      fill: #E1E3E3;
+    }
+  }
+}
+
+// --/-all-section--------------------
+
+// ------all-card-----------------------
+
+.beasts-witcher__item_all {
+  display: none;
+
+  @media (min-width: 1200px) {
+    display: block;
+  }
+}
+
+.beasts-witcher__img_all {
+  background-color: var(--dark-gray-color);
+  object-position: center -23px;
+  filter: brightness(50%);
 }
