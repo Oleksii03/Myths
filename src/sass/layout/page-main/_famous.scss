@@ -66,4 +66,8 @@
   object-fit: cover;
   object-position: center;
   height: 100%;
+
+  @media (min-width: 580px) {
+    object-position: top;
+  }
 }

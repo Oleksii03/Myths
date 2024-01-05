@@ -7,9 +7,21 @@
   align-items: center;
   column-gap: 16px;
 
+  padding-bottom: 8px;
+
   overflow-x: auto;
 
   scroll-snap-type: x mandatory;
+
+  @media (min-width: 580px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .beasts-witcher__item {
@@ -27,17 +39,30 @@
 
   object-fit: cover;
   object-position: top;
+
+  @media (min-width: 580px) {
+    width: 100%;
+  }
 }
 
 .beasts-witcher__content {
   padding: 16px;
   background-color: var(--dark-gray-color);
+
+  @media (min-width: 790px) {
+    padding: 24px;
+  }
 }
 
 .beasts-witcher__title {
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.15px;
+
+  @media (min-width: 790px) {
+    font-size: 22px;
+    line-height: 127.273%;
+  }
 }
 
 .beasts-witcher__sub-title {
@@ -48,4 +73,9 @@
   letter-spacing: 0.25px;
 
   color: #968E98;
+
+  @media (min-width: 790px) {
+    font-size: 16px;
+    line-height: 150%;
+  }
 }
