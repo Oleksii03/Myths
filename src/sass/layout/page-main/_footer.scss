@@ -96,5 +96,51 @@
 // ----/-nav-box-------------------------
 
 // ----footer-socials-------------------------
+.footer-socials__list {
+  display: flex;
+  column-gap: 24px;
+  align-items: center;
+
+  @media (min-width: 1200px) {
+    column-gap: 40px;
+  }
+}
+
+.footer-socials__link {
+  background-color: #af3333;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  border-radius: 16px;
+
+  &_patreon {
+    background-color: #323536;
+  }
+
+  &_telegram {
+    background-color: #004395;
+  }
+
+  &_TikTok {
+    background-color: #544600;
+  }
+
+  &_Twitter {
+    background-color: #005311;
+  }
+
+  @media (min-width: 1200px) {
+    transition: transform 250ms;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.footer-socials__icon {
+  width: 24px;
+  height: 24px;
+}
 
 // ----/-nfooter-socials----------------------
