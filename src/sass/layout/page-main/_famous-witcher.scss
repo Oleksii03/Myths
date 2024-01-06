@@ -1,5 +1,13 @@
 .famous-witcher {
   padding: 20px 0 40px;
+
+  @media (min-width: 790px) {
+    padding-bottom: 56px;
+  }
+
+  @media (min-width: 1200px) {
+    padding-bottom: 104px;
+  }
 }
 
 .famous-witcher__list {
