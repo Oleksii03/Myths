@@ -113,7 +113,7 @@
   }
 
   @media (min-width: 1200px) {
-    object-position: center -23px;
+    object-position: center -70px;
   }
 }
 
@@ -121,6 +121,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 579px) {
+    padding-right: 5px;
+  }
+}
+
+.all-famous-witcher__icon-arr {
+  @media (max-width: 579px) {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 // -----/-all-card----------------
@@ -141,11 +152,11 @@
 
     background-image: linear-gradient(to right,
         rgba(0, 0, 0, 0.469),
-        rgba(0, 0, 0, 0.469)), url(../images/famous-witcher/wither-all.png);
+        rgba(0, 0, 0, 0.469)), url(../images/famous-witcher/manuel-castanon.jpg);
 
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50% 30%;
+    background-position: center 20%;
 
     &__title {
       display: flex;
