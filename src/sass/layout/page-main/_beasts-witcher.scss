@@ -13,7 +13,7 @@
 
   scroll-snap-type: x mandatory;
 
-  @media (min-width: 580px) {
+  @media (min-width: 790px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
@@ -40,7 +40,7 @@
   object-fit: cover;
   object-position: top;
 
-  @media (min-width: 580px) {
+  @media (min-width: 790px) {
     width: 100%;
   }
 
@@ -133,7 +133,9 @@
 // ------all-card-----------------------
 
 .beasts-witcher__item_all {
-  display: none;
+  @media (min-width: 790px) {
+    display: none;
+  }
 
   @media (min-width: 1200px) {
     display: block;
@@ -142,8 +144,11 @@
 
 .beasts-witcher__img_all {
   background-color: var(--dark-gray-color);
-  object-position: center -23px;
   filter: brightness(50%);
+
+  @media (min-width: 1200px) {
+    object-position: center -23px;
+  }
 }
 
 .beasts-witcher-content {
