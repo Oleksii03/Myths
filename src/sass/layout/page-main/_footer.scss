@@ -70,7 +70,7 @@
       color: var(--accent-text-color);
 
       &_active {
-        color: var(--white-base-color);
+        color: #fff;
       }
 
       @media (min-width: 1200px) {
@@ -87,7 +87,7 @@
     transition: fill 250ms linear;
 
     &_active {
-      fill: #968E98;
+      fill: #fff;
     }
 
     @media (min-width: 1200px) {
