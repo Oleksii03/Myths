@@ -21,6 +21,9 @@
 }
 
 // ---form------
+.form-search {
+  margin-bottom: 24px;
+}
 
 .backdrop-search__container {
   max-width: 1160px;
@@ -84,3 +87,38 @@
     }
   }
 }
+
+// ------/-form---------
+
+
+// -------history-box---------
+
+.history-box {
+
+  &__history {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0 10px;
+  }
+
+  &__btn-close {
+    background-color: transparent;
+  }
+
+  &__title {
+    color: #968E98;
+    font-family: var(--secondary-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 133.333%;
+    letter-spacing: 0.5px;
+  }
+
+  &__btn-close {
+    fill: #ffffff;
+  }
+}
+
+// ------/-history-box--------
