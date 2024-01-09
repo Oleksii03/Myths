@@ -6,7 +6,7 @@
   height: 100%;
   z-index: 8;
 
-  background: rgba(0, 0, 0, 0.48);
+  background: rgba(0, 0, 0, 0.852);
   backdrop-filter: blur(3px);
 
   transition-property: opacity, visibility;
@@ -23,12 +23,32 @@
 // ---form------
 .form-search {
   margin-bottom: 24px;
+
+  &__btn-cross {
+    padding: 5px;
+  }
+
+  &__btn-mic {
+    padding: 5px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-bottom: 32px;
+  }
 }
 
 .backdrop-search__container {
   max-width: 1160px;
   margin: 0 auto;
   padding: 16px 16px 18px;
+
+  @media (min-width: 790px) {
+    padding: 24px 24px 18px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 24px 16px 18px;
+  }
 }
 
 .form-search__wrapper {
@@ -55,10 +75,23 @@
     font-weight: 400;
     line-height: 133%;
     letter-spacing: 0.5px;
+
+    @media (min-width: 790px) {
+      font-size: 18px;
+      line-height: 127%;
+    }
+
+    // @media (min-width: 1200px) {
+    //   font-size: 18px;
+    // }
   }
 
   &:focus {
     outline: 1px solid var(--white-base-color);
+  }
+
+  @media (min-width: 790px) {
+    padding: 15px 50px 15px 50px;
   }
 }
 
@@ -75,6 +108,7 @@
   &__icon-box {
     display: flex;
     align-items: center;
+    column-gap: 5px;
 
     position: absolute;
     top: 50%;
@@ -110,14 +144,14 @@
     color: #968E98;
     font-family: var(--secondary-font);
     font-size: 18px;
-    font-style: normal;
+
     font-weight: 400;
     line-height: 133.333%;
     letter-spacing: 0.5px;
   }
 
   &__btn-close {
-    fill: #ffffff;
+    fill: #968E98;
   }
 }
 
