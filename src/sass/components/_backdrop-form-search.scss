@@ -67,7 +67,7 @@
   border: none;
   border-radius: 28px;
 
-  padding: 10px 50px 10px 50px;
+  padding: 15px 50px 15px 50px;
 
   &::placeholder {
     color: #CDC4CE;
@@ -80,18 +80,10 @@
       font-size: 18px;
       line-height: 127%;
     }
-
-    // @media (min-width: 1200px) {
-    //   font-size: 18px;
-    // }
   }
 
   &:focus {
     outline: 1px solid var(--white-base-color);
-  }
-
-  @media (min-width: 790px) {
-    padding: 15px 50px 15px 50px;
   }
 }
 
@@ -108,7 +100,7 @@
   &__icon-box {
     display: flex;
     align-items: center;
-    column-gap: 8px;
+    column-gap: 6px;
 
     position: absolute;
     top: 50%;
