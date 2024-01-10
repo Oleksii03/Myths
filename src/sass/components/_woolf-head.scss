@@ -3,12 +3,13 @@
 
   @media (min-width: 1428px) and (max-width: 2000px) {
     display: block;
-    width: clamp(11.25rem, -43.171rem + 60.98vw, 30rem);
+    // height: auto;
+    width: clamp(8.438rem, -29.79rem + 42.83vw, 23.75rem);
 
     position: fixed;
     top: 60px;
     right: 10px;
 
-    filter: drop-shadow(4px 4px 5px rgb(255, 115, 0));
+    filter: drop-shadow(4px 4px 3px rgb(255, 115, 0));
   }
 }
