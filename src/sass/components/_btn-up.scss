@@ -1,0 +1,18 @@
+.btn-up {
+  position: absolute;
+  top: -5.625rem;
+  right: 0.6875rem;
+
+  background-color: #004395;
+  padding: 16px;
+  border-radius: 16px;
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (min-width: 790px) {
+    top: -75px;
+  }
+}

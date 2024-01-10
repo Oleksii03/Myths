@@ -5,9 +5,7 @@ btnSearch.addEventListener('click', onOpenBackdropSearch);
 backdropSearch.addEventListener('click', onCloseBackdropSearch);
 
 function onOpenBackdropSearch (e) {
-
   backdropSearch.classList.remove('backdrop-search--hidden');
-
 }
 
 function onCloseBackdropSearch (e) {
