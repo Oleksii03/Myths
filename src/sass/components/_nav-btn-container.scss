@@ -1,7 +1,18 @@
 .nav-btn-container {
-  padding: 12px 24px 0px;
-
   margin-bottom: 16px;
+
+  @media (max-width: 579px) {
+    padding: 12px 24px 0px;
+  }
+
+  @media (min-width: 580px) {
+    padding: 16px 5px 0px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 32px 10px 0px;
+    margin-bottom: 28px;
+  }
 }
 
 .container__inner {

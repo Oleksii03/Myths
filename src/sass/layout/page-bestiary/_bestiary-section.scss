@@ -1,0 +1,91 @@
+.bestiary-section {
+
+  &__title {
+    color: var(--accent-text-color);
+    font-size: 28px;
+    line-height: 128%;
+
+    margin-bottom: 20px;
+
+    @media (max-width: 579px) {
+      padding-right: 24px;
+      padding-left: 24px;
+    }
+
+    @media (min-width: 790px) {
+      font-size: 36px;
+      line-height: 122%;
+
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 45px;
+      line-height: 115%;
+
+      margin-bottom: 22px;
+    }
+  }
+}
+
+// --------BTN-BOX------------------
+
+.bestiary-btn-box {
+  @include flex;
+  flex-direction: column;
+  row-gap: 30px;
+
+  @media (max-width: 579px) {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  @media (min-width: 580px) {
+    @include flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 30px;
+  }
+}
+
+.myth-btns {
+  @include flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 367px;
+
+  border: 1px solid #968E98;
+  border-radius: 20px;
+  overflow: hidden;
+
+  font-family: var(--secondary-font);
+
+  &__ukr {
+    padding: 10px;
+    @include flex;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: #004395;
+    color: var(--accent-text-color);
+    line-height: 150%;
+    letter-spacing: 0.15px;
+    font-weight: 500;
+  }
+
+  &__witcher {
+    @include flex;
+    justify-content: center;
+    flex-grow: 1;
+    color: #C4C7C7;
+    background-color: transparent;
+    padding: 10px;
+    line-height: 150%;
+    letter-spacing: 0.15px;
+    font-weight: 500;
+  }
+}
+
+.sort-btns {
+  @include flex;
+  justify-content: center;
+}
