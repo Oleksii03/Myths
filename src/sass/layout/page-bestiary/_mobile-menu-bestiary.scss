@@ -1,0 +1,264 @@
+.mob-menu {
+  position: fixed;
+  top: 56px;
+  right: 0;
+  z-index: 4;
+
+  height: 100dvh;
+
+  background-color: #191C1D;
+  border-radius: 0 0 10px 10px;
+  border-top: none;
+
+  overflow-y: auto;
+
+  opacity: 1;
+
+  transition: all 300ms linear;
+
+  &__btn-subscribe {
+    display: flex;
+    padding: 17px 24px;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    color: #3A3000;
+
+    border-radius: 23px;
+    border: none;
+    background-color: #E9C400;
+
+    @media (min-width: 1200px) {
+      display: none;
+    }
+  }
+
+  @media (min-width: 790px) and (max-width: 1199px) {
+    // top: 65px;
+    // right: 5px;
+    // border-radius: 10px;
+    // border: 1px solid #968E98;
+    height: auto;
+  }
+
+
+  @media (min-width: 1200px) {
+    top: 0;
+    border-radius: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow-y: visible;
+  }
+}
+
+.btn-close {
+  display: none;
+
+  @media (min-width: 1200px) {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -35px;
+
+    transform: translateY(-50%);
+    transition: fill 250ms linear;
+
+    padding: 20px 5px 20px 10px;
+
+    border-radius: 50px 0 0 50px;
+
+    background-color: var(--dark-gray-color);
+
+    &__icon {
+      display: inline-block;
+      fill: var(--white-base-color);
+
+      transform: rotate(-90deg);
+    }
+
+    &:hover &__icon {
+      fill: var(--accent-text-color);
+    }
+  }
+}
+
+.is-hidden-mob-menu {
+  opacity: 0;
+  transform: translateX(110%);
+
+  @media (min-width: 790px) and (max-width: 1199px) {
+    opacity: 0;
+    transform: translateY(-170%);
+  }
+
+  @media (min-width: 1200px) {
+    transform: translateX(110%);
+  }
+}
+
+.mob-menu__container {
+  padding: 40px;
+
+  @media (min-width: 790px) and (max-width: 1199px) {
+    display: flex;
+    column-gap: 24px;
+
+    padding: 10px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 40px 29px;
+  }
+}
+
+.mob-menu__nav {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+
+  @media (min-width: 790px) {
+    display: none;
+  }
+
+  @media (min-width: 1200px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.mob-menu__link {
+  display: flex;
+  align-items: center;
+  gap: 0 8px;
+
+  &-text {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: calc(28 / 22);
+    color: #968E98;
+
+    &_active {
+      color: var(--accent-text-color);
+    }
+
+    @media (min-width: 1200px) {
+      transition: color 250ms linear;
+
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+
+    flex-direction: column;
+    row-gap: 6px;
+
+    font-family: Sofia Sans;
+    font-weight: 500;
+    line-height: 150%;
+
+    &:hover .mob-menu__icon {
+      fill: var(--accent-text-color);
+    }
+
+    &:hover &-text {
+      color: var(--accent-text-color);
+    }
+  }
+}
+
+.mob-menu__icon {
+  width: 24px;
+  height: 24px;
+  fill: #968E98;
+  transition: fill 250ms linear;
+
+  &_active {
+    fill: var(--accent-text-color);
+
+    @media (min-width: 1200px) {
+      background-color: #544600;
+      width: 74px;
+      height: 44px;
+
+      padding: 10px;
+      border-radius: 20px;
+    }
+  }
+}
+
+// ----mob-menu-socials-------------------
+
+.socials-menu {
+  margin: 40px 0;
+
+  @media (min-width: 790px) and (max-width: 1199px) {
+    margin: 0;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+
+    @media (min-width: 790px) and (max-width: 1199px) {
+      display: flex;
+    }
+
+    @media (min-width: 1200px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px 0;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    margin-bottom: 0;
+  }
+}
+
+.socials-menu__link {
+  background-color: #af3333;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  border-radius: 16px;
+
+  @media (max-width: 790px) {
+    padding: 20px;
+  }
+
+  &_patreon {
+    background-color: #323536;
+  }
+
+  &_telegram {
+    background-color: #004395;
+  }
+
+  &_TikTok {
+    background-color: #544600;
+  }
+
+  &_Twitter {
+    background-color: #005311;
+  }
+
+  @media (min-width: 1200px) {
+    transition: transform 250ms;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.socials-menu__icon {
+  width: 24px;
+  height: 24px;
+}
