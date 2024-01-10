@@ -1,0 +1,25 @@
+.nav-btn-container {
+  padding: 12px 24px 0px;
+
+  margin-bottom: 16px;
+}
+
+.container__inner {
+  @include flex;
+  justify-content: space-between;
+}
+
+.nav-btn-container__btn {
+  background-color: transparent;
+  line-height: 0;
+}
+
+.nav-btn-container__icon {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-btn-container__btn-box {
+  @include flex;
+  column-gap: 8px;
+}

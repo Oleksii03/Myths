@@ -2,12 +2,14 @@
 @import './base/container';
 
 @import './utils/variables';
+@import './utils/mixins';
 
 @import './components/woolf-head';
 @import './components/main-head';
 @import './components/backdrop';
 @import './components/backdrop-form-search';
 @import './components/btn-up';
+@import './components/nav-btn-container';
 
 @import './layout/page-bestiary/header-bestiary';
 @import './layout/page-bestiary/mobile-menu-bestiary';
