@@ -49,8 +49,8 @@
 }
 
 .myth-btns {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+
   width: 100%;
   max-width: 367px;
 
@@ -59,14 +59,17 @@
   overflow: hidden;
 
   font-family: var(--secondary-font);
+  font-size: 14px;
 
   &__ukr {
     padding: 10px;
     @include flex;
     justify-content: center;
-    flex-grow: 1;
-    background-color: #004395;
-    color: var(--accent-text-color);
+    flex: 1 1 50%;
+
+    background-color: var(--black-background-color);
+
+    color: #C4C7C7;
     line-height: 150%;
     letter-spacing: 0.15px;
     font-weight: 500;
@@ -75,7 +78,8 @@
   &__witcher {
     @include flex;
     justify-content: center;
-    flex-grow: 1;
+    flex: 1 1 50%;
+
     color: #C4C7C7;
     background-color: transparent;
     padding: 10px;
@@ -87,9 +91,10 @@
   }
 }
 
+// ------sort-btn---------------------------
+
 .sort-btns {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   width: 100%;
   max-width: 367px;
 
@@ -99,6 +104,7 @@
   &__sort {
     @include flex;
     justify-content: center;
+    flex: 1 1 50%;
 
     color: #C4C7C7;
 
@@ -113,7 +119,7 @@
   &__alphabet {
     @include flex;
     justify-content: center;
-    column-gap: 6px;
+    flex: 1 1 50%;
 
     color: #C4C7C7;
     background-color: #323536;
@@ -125,3 +131,22 @@
     letter-spacing: 0.5px;
   }
 }
+
+// -----/-sort-btn---------------------------
+
+// -----myth-btns-active----------------------
+
+.myth-btns__active {
+  background-color: #004395;
+  color: var(--accent-text-color);
+
+  &::before {
+    content: '\2713';
+    display: block;
+    margin-right: 5px;
+
+    transform: rotate(8deg);
+  }
+}
+
+// ---/--myth-btns-active----------------------
