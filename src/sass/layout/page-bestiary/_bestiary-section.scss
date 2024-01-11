@@ -150,3 +150,65 @@
 }
 
 // ---/--myth-btns-active----------------------
+
+
+// -----card-list----------------
+
+.bestiary-section__list {
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+.bestiary-item {
+  border-radius: 12px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.bestiary-item__heder {
+  @include flex;
+  column-gap: 16px;
+
+  padding: 12px 16px;
+
+  background-color: var(--dark-gray-color);
+}
+
+.bestiary-item__logo {
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.bestiary-item__svg-more {
+  margin-left: auto;
+}
+
+.bestiary-item__title {
+  font-size: 22px;
+  line-height: 127.273%;
+  margin-bottom: 4px;
+}
+
+.bestiary-item__sub-title {
+  font-family: var(--secondary-font);
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+
+  color: #968E98;
+}
+
+.bestiary-item__img {
+  max-height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+// -----bestiary-body-----------------------
+
+.bestiary-body {
+  background-color: var(--dark-gray-color);
+  padding: 16px;
+}
