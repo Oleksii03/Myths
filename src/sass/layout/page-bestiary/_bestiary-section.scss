@@ -40,7 +40,7 @@
     padding-left: 24px;
   }
 
-  @media (min-width: 580px) {
+  @media (min-width: 790px) {
     @include flex;
     flex-direction: row;
     justify-content: space-between;
@@ -49,8 +49,8 @@
 }
 
 .myth-btns {
-  @include flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   width: 100%;
   max-width: 367px;
 
@@ -82,10 +82,46 @@
     line-height: 150%;
     letter-spacing: 0.15px;
     font-weight: 500;
+
+    background-color: var(--black-background-color);
   }
 }
 
 .sort-btns {
-  @include flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  max-width: 367px;
+
+  font-family: var(--secondary-font);
+  font-size: 14px;
+
+  &__sort {
+    @include flex;
+    justify-content: center;
+
+    color: #C4C7C7;
+
+    padding: 10px 12px;
+
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    background-color: var(--black-background-color);
+  }
+
+  &__alphabet {
+    @include flex;
+    justify-content: center;
+    column-gap: 6px;
+
+    color: #C4C7C7;
+    background-color: #323536;
+
+    padding: 10px 12px;
+
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+  }
 }
