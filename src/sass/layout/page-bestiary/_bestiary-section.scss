@@ -212,3 +212,55 @@
   background-color: var(--dark-gray-color);
   padding: 16px;
 }
+
+// -----link-------
+
+.bestiary-body__link-myth {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 8px;
+
+  padding: 6px 16px 6px 8px;
+
+  border: 1px solid #968E98;
+  border-radius: 8px;
+
+  font-family: var(--secondary-font);
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
+
+// -----text-----------
+
+.bestiary-body__text {
+  font-family: var(--secondary-font);
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.5px;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+// -------button-------
+
+.bestiary-body__link-btn {
+  @include flex;
+  justify-content: center;
+  column-gap: 8px;
+
+  max-width: 194px;
+  margin-left: auto;
+
+  padding: 10px 24px;
+
+  border-radius: 100px;
+  background: var(--accent-text-color);
+  color: #3A3000;
+}
