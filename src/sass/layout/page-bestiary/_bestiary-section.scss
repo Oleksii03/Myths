@@ -89,6 +89,14 @@
 
     background-color: var(--black-background-color);
   }
+
+  @media (min-width: 790px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 450px;
+  }
 }
 
 // ------sort-btn---------------------------
@@ -129,6 +137,14 @@
     font-weight: 400;
     line-height: 150%;
     letter-spacing: 0.5px;
+  }
+
+  @media (min-width: 790px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 450px;
   }
 }
 
