@@ -165,6 +165,20 @@
 
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 790px) {
+    // flex-direction: row;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 55% 45%;
+
+    background-color: var(--dark-gray-color);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 40% 60%;
+  }
 }
 
 .bestiary-item__heder {
@@ -174,6 +188,15 @@
   padding: 12px 16px;
 
   background-color: var(--dark-gray-color);
+
+  @media (min-width: 790px) {
+    position: absolute;
+    top: 24px;
+    left: 32px;
+    z-index: 1;
+
+    padding: 0;
+  }
 }
 
 .bestiary-item__logo {
@@ -183,12 +206,21 @@
 
 .bestiary-item__svg-more {
   margin-left: auto;
+
+  @media (min-width: 790px) {
+    display: none;
+  }
 }
 
 .bestiary-item__title {
   font-size: 22px;
   line-height: 127.273%;
   margin-bottom: 4px;
+
+  @media (min-width: 790px) {
+    font-size: 24px;
+    line-height: 133%;
+  }
 }
 
 .bestiary-item__sub-title {
@@ -200,10 +232,20 @@
   color: #968E98;
 }
 
+.bestiary-item__picture {
+  @media (min-width: 790px) {
+    order: 1;
+  }
+}
+
 .bestiary-item__img {
   max-height: 200px;
   object-fit: cover;
   object-position: center;
+
+  @media (min-width: 790px) {
+    max-height: 332px;
+  }
 }
 
 // -----bestiary-body-----------------------
@@ -211,6 +253,12 @@
 .bestiary-body {
   background-color: var(--dark-gray-color);
   padding: 16px;
+
+  @media (min-width: 790px) {
+    margin-top: auto;
+
+    padding: 24px 48px 24px 32px;
+  }
 }
 
 // -----link-------
@@ -246,6 +294,11 @@
   &:not(:last-child) {
     margin-bottom: 32px;
   }
+
+  @media (min-width: 790px) {
+    font-size: 18px;
+    line-height: 133%;
+  }
 }
 
 // -------button-------
@@ -263,4 +316,8 @@
   border-radius: 100px;
   background: var(--accent-text-color);
   color: #3A3000;
+
+  @media (min-width: 790px) {
+    max-width: 231px;
+  }
 }
