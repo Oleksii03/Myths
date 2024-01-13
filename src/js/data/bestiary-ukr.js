@@ -3,8 +3,7 @@ export const bestiaryUkr = [
     name: "Боровик",
     description: `Боровик — (за слов'янською міфологією) один
     з лісових духів, господар борів та`,
-    // image: "https://github.com/Oleksii03/Myths/blob/main/src/images/beasts-main/item-mob-1.jpg?raw=true",
-    image: "images/beasts-main/item-mob-1.jpg",
+    image: "https://github.com/Oleksii03/Myths/blob/main/src/images/beasts-main/item-mob-1.jpg?raw=true",
   },
   {
     name: "Грифон (Гриф)",

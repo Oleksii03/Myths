@@ -181,5 +181,3 @@ function createMarkupBestiaryListWitcher (data) {
   }).join('');
 };
 // -----/-onCreateMarkupWitcher-----------------------
-
-// bestiaryList.innerHTML = `<li>hello<img class="list-beasts__img" src='//images/beasts-main/item-mob-1.jpg" alt="боровик'></li>`;
