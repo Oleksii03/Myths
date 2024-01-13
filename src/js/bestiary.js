@@ -147,7 +147,7 @@ function createMarkupBestiaryListWitcher (data) {
 
     <picture class="bestiary-item__picture">
       <a href="#">
-        <img class="bestiary-item__img" src="${image}" alt="${name}" loading="lazy">
+        <img class="bestiary-item__img bestiary-item__img-witcher" src="${image}" alt="${name}" loading="lazy">
       </a>
     </picture>
 
@@ -170,7 +170,7 @@ function createMarkupBestiaryListWitcher (data) {
         ${genus}
       </a>
 
-      <p class="bestiary-body__text"></p>
+      <p class="bestiary-body__text">${description}</p>
 
       <a class="bestiary-body__link-btn" href="#">
         Читати далі

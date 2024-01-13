@@ -188,7 +188,6 @@
   }
 
   @media (min-width: 790px) {
-    // flex-direction: row;
     position: relative;
 
     display: grid;
@@ -264,10 +263,16 @@
   object-fit: cover;
   object-position: center;
 
+  &-witcher {
+    object-position: top;
+  }
+
   @media (min-width: 790px) {
     max-height: 332px;
   }
 }
+
+
 
 // -----bestiary-body-----------------------
 
