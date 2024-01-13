@@ -173,6 +173,7 @@
 .bestiary-section__list {
   padding-top: 24px;
   padding-bottom: 48px;
+
 }
 
 .bestiary-item {
@@ -181,6 +182,10 @@
 
   display: flex;
   flex-direction: column;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
 
   @media (min-width: 790px) {
     // flex-direction: row;

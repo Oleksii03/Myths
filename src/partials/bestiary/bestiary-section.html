@@ -6,10 +6,10 @@
     <div class="bestiary-section__btn-box bestiary-btn-box">
 
       <div class="bestiary-btn-box__myth myth-btns">
-        <button type="button" class="myth-btns__ukr myth-btns__active">
+        <button type="button" class="myth-btns__ukr js-myth-btn-ukr">
           В укр. міфології
         </button>
-        <button type="button" class="myth-btns__witcher">
+        <button type="button" class="myth-btns__witcher js-myth-btn-witcher">
           У грі Відьмак
         </button>
       </div>
@@ -35,72 +35,7 @@
 
     <!-- card list -->
 
-    <ul class="bestiary-section__list">
-
-      <li class="bestiary-list__item bestiary-item">
-
-        <div class="bestiary-item__heder">
-
-          <svg width="40" height="40" class="list-beasts__logo bestiary-item__logo">
-            <use href="./images/sprite.svg#icon-logo-ua"></use>
-          </svg>
-
-          <div class="bestiary-item__content">
-            <h3 class="bestiary-item__title">Боровик</h3>
-            <h4 class="bestiary-item__sub-title">Українська міфологія</h4>
-          </div>
-
-          <a href="#" class="bestiary-item__svg-more">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M12 7.69231C10.8954 7.69231 10 6.86576 10 5.84615C10 4.82655 10.8954 4 12 4C13.1046 4 14 4.82655 14 5.84615C14 6.86576 13.1046 7.69231 12 7.69231Z"
-                fill="#363A3A" />
-              <path
-                d="M12 13.8462C10.8954 13.8462 10 13.0196 10 12C10 10.9804 10.8954 10.1538 12 10.1538C13.1046 10.1538 14 10.9804 14 12C14 13.0196 13.1046 13.8462 12 13.8462Z"
-                fill="#363A3A" />
-              <path
-                d="M10 18.1538C10 19.1734 10.8954 20 12 20C13.1046 20 14 19.1734 14 18.1538C14 17.1342 13.1046 16.3077 12 16.3077C10.8954 16.3077 10 17.1342 10 18.1538Z"
-                fill="#363A3A" />
-            </svg>
-          </a>
-
-        </div>
-
-        <picture class="bestiary-item__picture">
-          <!-- <source srcset="#" media="(min-width: 1200px)">
-          <source srcset="№" media="(min-width: 580px)"> -->
-          <a href="#">
-            <img class="bestiary-item__img" src="./images/beasts-main/item-mob-1.jpg" alt="боровик">
-          </a>
-        </picture>
-
-        <div class="bestiary-item__body bestiary-body">
-
-          <a class="bestiary-body__link-myth" href="#">
-            <svg width="18" height="18" class="bestiary-body__logo">
-              <use href="./images/sprite.svg#icon-logo-ua"></use>
-            </svg>
-            Міф
-          </a>
-
-          <p class="bestiary-body__text">
-            Боровик — (за слов'янською міфологією) один з лісових духів, господар борів та ...
-          </p>
-
-          <a class="bestiary-body__link-btn" href="#">
-            Читати далі
-            <svg class="bestiary-body__svg_arr" xmlns="http://www.w3.org/2000/svg" width="19" height="18"
-              viewBox="0 0 19 18" fill="none">
-              <path
-                d="M7.82002 3.63222C7.39784 3.62425 7.06205 3.96004 7.07002 4.38222C7.07799 4.8044 7.42669 5.1531 7.84887 5.16106L12.0543 5.24041L4.26746 13.0273C3.99288 13.3018 3.99288 13.747 4.26746 14.0216C4.54205 14.2962 4.98725 14.2962 5.26183 14.0216L13.0487 6.23478L13.128 10.4402C13.136 10.8624 13.4847 11.2111 13.9069 11.2191C14.329 11.227 14.6648 10.8912 14.6569 10.4691L14.5447 4.52325C14.5367 4.10107 14.188 3.75237 13.7658 3.7444L7.82002 3.63222Z"
-                fill="#3A3000" />
-            </svg>
-          </a>
-        </div>
-
-      </li>
-
-    </ul>
+    <ul class="bestiary-section__list js-bestiary-section-list"></ul>
 
     <!--/ card list -->
   </div>
