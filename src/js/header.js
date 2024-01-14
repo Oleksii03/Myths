@@ -70,4 +70,4 @@ transformBtn.addEventListener('click', onTransformBtnClose);
 
 function onTransformBtnClose (e) {
   transformBtn.classList.toggle('transform-btn');
-}
+};

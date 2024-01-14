@@ -108,7 +108,7 @@ function onCreateMarkupWitcher (e) {
 
 function createMarkupBestiaryListWitcher (data) {
   return data.map(({ name, description, image, genus }, i) => {
-    return ` <li class="bestiary-list__item bestiary-item">
+    return `<li class="bestiary-list__item bestiary-item">
 
     <div class="bestiary-item__heder">
 
