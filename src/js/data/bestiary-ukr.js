@@ -2,8 +2,6 @@ import borovik from '../../images/beasts-main/item-mob-1.jpg';
 import griffin from '../../images/beasts-main/item-mob-2.jpg';
 import goblin from '../../images/beasts-main/item-mob-3.jpg';
 
-console.log(borovik);
-
 export const bestiaryUkr = [
   {
     name: "Боровик",
