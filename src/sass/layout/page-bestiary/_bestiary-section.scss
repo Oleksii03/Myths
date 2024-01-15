@@ -201,6 +201,12 @@
   }
 }
 
+.bestiary-item {
+  &:nth-child(2) img {
+    object-position: center 20%;
+  }
+}
+
 .bestiary-item__heder {
   @include flex;
   column-gap: 16px;
@@ -252,6 +258,8 @@
   color: #968E98;
 }
 
+// ----IMAGE --------
+
 .bestiary-item__picture {
   @media (min-width: 790px) {
     order: 1;
@@ -267,12 +275,16 @@
     object-position: top;
   }
 
+  &-ukr {
+    object-position: center 40%;
+  }
+
   @media (min-width: 790px) {
     max-height: 332px;
   }
 }
 
-
+// ---/-----IMAGE --------
 
 // -----bestiary-body-----------------------
 

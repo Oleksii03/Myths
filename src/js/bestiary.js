@@ -55,7 +55,7 @@ function createMarkupBestiaryListUkr (data) {
 
     <picture class="bestiary-item__picture">
       <a href="#">
-        <img class="bestiary-item__img" src="${image}" alt="${name}" loading="lazy">
+        <img class="bestiary-item__img bestiary-item__img-ukr" src="${image}" alt="${name}" loading="lazy">
       </a>
     </picture>
 
