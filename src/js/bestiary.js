@@ -56,7 +56,7 @@ function createMarkupBestiaryListUkr (data) {
 
       <p class="bestiary-body__text">${description}</p>
 
-      <a class="bestiary-body__link-btn" href="#">
+      <a class="bestiary-body__link-btn" href="${ref}">
         Читати далі
         <svg width="19" height="18" class="bestiary-item__logo">
           <use href="${svg + '#arrow-up-right'}"></use>
