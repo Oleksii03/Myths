@@ -20,7 +20,7 @@ function onCreateMarkupUkr (e) {
 }
 
 function createMarkupBestiaryListUkr (data) {
-  return data.map(({ name, description, image }) => {
+  return data.map(({ name, description, image, ref }) => {
     return `<li class="bestiary-list__item bestiary-item">
     <div class="bestiary-item__heder">
         <svg width="40" height="40" class="bestiary-item__logo">
@@ -40,7 +40,7 @@ function createMarkupBestiaryListUkr (data) {
     </div>
 
     <picture class="bestiary-item__picture">
-      <a href="#">
+      <a href="${ref}">
         <img class="bestiary-item__img bestiary-item__img-ukr" src="${image}" alt="${name}" loading="lazy">
       </a>
     </picture>

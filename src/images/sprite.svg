@@ -131,5 +131,10 @@
 <path d="M16 18.462c-1.473 0-2.667-1.102-2.667-2.462s1.194-2.462 2.667-2.462c1.473 0 2.667 1.102 2.667 2.462s-1.194 2.462-2.667 2.462z"></path>
 <path d="M13.333 24.205c0 1.359 1.194 2.462 2.667 2.462s2.667-1.102 2.667-2.462c0-1.359-1.194-2.461-2.667-2.461s-2.667 1.102-2.667 2.461z"></path>
 </symbol>
+
+<symbol id="icon-toggleable-dark" viewBox="0 0 32 32">
+<path fill="none" stroke="#cdc4ce" style="stroke: var(--color1, #cdc4ce)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.3333" d="M12 12c0-0.736 0.597-1.333 1.333-1.333h5.333c0.736 0 1.333 0.597 1.333 1.333v10l-4-4-4 4v-10z"></path>
+<path fill="none" stroke="#968e98" style="stroke: var(--color2, #968e98)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.6667" d="M16 3c7.18 0 13 5.82 13 13s-5.82 13-13 13c-7.18 0-13-5.82-13-13s5.82-13 13-13z"></path>
+</symbol>
 </defs>
 </svg>

@@ -8,6 +8,7 @@ export const bestiaryUkr = [
     description: `Боровик — (за слов'янською міфологією) один
     з лісових духів, господар борів та`,
     image: borovik,
+    ref: "./page-borovik.html",
   },
   {
     name: "Грифон (Гриф)",
