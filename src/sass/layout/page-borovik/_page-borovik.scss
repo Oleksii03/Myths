@@ -1,0 +1,172 @@
+.borovik-item {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+
+  max-width: 408px;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 790px) {
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+
+
+.borovik-item__heder {
+  @include flex;
+  column-gap: 16px;
+
+  padding: 12px 16px;
+
+  background-color: var(--dark-gray-color);
+
+  // @media (min-width: 790px) {
+  //   position: absolute;
+  //   top: 24px;
+  //   left: 32px;
+  //   z-index: 1;
+
+  //   padding: 0;
+  // }
+}
+
+.borovik-item__logo {
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.borovik-item__svg-more {
+  margin-left: auto;
+  fill: #363A3A;
+
+  // @media (min-width: 790px) {
+  //   display: none;
+  // }
+}
+
+.borovik-item__title {
+  font-size: 22px;
+  line-height: 127.273%;
+  margin-bottom: 4px;
+
+  // @media (min-width: 790px) {
+  //   font-size: 24px;
+  //   line-height: 133%;
+  // }
+}
+
+.borovik-item__sub-title {
+  font-family: var(--secondary-font);
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+
+  color: #968E98;
+}
+
+// ----IMAGE --------
+
+// .borovik-item__picture {
+//   @media (min-width: 790px) {
+//     order: 1;
+//   }
+// }
+
+.borovik-item__img {
+  max-height: 200px;
+  object-fit: cover;
+  object-position: center;
+
+  &-witcher {
+    object-position: top;
+  }
+
+  &-ukr {
+    object-position: center 40%;
+  }
+
+  // @media (min-width: 790px) {
+  //   max-height: 332px;
+  // }
+}
+
+// ---/-----IMAGE --------
+
+// -----borovik-body-----------------------
+
+.borovik-body {
+  background-color: var(--dark-gray-color);
+  padding: 16px;
+
+  // @media (min-width: 790px) {
+  //   margin-top: auto;
+
+  //   padding: 24px 48px 24px 32px;
+  // }
+}
+
+// -----link-------
+
+.borovik-body__link-myth {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 8px;
+
+  padding: 6px 16px 6px 8px;
+
+  border: 1px solid #968E98;
+  border-radius: 8px;
+
+  font-family: var(--secondary-font);
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
+
+// -----text-----------
+
+.borovik-body__text {
+  font-family: var(--secondary-font);
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.5px;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  // @media (min-width: 790px) {
+  //   font-size: 18px;
+  //   line-height: 133%;
+  // }
+}
+
+// -------button-------
+
+.borovik-body__link-btn {
+  @include flex;
+  justify-content: center;
+  column-gap: 8px;
+
+  max-width: 194px;
+  margin-left: auto;
+
+  padding: 10px 24px;
+
+  border-radius: 100px;
+  background: var(--accent-text-color);
+  color: #3A3000;
+
+  // @media (min-width: 790px) {
+  //   max-width: 231px;
+  // }
+}
