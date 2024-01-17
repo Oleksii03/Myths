@@ -1,5 +1,14 @@
 .borovik__main-content {
-  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 32px;
+
+  @media (min-width: 790px) {
+    padding-top: 28px;
+  }
+
+  @media (min-width: 1200px) {
+    padding-top: 36px;
+  }
 }
 
 .borovik-item {
@@ -10,13 +19,19 @@
 
   max-width: 408px;
 
-  &:not(:last-child) {
-    margin-bottom: 40px;
-  }
-
   @media (min-width: 790px) {
     margin-right: 0;
     margin-left: auto;
+
+    float: right;
+
+    margin-left: 65px;
+    margin-bottom: 80px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-left: 121px;
+    margin-bottom: 80px;
   }
 }
 
@@ -29,14 +44,10 @@
 
   background-color: var(--dark-gray-color);
 
-  // @media (min-width: 790px) {
-  //   position: absolute;
-  //   top: 24px;
-  //   left: 32px;
-  //   z-index: 1;
 
-  //   padding: 0;
-  // }
+  @media (min-width: 1200px) {
+    padding: 16px 24px;
+  }
 }
 
 .borovik-item__logo {
@@ -57,11 +68,12 @@
   font-size: 22px;
   line-height: 127.273%;
   margin-bottom: 4px;
+  font-family: var(--primary-font);
 
-  // @media (min-width: 790px) {
-  //   font-size: 24px;
-  //   line-height: 133%;
-  // }
+  @media (min-width: 1200px) {
+    font-size: 24px;
+    line-height: 133%;
+  }
 }
 
 .borovik-item__sub-title {
@@ -71,15 +83,14 @@
   letter-spacing: 0.15px;
 
   color: #968E98;
+
+  @media (min-width: 1200px) {
+    font-size: 18px;
+    line-height: 133%;
+  }
 }
 
 // ----IMAGE --------
-
-// .borovik-item__picture {
-//   @media (min-width: 790px) {
-//     order: 1;
-//   }
-// }
 
 .borovik-item__img {
   max-height: 200px;
@@ -107,11 +118,9 @@
   background-color: var(--dark-gray-color);
   padding: 16px;
 
-  // @media (min-width: 790px) {
-  //   margin-top: auto;
-
-  //   padding: 24px 48px 24px 32px;
-  // }
+  @media (min-width: 1200px) {
+    padding: 24px 24px 32px 24px;
+  }
 }
 
 // -----link-------
@@ -148,10 +157,10 @@
     margin-bottom: 32px;
   }
 
-  // @media (min-width: 790px) {
-  //   font-size: 18px;
-  //   line-height: 133%;
-  // }
+  @media (min-width: 790px) {
+    font-size: 18px;
+    line-height: 133%;
+  }
 }
 
 // -------button-------
@@ -169,8 +178,69 @@
   border-radius: 100px;
   background: var(--accent-text-color);
   color: #3A3000;
+}
 
-  // @media (min-width: 790px) {
-  //   max-width: 231px;
-  // }
+// -----main-content-----------
+.main-content {
+  font-family: var(--secondary-font);
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.main-content__list {
+  @media (max-width: 580px) {
+    padding: 0px 20px;
+  }
+
+  margin-top: 32px;
+  margin-bottom: 32px;
+  line-height: 127.273%;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+
+  &-title {
+    margin-bottom: 8px;
+
+    font-family: GWENT;
+    font-size: 22px;
+    line-height: 127.273%;
+
+    @media (min-width: 790px) {
+      font-size: 24px;
+      line-height: 133%;
+    }
+  }
+
+  @media (min-width: 790px) {
+    font-size: 22px;
+    margin-top: 0;
+  }
+}
+
+.description-content__title {
+  @extend .main-content__list-title;
+  margin-bottom: 16px;
+
+  @media (max-width: 580px) {
+    padding: 0px 20px;
+  }
+}
+
+.description-content__text {
+  @media (max-width: 580px) {
+    padding: 0px 20px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+
+  @media (min-width: 790px) {
+    font-size: 22px;
+    line-height: 127%;
+    font-weight: 400;
+  }
 }
