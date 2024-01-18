@@ -294,12 +294,39 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   height: 320;
+
+  @media (min-width: 790px) {
+    gap: 16px;
+    height: 534px;
+  }
+
+  @media (min-width: 1200px) {
+    gap: 24px;
+    height: 640px;
+  }
 }
 
 .gallery-borovik__item {
   height: 190px;
   border-radius: 8px;
   overflow: hidden;
+
+  cursor: pointer;
+
+  @media (min-width: 790px) {
+    height: 336px;
+  }
+
+  @media (min-width: 1200px) {
+    height: 308px;
+  }
+}
+
+.gallery-borovik__item-col {
+  @media (min-width: 1200px) {
+    grid-row: 1/3;
+    height: 640px;
+  }
 }
 
 .gallery-borovik__img {
@@ -310,6 +337,15 @@
 .gallery-borovik__item-row {
   grid-column: 1/3;
   height: 122px;
+
+  @media (min-width: 790px) {
+    height: 182px;
+  }
+
+  @media (min-width: 1200px) {
+    grid-column: 2/3;
+    height: 308px;
+  }
 }
 
 .gallery-borovik__img-row {
@@ -331,6 +367,19 @@
   border-radius: 100px;
 
   margin: 32px auto;
+
+  @media (min-width: 790px) {
+    margin: 40px auto;
+    width: 180px;
+  }
+
+  @media (min-width: 1200px) {
+    margin: 48px auto;
+    width: 362px;
+
+    font-size: 18px;
+    line-height: 155%;
+  }
 }
 
 // -/-gallery-borovik__btn--
