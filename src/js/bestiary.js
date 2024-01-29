@@ -6,6 +6,7 @@ const bestiaryList = document.querySelector('.js-bestiary-section-list');
 const mythBtnUkr = document.querySelector('.js-myth-btn-ukr');
 const mythBtnWitcher = document.querySelector('.js-myth-btn-witcher');
 
+
 // ------onCreateMarkupUkr-----------------------
 
 onCreateMarkupUkr();
@@ -82,7 +83,7 @@ function onCreateMarkupWitcher (e) {
 
 
 function createMarkupBestiaryListWitcher (data) {
-  return data.map(({ name, description, image, genus }) => {
+  return data.map(({ name, description, image, genus, ref }) => {
     return `<li class="bestiary-list__item bestiary-item">
     <div class="bestiary-item__heder">
         <svg width="40" height="40" class="bestiary-item__logo">
@@ -101,8 +102,8 @@ function createMarkupBestiaryListWitcher (data) {
     </div>
 
     <picture class="bestiary-item__picture">
-      <a href="#">
-        <img class="bestiary-item__img bestiary-item__img-witcher" src="${image}" alt="${name}" loading="lazy">
+      <a href="${ref}">
+        <img class="bestiary-item__img bestiary-item__img-witcher js-bestiary-item-img-witcher" src="${image}" alt="${name}" loading="lazy">
       </a>
     </picture>
 
@@ -116,7 +117,7 @@ function createMarkupBestiaryListWitcher (data) {
 
       <p class="bestiary-body__text">${description}</p>
 
-      <a class="bestiary-body__link-btn" href="#">
+      <a class="bestiary-body__link-btn" href="${ref}">
         Читати далі
         <svg width="19" height="18" class="bestiary-item__logo">
           <use href="${svg + '#arrow-up-right'}"></use>

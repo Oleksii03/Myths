@@ -8,6 +8,7 @@ export const bestiaryWitcher = [
     description: `Боровик (пол. Borowy, англ. Spriggan) — бестія у всесвіті Відьмака ...`,
     image: borovik,
     genus: "Релікти",
+    ref: "./page-borovik.html",
   },
   {
     name: "Грифон",

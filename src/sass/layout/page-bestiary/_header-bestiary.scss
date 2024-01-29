@@ -293,3 +293,31 @@
 }
 
 // ----/NAVIGATION-DESC
+
+// -------progress-bar------
+
+.progress-bar {
+  height: 4px;
+
+  &__wrap {
+    background-color: #323536;
+  }
+
+  animation: grow-progress auto linear;
+  animation-timeline: scroll();
+  transform-origin: left;
+}
+
+@keyframes grow-progress {
+  from {
+    transform: scaleX(0);
+    background-color: var(--accent-text-color);
+  }
+
+  to {
+    transform: scaleX(1);
+    background-color: var(--accent-text-color);
+  }
+}
+
+// ------/-progress-bar------
