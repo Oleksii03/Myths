@@ -297,15 +297,18 @@
 // -------progress-bar------
 
 .progress-bar {
-  height: 4px;
+  @media (max-width: 1199px) {
+    height: 4px;
 
-  &__wrap {
-    background-color: #323536;
+    &__wrap {
+      background-color: #323536;
+    }
+
+    transform-origin: left;
+
+    animation: grow-progress auto linear;
+    animation-timeline: scroll();
   }
-
-  animation: grow-progress auto linear;
-  animation-timeline: scroll();
-  transform-origin: left;
 }
 
 @keyframes grow-progress {
