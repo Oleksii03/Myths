@@ -493,3 +493,68 @@
 // -/-btn-box--
 
 // ----/-borovik-video------------------
+
+// ----/-borovik-Ukr------------------
+
+// =================================
+
+// ----borovik-witcher--------------
+
+.author-img {
+  padding-bottom: 24px;
+}
+
+.author-img__title {
+  font-size: 22px;
+  line-height: 127.273%;
+}
+
+.author-img__link {
+  font-family: var(--secondary-font);
+  font-weight: 500;
+  line-height: 150%;
+
+  color: #ADC6FF;
+}
+
+// -----table-----
+
+.borovik-witcher__table {
+  color: #E1E3E3;
+
+  font-family: var(--secondary-font);
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.5px;
+}
+
+.borovik-witcher__row {
+  display: grid;
+  grid-template-columns: 40% 60%;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+// .borovik-witcher__data {}
+
+// ----gallery-borovik--section_wicher-
+// .gallery-borovik__section_wicher {
+//   @media (min-width: 1200px) {
+//     // padding-top: 50px;
+//   }
+
+// }
+
+.gallery-borovik {
+  width: 100%;
+}
+
+.gallery-borovik__img-col {
+  object-position: top;
+}
+
+.gallery-borovik__img-wicher_row {
+  object-position: center 14%;
+}
