@@ -5,7 +5,10 @@ import svg from '../../images/sprite.svg';
 import borovik from '../../images/beasts-main/item-mob-1.jpg';
 import borovik2 from '../../images/page-borovik/borovik-item-2.jpg';
 import borovik3 from '../../images/page-borovik/borovik-item-3.jpg';
+
 import spriggan from '../../images/beasts-witcher/spriggan.jpg';
+import spriggan2 from '../../images/page-borovik/borovik-witcher-item-2.jpg';
+import spriggan3 from '../../images/page-borovik/borovik-witcher-item-3.jpg';
 
 
 const mythBtnUkrEl = document.querySelector('.js-myth-btns_ukr');
@@ -19,7 +22,10 @@ onCreateMarcupUkr();
 mythBtnUkrEl.addEventListener('click', onCreateMarcupUkr);
 mythBtnWitcherEl.addEventListener('click', onCreateMarcupWitcher);
 
-function onCreateMarcupUkr (e) {
+function onCreateMarcupUkr () {
+  mythBtnWitcherEl.classList.remove('myth-btns__active');
+  mythBtnUkrEl.classList.add('myth-btns__active');
+
   mainContent.innerHTML = createMarcupUkr();
   galleryBorovikSection.innerHTML = createGalleryBorovikUkr();
 };
@@ -122,6 +128,9 @@ function createGalleryBorovikUkr () {
 // onCreateMarcupWitcher-----
 
 function onCreateMarcupWitcher (e) {
+  mythBtnUkrEl.classList.remove('myth-btns__active');
+  mythBtnWitcherEl.classList.add('myth-btns__active');
+
   mainContent.innerHTML = createMarcupWicher();
   galleryBorovikSection.innerHTML = createGalleryBorovikWicher();
 };
@@ -242,5 +251,26 @@ function createMarcupWicher () {
 };
 
 function createGalleryBorovikWicher () {
+  return `
+<div class="borovik__gallery-header gallery-borovik">
+<h2 class="gallery-borovik__title">Галерея</h2>
+<p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
+</div>
 
-}
+<ul class="gallery-borovik__list">
+<li class="gallery-borovik__item gallery-borovik__item-col">
+  <img class="gallery-borovik__img gallery-borovik__img-col gallery-borovik__img-wicher_col"
+    src="${spriggan}" alt="spriggan">
+</li>
+<li class="gallery-borovik__item">
+  <img class="gallery-borovik__img gallery-borovik__img-wicher_row"
+    src="${spriggan2}" alt="borovik-witcher-item-2">
+</li>
+<li class="gallery-borovik__item gallery-borovik__item-row">
+  <img class="gallery-borovik__img gallery-borovik__img-row gallery-borovik__img-wicher_row"
+    src="${spriggan3}" alt="borovik-witcher-item-3">
+</li>
+</ul>
+
+<button class="gallery-borovik__btn" type="button">В укр. міфології</button>`;
+};
