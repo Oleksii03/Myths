@@ -17,6 +17,13 @@ const mythBtnWitcherEl = document.querySelector('.js-myth-btn_witcher');
 const mainContent = document.querySelector('.js-main-content');
 const galleryBorovikSection = document.querySelector('.js-gallery-borovik-section');
 
+// ------backdrop-borovik-gallery------------------
+const borovikGallery = document.querySelector('.js-backdrop-borovik-gallery');
+const borovikGalleryBigImg = document.querySelector('.js-borovik-modal-img');
+const borovikGalleryBtnclose = document.querySelector('.js-backdrop-close');
+
+console.log(borovikGalleryBtnclose);
+// ----/--backdrop-borovik-gallery------------------
 
 onCreateMarcupUkr();
 
@@ -33,7 +40,31 @@ function onCreateMarcupUkr () {
   document.querySelector('.js-gallery-btn-wich').addEventListener('click', () => {
     onCreateMarcupWitcher();
   });
+
+  const galleryBorovikUrk = document.querySelector('.js-gallery-borovik-urk');
+
+  galleryBorovikUrk.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.tagName !== 'IMG') return;
+    borovikGallery.classList.remove('backdrop-borovik-gallery--hidden');
+
+    borovikGalleryBigImg.src = target.src;
+
+    document.querySelector('.js-small-gallery').addEventListener('click', (e) => {
+      const { target } = e;
+
+      if (target.tagName !== 'IMG') return;
+
+      borovikGalleryBigImg.src = target.src;
+    });
+  });
+
 };
+
+borovikGalleryBtnclose.addEventListener('click', () => {
+  borovikGallery.classList.add('backdrop-borovik-gallery--hidden');
+});
 
 function createMarcupUkr () {
   return `
@@ -114,7 +145,7 @@ function createGalleryBorovikUkr () {
         <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
       </div>
 
-      <ul class="gallery-borovik__list">
+      <ul class="gallery-borovik__list js-gallery-borovik-urk">
         <li class="gallery-borovik__item gallery-borovik__item-col">
           <img class="gallery-borovik__img gallery-borovik__img-col" src="${borovik}" alt="borovik">
         </li>
@@ -126,6 +157,7 @@ function createGalleryBorovikUkr () {
             alt="borovik3">
         </li>
       </ul>
+
       <button class="gallery-borovik__btn js-gallery-btn-wich" type="button">У грі Відьмак</button>`;
 };
 
