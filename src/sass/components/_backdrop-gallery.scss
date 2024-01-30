@@ -6,7 +6,7 @@
   height: 100dvh;
   z-index: 8;
 
-  background: rgba(0, 0, 0, 0.852);
+  background: rgba(0, 0, 0, 0.911);
   backdrop-filter: blur(3px);
 
   transition-property: opacity, visibility;
@@ -51,7 +51,23 @@
 
     object-fit: cover;
     cursor: pointer;
+
+
+
+    @media (min-width: 790px) {
+      width: 72px;
+      height: 72px;
+    }
   }
+}
+
+.small-gallery__item {
+  filter: brightness(50%);
+}
+
+.small-img-active {
+  transform: scale(1.15);
+  filter: brightness(100%);
 }
 
 // ----big-img-----

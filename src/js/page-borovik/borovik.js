@@ -52,11 +52,20 @@ function onCreateMarcupUkr () {
     borovikGalleryBigImg.src = target.src;
 
     document.querySelector('.js-small-gallery').addEventListener('click', (e) => {
-      const { target } = e;
+      const { target, currentTarget } = e;
 
       if (target.tagName !== 'IMG') return;
 
       borovikGalleryBigImg.src = target.src;
+
+      for (const el of [...currentTarget.children]) {
+        if (el.classList.contains('small-img-active')) {
+          el.classList.remove('small-img-active');
+        }
+      }
+
+      target.closest('.small-gallery__item').classList.add('small-img-active');
+
     });
   });
 
