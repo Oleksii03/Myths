@@ -1,0 +1,44 @@
+.progress-bar {
+  @media (max-width: 1199px) {
+    height: 4px;
+
+    &__wrap {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+
+      background-color: #323536;
+
+      animation: hidden-progress auto linear;
+      animation-timeline: scroll();
+
+      @keyframes hidden-progress {
+        0% {
+          opacity: 0;
+        }
+
+        1% {
+          opacity: 1;
+        }
+      }
+    }
+
+    transform-origin: left;
+
+    animation: grow-progress auto linear;
+    animation-timeline: scroll();
+  }
+}
+
+@keyframes grow-progress {
+  from {
+    transform: scaleX(0);
+    background-color: var(--accent-text-color);
+  }
+
+  to {
+    transform: scaleX(1);
+    background-color: var(--accent-text-color);
+  }
+}

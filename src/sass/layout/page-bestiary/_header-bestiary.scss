@@ -292,35 +292,4 @@
   }
 }
 
-// ----/NAVIGATION-DESC
-
-// -------progress-bar------
-
-.progress-bar {
-  @media (max-width: 1199px) {
-    height: 4px;
-
-    &__wrap {
-      background-color: #323536;
-    }
-
-    transform-origin: left;
-
-    animation: grow-progress auto linear;
-    animation-timeline: scroll();
-  }
-}
-
-@keyframes grow-progress {
-  from {
-    transform: scaleX(0);
-    background-color: var(--accent-text-color);
-  }
-
-  to {
-    transform: scaleX(1);
-    background-color: var(--accent-text-color);
-  }
-}
-
-// ------/-progress-bar------
+// ----/NAVIGATION-DESC--
