@@ -17,6 +17,7 @@ const mythBtnWitcherEl = document.querySelector('.js-myth-btn_witcher');
 const mainContent = document.querySelector('.js-main-content');
 const galleryBorovikSection = document.querySelector('.js-gallery-borovik-section');
 
+
 onCreateMarcupUkr();
 
 mythBtnUkrEl.addEventListener('click', onCreateMarcupUkr);
@@ -28,6 +29,10 @@ function onCreateMarcupUkr () {
 
   mainContent.innerHTML = createMarcupUkr();
   galleryBorovikSection.innerHTML = createGalleryBorovikUkr();
+
+  document.querySelector('.js-gallery-btn-wich').addEventListener('click', () => {
+    onCreateMarcupWitcher();
+  });
 };
 
 function createMarcupUkr () {
@@ -121,7 +126,7 @@ function createGalleryBorovikUkr () {
             alt="borovik3">
         </li>
       </ul>
-      <button class="gallery-borovik__btn" type="button">У грі Відьмак</button>`;
+      <button class="gallery-borovik__btn js-gallery-btn-wich" type="button">У грі Відьмак</button>`;
 };
 
 
@@ -133,6 +138,10 @@ function onCreateMarcupWitcher (e) {
 
   mainContent.innerHTML = createMarcupWicher();
   galleryBorovikSection.innerHTML = createGalleryBorovikWicher();
+
+  document.querySelector('.js-gallery-btn-ukr').addEventListener('click', () => {
+    onCreateMarcupUkr();
+  });
 };
 
 function createMarcupWicher () {
@@ -272,5 +281,5 @@ function createGalleryBorovikWicher () {
 </li>
 </ul>
 
-<button class="gallery-borovik__btn" type="button">В укр. міфології</button>`;
+<button class="gallery-borovik__btn js-gallery-btn-ukr" type="button">В укр. міфології</button>`;
 };
