@@ -22,7 +22,6 @@ const borovikGallery = document.querySelector('.js-backdrop-borovik-gallery');
 const borovikGalleryBigImg = document.querySelector('.js-borovik-modal-img');
 const borovikGalleryBtnclose = document.querySelector('.js-backdrop-close');
 
-console.log(borovikGalleryBtnclose);
 // ----/--backdrop-borovik-gallery------------------
 
 onCreateMarcupUkr();
@@ -46,29 +45,45 @@ function onCreateMarcupUkr () {
   galleryBorovikUrk.addEventListener('click', (e) => {
     const { target } = e;
 
+    const bigImgId = Number(target.dataset.id);
+
+
     if (target.tagName !== 'IMG') return;
     borovikGallery.classList.remove('backdrop-borovik-gallery--hidden');
 
     borovikGalleryBigImg.src = target.src;
 
-    document.querySelector('.js-small-gallery').addEventListener('click', (e) => {
+    // --------small-gallery-----------
+
+    const smallGalleryItem = document.querySelector('.js-small-gallery');
+    smallGalleryItem.addEventListener('click', (e) => {
       const { target, currentTarget } = e;
 
       if (target.tagName !== 'IMG') return;
 
       borovikGalleryBigImg.src = target.src;
 
-      for (const el of [...currentTarget.children]) {
-        if (el.classList.contains('small-img-active')) {
-          el.classList.remove('small-img-active');
+      [...currentTarget.children].forEach((li) => {
+        if (li.classList.contains('small-img-active')) {
+          li.classList.remove('small-img-active');
         }
-      }
+      });
 
       target.closest('.small-gallery__item').classList.add('small-img-active');
+    });
 
+    [...smallGalleryItem.children].forEach((li) => {
+      const liId = Number(li.dataset.id);
+
+      if (li.classList.contains('small-img-active')) {
+        li.classList.remove('small-img-active');
+      }
+
+      if (liId === bigImgId) {
+        li.classList.add('small-img-active');
+      }
     });
   });
-
 };
 
 borovikGalleryBtnclose.addEventListener('click', () => {
@@ -156,13 +171,13 @@ function createGalleryBorovikUkr () {
 
       <ul class="gallery-borovik__list js-gallery-borovik-urk">
         <li class="gallery-borovik__item gallery-borovik__item-col">
-          <img class="gallery-borovik__img gallery-borovik__img-col" src="${borovik}" alt="borovik">
+          <img data-id="1" class="gallery-borovik__img gallery-borovik__img-col" src="${borovik}" alt="borovik">
         </li>
         <li class="gallery-borovik__item">
-          <img class="gallery-borovik__img" src="${borovik2}" alt="borovik2">
+          <img data-id="2" class="gallery-borovik__img" src="${borovik2}" alt="borovik2">
         </li>
         <li class="gallery-borovik__item gallery-borovik__item-row">
-          <img class="gallery-borovik__img gallery-borovik__img-row" src="${borovik3}"
+          <img data-id="3" class="gallery-borovik__img gallery-borovik__img-row" src="${borovik3}"
             alt="borovik3">
         </li>
       </ul>
