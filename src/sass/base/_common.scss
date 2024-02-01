@@ -1,5 +1,9 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
+* {
+  overscroll-behavior: none;
+}
+
 @media (min-width: 1200px) {
   ::-webkit-scrollbar {
     width: 12px;
