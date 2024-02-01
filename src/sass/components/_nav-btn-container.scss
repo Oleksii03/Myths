@@ -28,6 +28,10 @@
 .nav-btn-container__icon {
   width: 40px;
   height: 40px;
+
+  &_small {
+    width: 34px;
+  }
 }
 
 .nav-btn-container__btn-box {
