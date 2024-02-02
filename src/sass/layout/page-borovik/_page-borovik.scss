@@ -1,3 +1,7 @@
+.main-borovik {
+  background-color: #242424;
+}
+
 .borovik-section {
   padding-bottom: 100px;
 }
@@ -104,10 +108,6 @@
   &-ukr {
     object-position: center 40%;
   }
-
-  // @media (min-width: 790px) {
-  //   max-height: 332px;
-  // }
 }
 
 // ---/-----IMAGE --------
@@ -484,8 +484,6 @@
   }
 }
 
-.borovik__btn-prev {}
-
 .borovik__btn-next {
   color: var(--accent-text-color);
 }
@@ -537,16 +535,6 @@
   }
 }
 
-// .borovik-witcher__data {}
-
-// ----gallery-borovik--section_wicher-
-// .gallery-borovik__section_wicher {
-//   @media (min-width: 1200px) {
-//     // padding-top: 50px;
-//   }
-
-// }
-
 .gallery-borovik {
   width: 100%;
 }
@@ -556,5 +544,5 @@
 }
 
 .gallery-borovik__img-wicher_row {
-  object-position: center 14%;
+  object-position: center top;
 }

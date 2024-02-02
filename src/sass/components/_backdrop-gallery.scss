@@ -35,7 +35,7 @@
 .borovik-modal {
   width: 100%;
   max-width: 770px;
-  height: 70dvh;
+  height: 74dvh;
   background-color: #fff;
 }
 
@@ -52,8 +52,6 @@
 
     object-fit: cover;
     cursor: pointer;
-
-
 
     @media (min-width: 790px) {
       width: 72px;
@@ -77,4 +75,20 @@
   object-fit: cover;
   object-position: center 35%;
   height: 100%;
+}
+
+// ------backdrop-borovik-gallery-wicher----------
+
+.small-gallery__img_wich {
+  object-position: top;
+  object-fit: cover;
+}
+
+// .small-gallery_wich>li:last-child>img {
+//   object-position: center 20%;
+// }
+
+.borovik-modal__img_wich {
+  object-position: center top;
+  object-fit: cover;
 }

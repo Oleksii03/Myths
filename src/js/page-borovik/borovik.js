@@ -8,7 +8,7 @@ import borovik2 from '../../images/page-borovik/borovik-item-2.jpg';
 import borovik3 from '../../images/page-borovik/borovik-item-3.jpg';
 
 import spriggan from '../../images/beasts-witcher/spriggan.jpg';
-import spriggan2 from '../../images/page-borovik/borovik-witcher-item-2.jpg';
+import spriggan2 from '../../images/page-borovik/borovik-witcher-item-2.png';
 import spriggan3 from '../../images/page-borovik/borovik-witcher-item-3.jpg';
 
 
@@ -20,8 +20,14 @@ const galleryBorovikSection = document.querySelector('.js-gallery-borovik-sectio
 
 // ------backdrop-borovik-gallery------------------
 const borovikGallery = document.querySelector('.js-backdrop-borovik-gallery');
+const borovikGalleryWicher = document.querySelector('.js-backdrop-borovik-gallery-wicher');
+
+
 const borovikGalleryBigImg = document.querySelector('.js-borovik-modal-img');
+const borovikGalleryBigImgWich = document.querySelector('.js-borovik-modal-img-wich');
+
 const borovikGalleryBtnclose = document.querySelector('.js-backdrop-close');
+const borovikGalleryBtncloseWich = document.querySelector('.js-backdrop-close-wich');
 
 // ----/--backdrop-borovik-gallery------------------
 
@@ -40,6 +46,8 @@ function onCreateMarcupUkr () {
   document.querySelector('.js-gallery-btn-wich').addEventListener('click', () => {
     onCreateMarcupWitcher();
   });
+
+  // -----------backdrop-logic-------------------
 
   const galleryBorovikUrk = document.querySelector('.js-gallery-borovik-urk');
 
@@ -201,7 +209,59 @@ function onCreateMarcupWitcher (e) {
   document.querySelector('.js-gallery-btn-ukr').addEventListener('click', () => {
     onCreateMarcupUkr();
   });
+
+  // -----------backdrop-logic-------------------
+
+  const galleryBorovikWich = document.querySelector('.js-gallery-borovik-wich');
+
+  galleryBorovikWich.addEventListener('click', (e) => {
+    const { target } = e;
+
+    const bigImgId = Number(target.dataset.id);
+
+    if (target.tagName !== 'IMG') return;
+
+    borovikGalleryWicher.classList.remove('backdrop-borovik-gallery--hidden');
+
+    borovikGalleryBigImgWich.src = target.src;
+
+    // --------small-gallery-----------
+
+    const smallGalleryItem = document.querySelector('.js-small-gallery-wich');
+
+    smallGalleryItem.addEventListener('click', (e) => {
+      const { target, currentTarget } = e;
+
+      if (target.tagName !== 'IMG') return;
+
+      borovikGalleryBigImgWich.src = target.src;
+
+      [...currentTarget.children].forEach((li) => {
+        if (li.classList.contains('small-img-active')) {
+          li.classList.remove('small-img-active');
+        }
+      });
+
+      target.closest('.small-gallery__item').classList.add('small-img-active');
+    });
+
+    [...smallGalleryItem.children].forEach((li) => {
+      const liId = Number(li.dataset.id);
+
+      if (li.classList.contains('small-img-active')) {
+        li.classList.remove('small-img-active');
+      }
+
+      if (liId === bigImgId) {
+        li.classList.add('small-img-active');
+      }
+    });
+  });
 };
+
+borovikGalleryBtncloseWich.addEventListener('click', () => {
+  borovikGalleryWicher.classList.add('backdrop-borovik-gallery--hidden');
+});
 
 function createMarcupWicher () {
   return `
@@ -325,19 +385,19 @@ function createGalleryBorovikWicher () {
 <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
 </div>
 
-<ul class="gallery-borovik__list">
-<li class="gallery-borovik__item gallery-borovik__item-col">
-  <img class="gallery-borovik__img gallery-borovik__img-col gallery-borovik__img-wicher_col"
-    src="${spriggan}" alt="spriggan">
-</li>
-<li class="gallery-borovik__item">
-  <img class="gallery-borovik__img gallery-borovik__img-wicher_row"
-    src="${spriggan2}" alt="borovik-witcher-item-2">
-</li>
-<li class="gallery-borovik__item gallery-borovik__item-row">
-  <img class="gallery-borovik__img gallery-borovik__img-row gallery-borovik__img-wicher_row"
-    src="${spriggan3}" alt="borovik-witcher-item-3">
-</li>
+<ul class="gallery-borovik__list js-gallery-borovik-wich">
+  <li class="gallery-borovik__item gallery-borovik__item-col">
+    <img data-id="1" class="gallery-borovik__img gallery-borovik__img-col gallery-borovik__img-wicher_col"
+      src="${spriggan}" alt="spriggan">
+  </li>
+  <li class="gallery-borovik__item">
+    <img data-id="2" class="gallery-borovik__img gallery-borovik__img-wicher_row"
+      src="${spriggan2}" alt="borovik-witcher-item-2">
+  </li>
+  <li class="gallery-borovik__item gallery-borovik__item-row">
+    <img data-id="3" class="gallery-borovik__img gallery-borovik__img-row gallery-borovik__img-wicher_row"
+      src="${spriggan3}" alt="borovik-witcher-item-3">
+  </li>
 </ul>
 
 <button class="gallery-borovik__btn js-gallery-btn-ukr" type="button">В укр. міфології</button>`;
