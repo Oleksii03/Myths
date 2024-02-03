@@ -7,7 +7,7 @@ import borovikGif from '../../images/page-borovik/borovik-ukr-gif.gif';
 import borovik2 from '../../images/page-borovik/borovik-item-2.jpg';
 import borovik3 from '../../images/page-borovik/borovik-item-3.jpg';
 
-import spriggan from '../../images/beasts-witcher/spriggan.jpg';
+import spriggan from '../../images/page-borovik/borovik-wich-gif.gif';
 import spriggan2 from '../../images/page-borovik/borovik-witcher-item-2.png';
 import spriggan3 from '../../images/page-borovik/borovik-witcher-item-3.jpg';
 
