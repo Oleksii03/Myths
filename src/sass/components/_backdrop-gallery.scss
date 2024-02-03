@@ -34,9 +34,8 @@
 
 .borovik-modal {
   width: 100%;
-  max-width: 770px;
+  max-width: 1080px;
   height: 74dvh;
-  background-color: #fff;
 }
 
 // -----small-gallery--------
@@ -72,8 +71,9 @@
 // ----big-img-----
 
 .borovik-modal__img {
-  object-fit: cover;
-  object-position: center 35%;
+  object-fit: contain;
+  object-position: center;
+  // object-position: center 35%;
   height: 100%;
 }
 
@@ -84,12 +84,7 @@
   object-fit: cover;
 }
 
-// .small-gallery_wich>li:last-child>img {
-//   object-position: center 20%;
-// }
-
 .borovik-modal__img_wich {
-  object-position: center top;
-  object-fit: cover;
-  background-color: rgba(0, 0, 0, 0.954);
+  object-position: center;
+  object-fit: contain;
 }
