@@ -4,8 +4,6 @@ import '../backdrop-search';
 import svg from '../../images/sprite.svg';
 
 import borovik from '../../images/beasts-main/item-mob-1.jpg';
-import borovikGif from '../../images/page-borovik/borovik-ukr-gif.gif';
-// import borovikVideo from '../../video/page-borovik/borovyk_1_uk.mp4';
 import borovik2 from '../../images/page-borovik/borovik-item-2.jpg';
 import borovik3 from '../../images/page-borovik/borovik-item-3.jpg';
 
@@ -66,7 +64,6 @@ function onCreateMarcupUkr () {
     if (bigImgId === 1) {
       borovikGalleryBigImg.closest('picture').hidden = true;
       borovikGalleryBigVideo.hidden = false;
-      return;
     }
 
     borovikGalleryBigImg.src = target.src;
@@ -78,7 +75,17 @@ function onCreateMarcupUkr () {
     smallGalleryItem.addEventListener('click', (e) => {
       const { target, currentTarget } = e;
 
+      const liItemId = Number(target.closest('LI').dataset.id);
+
       if (target.tagName !== 'IMG') return;
+
+      if (liItemId === 1) {
+        borovikGalleryBigImg.closest('picture').hidden = true;
+        borovikGalleryBigVideo.hidden = false;
+      } else {
+        borovikGalleryBigImg.closest('picture').hidden = false;
+        borovikGalleryBigVideo.hidden = true;
+      }
 
       borovikGalleryBigImg.src = target.src;
 
