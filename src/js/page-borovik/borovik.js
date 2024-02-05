@@ -2,8 +2,10 @@ import '../header';
 import '../backdrop-search';
 
 import svg from '../../images/sprite.svg';
+
 import borovik from '../../images/beasts-main/item-mob-1.jpg';
 import borovikGif from '../../images/page-borovik/borovik-ukr-gif.gif';
+// import borovikVideo from '../../video/page-borovik/borovyk_1_uk.mp4';
 import borovik2 from '../../images/page-borovik/borovik-item-2.jpg';
 import borovik3 from '../../images/page-borovik/borovik-item-3.jpg';
 
@@ -182,8 +184,11 @@ function createGalleryBorovikUkr () {
 
       <ul class="gallery-borovik__list js-gallery-borovik-urk">
         <li class="gallery-borovik__item gallery-borovik__item-col">
-          <img data-id="1" class="gallery-borovik__img gallery-borovik__img-col" src="${borovikGif}" alt="borovik">
+
+        <video controls src="http://localhost:1234/video/page-borovik/borovyk_1_uk.mp4"></video>
+
         </li>
+
         <li class="gallery-borovik__item">
           <img data-id="2" class="gallery-borovik__img" src="${borovik2}" alt="borovik2">
         </li>
