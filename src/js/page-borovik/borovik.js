@@ -27,6 +27,8 @@ const borovikGalleryWicher = document.querySelector('.js-backdrop-borovik-galler
 
 const borovikGalleryBigImg = document.querySelector('.js-borovik-modal-img');
 const borovikGalleryBigImgWich = document.querySelector('.js-borovik-modal-img-wich');
+const borovikGalleryBigVideo = document.querySelector('.js-borovik-modal-video');
+
 
 const borovikGalleryBtnclose = document.querySelector('.js-backdrop-close');
 const borovikGalleryBtncloseWich = document.querySelector('.js-backdrop-close-wich');
@@ -58,15 +60,21 @@ function onCreateMarcupUkr () {
 
     const bigImgId = Number(target.dataset.id);
 
-
     if (target.tagName !== 'IMG') return;
     borovikGallery.classList.remove('backdrop-borovik-gallery--hidden');
+
+    if (bigImgId === 1) {
+      borovikGalleryBigImg.closest('picture').hidden = true;
+      borovikGalleryBigVideo.hidden = false;
+      return;
+    }
 
     borovikGalleryBigImg.src = target.src;
 
     // --------small-gallery-----------
 
     const smallGalleryItem = document.querySelector('.js-small-gallery');
+
     smallGalleryItem.addEventListener('click', (e) => {
       const { target, currentTarget } = e;
 
@@ -98,6 +106,8 @@ function onCreateMarcupUkr () {
 };
 
 borovikGalleryBtnclose.addEventListener('click', () => {
+  borovikGalleryBigImg.closest('picture').hidden = false;
+  borovikGalleryBigVideo.hidden = true;
   borovikGallery.classList.add('backdrop-borovik-gallery--hidden');
 });
 
@@ -183,10 +193,9 @@ function createGalleryBorovikUkr () {
       </div>
 
       <ul class="gallery-borovik__list js-gallery-borovik-urk">
+
         <li class="gallery-borovik__item gallery-borovik__item-col">
-
-        <video controls src="http://localhost:1234/video/page-borovik/borovyk_1_uk.mp4"></video>
-
+          <img data-id="1" class="gallery-borovik__img" src="${borovik}" alt="borovik"
         </li>
 
         <li class="gallery-borovik__item">
