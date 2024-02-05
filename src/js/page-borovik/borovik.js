@@ -7,7 +7,7 @@ import borovik from '../../images/beasts-main/item-mob-1.jpg';
 import borovik2 from '../../images/page-borovik/borovik-item-2.jpg';
 import borovik3 from '../../images/page-borovik/borovik-item-3.jpg';
 
-import spriggan from '../../images/page-borovik/borovik-wich-gif.gif';
+import spriggan from '../../images/beasts-witcher/spriggan.jpg';
 import spriggan2 from '../../images/page-borovik/borovik-witcher-item-2.png';
 import spriggan3 from '../../images/page-borovik/borovik-witcher-item-3.jpg';
 
@@ -25,8 +25,9 @@ const borovikGalleryWicher = document.querySelector('.js-backdrop-borovik-galler
 
 const borovikGalleryBigImg = document.querySelector('.js-borovik-modal-img');
 const borovikGalleryBigImgWich = document.querySelector('.js-borovik-modal-img-wich');
-const borovikGalleryBigVideo = document.querySelector('.js-borovik-modal-video');
 
+const borovikGalleryBigVideo = document.querySelector('.js-borovik-modal-video');
+const borovikGalleryBigVideoWitcher = document.querySelector('.js-borovik-modal-video-witcher');
 
 const borovikGalleryBtnclose = document.querySelector('.js-backdrop-close');
 const borovikGalleryBtncloseWich = document.querySelector('.js-backdrop-close-wich');
@@ -241,8 +242,12 @@ function onCreateMarcupWitcher (e) {
     const bigImgId = Number(target.dataset.id);
 
     if (target.tagName !== 'IMG') return;
-
     borovikGalleryWicher.classList.remove('backdrop-borovik-gallery--hidden');
+
+    if (bigImgId === 1) {
+      borovikGalleryBigImgWich.closest('picture').hidden = true;
+      borovikGalleryBigVideoWitcher.hidden = false;
+    }
 
     borovikGalleryBigImgWich.src = target.src;
 
@@ -253,7 +258,17 @@ function onCreateMarcupWitcher (e) {
     smallGalleryItem.addEventListener('click', (e) => {
       const { target, currentTarget } = e;
 
+      const liItemId = Number(target.closest('LI').dataset.id);
+
       if (target.tagName !== 'IMG') return;
+
+      if (liItemId === 1) {
+        borovikGalleryBigImgWich.closest('picture').hidden = true;
+        borovikGalleryBigVideoWitcher.hidden = false;
+      } else {
+        borovikGalleryBigImgWich.closest('picture').hidden = false;
+        borovikGalleryBigVideoWitcher.hidden = true;
+      }
 
       borovikGalleryBigImgWich.src = target.src;
 
@@ -281,6 +296,8 @@ function onCreateMarcupWitcher (e) {
 };
 
 borovikGalleryBtncloseWich.addEventListener('click', () => {
+  borovikGalleryBigImgWich.closest('picture').hidden = false;
+  borovikGalleryBigVideoWitcher.hidden = true;
   borovikGalleryWicher.classList.add('backdrop-borovik-gallery--hidden');
 });
 
