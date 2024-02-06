@@ -52,10 +52,12 @@ function onCreateMarcupUkr () {
   // -----------backdrop-logic-------------------
 
   const galleryBorovikUrk = document.querySelector('.js-gallery-borovik-urk');
-  const wolfHeadImgBoxUrk = document.querySelector('.js-wolf-head-img-box-urk');
-
   galleryBorovikUrk.addEventListener('click', (e) => {
     const { target } = e;
+
+    if (target.tagName !== 'IMG') return;
+    borovikGallery.classList.remove('backdrop-borovik-gallery--hidden');
+    const wolfHeadImgBoxUrk = document.querySelector('.js-wolf-head-img-box-urk');
 
     const bigImgId = Number(target.dataset.id);
     const wolfHeadImg = [...wolfHeadImgBoxUrk.children];
@@ -80,9 +82,6 @@ function onCreateMarcupUkr () {
         break;
     };
 
-    if (target.tagName !== 'IMG') return;
-    borovikGallery.classList.remove('backdrop-borovik-gallery--hidden');
-
     if (bigImgId === 1) {
       borovikGalleryBigImg.closest('picture').hidden = true;
       borovikGalleryBigVideo.hidden = false;
@@ -96,6 +95,8 @@ function onCreateMarcupUkr () {
 
     smallGalleryItem.addEventListener('click', (e) => {
       const { target, currentTarget } = e;
+
+      if (target.tagName !== 'IMG') return;
 
       const liItemId = Number(target.closest('LI').dataset.id);
 
@@ -118,8 +119,6 @@ function onCreateMarcupUkr () {
           wolfHeadImg[2].hidden = false;
           break;
       };
-
-      if (target.tagName !== 'IMG') return;
 
       if (liItemId === 1) {
         borovikGalleryBigImg.closest('picture').hidden = true;
@@ -280,10 +279,33 @@ function onCreateMarcupWitcher (e) {
   galleryBorovikWich.addEventListener('click', (e) => {
     const { target } = e;
 
-    const bigImgId = Number(target.dataset.id);
-
     if (target.tagName !== 'IMG') return;
+
     borovikGalleryWicher.classList.remove('backdrop-borovik-gallery--hidden');
+    const wolfHeadImgBoxWitcher = document.querySelector('.js-wolf-head-img-box-witcher');
+
+    const bigImgId = Number(target.dataset.id);
+    const wolfHeadImg = [...wolfHeadImgBoxWitcher.children];
+
+    switch (bigImgId) {
+      case 1:
+        wolfHeadImg[0].hidden = false;
+        wolfHeadImg[1].hidden = true;
+        wolfHeadImg[2].hidden = true;
+        break;
+
+      case 2:
+        wolfHeadImg[0].hidden = true;
+        wolfHeadImg[1].hidden = false;
+        wolfHeadImg[2].hidden = true;
+        break;
+
+      case 3:
+        wolfHeadImg[0].hidden = true;
+        wolfHeadImg[1].hidden = true;
+        wolfHeadImg[2].hidden = false;
+        break;
+    };
 
     if (bigImgId === 1) {
       borovikGalleryBigImgWich.closest('picture').hidden = true;
@@ -299,9 +321,29 @@ function onCreateMarcupWitcher (e) {
     smallGalleryItem.addEventListener('click', (e) => {
       const { target, currentTarget } = e;
 
+      if (target.tagName !== 'IMG') return;
+
       const liItemId = Number(target.closest('LI').dataset.id);
 
-      if (target.tagName !== 'IMG') return;
+      switch (liItemId) {
+        case 1:
+          wolfHeadImg[0].hidden = false;
+          wolfHeadImg[1].hidden = true;
+          wolfHeadImg[2].hidden = true;
+          break;
+
+        case 2:
+          wolfHeadImg[0].hidden = true;
+          wolfHeadImg[1].hidden = false;
+          wolfHeadImg[2].hidden = true;
+          break;
+
+        case 3:
+          wolfHeadImg[0].hidden = true;
+          wolfHeadImg[1].hidden = true;
+          wolfHeadImg[2].hidden = false;
+          break;
+      };
 
       if (liItemId === 1) {
         borovikGalleryBigImgWich.closest('picture').hidden = true;
