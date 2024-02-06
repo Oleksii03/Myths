@@ -35,7 +35,11 @@
 .borovik-modal {
   width: 100%;
   max-width: 1080px;
-  height: 70dvh;
+  height: 74dvh;
+
+  @media (min-width: 790px) {
+    height: 70dvh;
+  }
 }
 
 // -----small-gallery--------
