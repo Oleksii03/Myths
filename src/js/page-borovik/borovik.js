@@ -21,7 +21,6 @@ const galleryBorovikSection = document.querySelector('.js-gallery-borovik-sectio
 // ------backdrop-borovik-gallery------------------
 const borovikGallery = document.querySelector('.js-backdrop-borovik-gallery');
 const borovikGalleryWicher = document.querySelector('.js-backdrop-borovik-gallery-wicher');
-const wolfHeadImgBoxUrk = document.querySelector('.js-wolf-head-img-box-urk');
 
 const borovikGalleryBigImg = document.querySelector('.js-borovik-modal-img');
 const borovikGalleryBigImgWich = document.querySelector('.js-borovik-modal-img-wich');
@@ -53,16 +52,13 @@ function onCreateMarcupUkr () {
   // -----------backdrop-logic-------------------
 
   const galleryBorovikUrk = document.querySelector('.js-gallery-borovik-urk');
+  const wolfHeadImgBoxUrk = document.querySelector('.js-wolf-head-img-box-urk');
 
   galleryBorovikUrk.addEventListener('click', (e) => {
     const { target } = e;
 
     const bigImgId = Number(target.dataset.id);
     const wolfHeadImg = [...wolfHeadImgBoxUrk.children];
-
-
-    if (target.tagName !== 'IMG') return;
-    borovikGallery.classList.remove('backdrop-borovik-gallery--hidden');
 
     switch (bigImgId) {
       case 1:
@@ -82,7 +78,10 @@ function onCreateMarcupUkr () {
         wolfHeadImg[1].hidden = true;
         wolfHeadImg[2].hidden = false;
         break;
-    }
+    };
+
+    if (target.tagName !== 'IMG') return;
+    borovikGallery.classList.remove('backdrop-borovik-gallery--hidden');
 
     if (bigImgId === 1) {
       borovikGalleryBigImg.closest('picture').hidden = true;
@@ -99,7 +98,6 @@ function onCreateMarcupUkr () {
       const { target, currentTarget } = e;
 
       const liItemId = Number(target.closest('LI').dataset.id);
-      if (target.tagName !== 'IMG') return;
 
       switch (liItemId) {
         case 1:
@@ -119,7 +117,9 @@ function onCreateMarcupUkr () {
           wolfHeadImg[1].hidden = true;
           wolfHeadImg[2].hidden = false;
           break;
-      }
+      };
+
+      if (target.tagName !== 'IMG') return;
 
       if (liItemId === 1) {
         borovikGalleryBigImg.closest('picture').hidden = true;
