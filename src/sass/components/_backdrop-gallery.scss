@@ -90,7 +90,10 @@
 }
 
 .wolf-head-img__box-urk {
+  display: none;
+
   @media (min-width: 1560px) {
+    display: block;
     position: fixed;
     top: 28px;
     right: 68px;
