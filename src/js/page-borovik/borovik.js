@@ -21,7 +21,7 @@ const galleryBorovikSection = document.querySelector('.js-gallery-borovik-sectio
 // ------backdrop-borovik-gallery------------------
 const borovikGallery = document.querySelector('.js-backdrop-borovik-gallery');
 const borovikGalleryWicher = document.querySelector('.js-backdrop-borovik-gallery-wicher');
-
+const wolfHeadImgBoxUrk = document.querySelector('.js-wolf-head-img-box-urk');
 
 const borovikGalleryBigImg = document.querySelector('.js-borovik-modal-img');
 const borovikGalleryBigImgWich = document.querySelector('.js-borovik-modal-img-wich');
@@ -58,9 +58,31 @@ function onCreateMarcupUkr () {
     const { target } = e;
 
     const bigImgId = Number(target.dataset.id);
+    const wolfHeadImg = [...wolfHeadImgBoxUrk.children];
+
 
     if (target.tagName !== 'IMG') return;
     borovikGallery.classList.remove('backdrop-borovik-gallery--hidden');
+
+    switch (bigImgId) {
+      case 1:
+        wolfHeadImg[0].hidden = false;
+        wolfHeadImg[1].hidden = true;
+        wolfHeadImg[2].hidden = true;
+        break;
+
+      case 2:
+        wolfHeadImg[0].hidden = true;
+        wolfHeadImg[1].hidden = false;
+        wolfHeadImg[2].hidden = true;
+        break;
+
+      case 3:
+        wolfHeadImg[0].hidden = true;
+        wolfHeadImg[1].hidden = true;
+        wolfHeadImg[2].hidden = false;
+        break;
+    }
 
     if (bigImgId === 1) {
       borovikGalleryBigImg.closest('picture').hidden = true;
@@ -77,8 +99,27 @@ function onCreateMarcupUkr () {
       const { target, currentTarget } = e;
 
       const liItemId = Number(target.closest('LI').dataset.id);
-
       if (target.tagName !== 'IMG') return;
+
+      switch (liItemId) {
+        case 1:
+          wolfHeadImg[0].hidden = false;
+          wolfHeadImg[1].hidden = true;
+          wolfHeadImg[2].hidden = true;
+          break;
+
+        case 2:
+          wolfHeadImg[0].hidden = true;
+          wolfHeadImg[1].hidden = false;
+          wolfHeadImg[2].hidden = true;
+          break;
+
+        case 3:
+          wolfHeadImg[0].hidden = true;
+          wolfHeadImg[1].hidden = true;
+          wolfHeadImg[2].hidden = false;
+          break;
+      }
 
       if (liItemId === 1) {
         borovikGalleryBigImg.closest('picture').hidden = true;

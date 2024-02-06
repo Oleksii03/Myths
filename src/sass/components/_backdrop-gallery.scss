@@ -88,3 +88,16 @@
   object-position: center;
   object-fit: contain;
 }
+
+.wolf-head-img__box-urk {
+  @media (min-width: 1560px) {
+    position: fixed;
+    top: 28px;
+    right: 68px;
+    width: clamp(8.438rem, -34.509rem + 44.05vw, 20rem);
+
+    &>div>img {
+      filter: drop-shadow(3px 3px 3px #ff7300);
+    }
+  }
+}
