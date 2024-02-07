@@ -14,6 +14,7 @@ export const bestiaryUkr = [
     name: "Грифон (Гриф)",
     description: `Грифони — суперечливі істоти, які одночасно об'єднують Небо і Землю ...`,
     image: griffin,
+    ref: "./page-griffin.html",
   },
   {
     name: "Домовик",
