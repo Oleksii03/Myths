@@ -31,6 +31,10 @@ function onCreateMarcupUkrGriff () {
 
   mainContentGriffin.innerHTML = createMarcupGriffUkr();
   galleryGriffin.innerHTML = createGalleryGriffinUkr();
+
+  document.querySelector('.js-gallery-btn-witch').addEventListener('click', () => {
+    onCreateMarcupWitcherGriff();
+  });
 }
 
 
@@ -132,7 +136,7 @@ function createGalleryGriffinUkr () {
         </li>
       </ul>
 
-      <button class="gallery-borovik__btn js-gallery-btn-wich" type="button">У грі Відьмак</button>`;
+      <button class="gallery-borovik__btn js-gallery-btn-witch" type="button">У грі Відьмак</button>`;
 };
 
 // -----/--onCreateMarcupUkrGriff----------------------------------
@@ -143,6 +147,10 @@ function onCreateMarcupWitcherGriff (e) {
 
   mainContentGriffin.innerHTML = createMarcupGriffWitcher();
   galleryGriffin.innerHTML = createGalleryGriffWitcher();
+
+  document.querySelector('.js-gallery-btn-ukr').addEventListener('click', () => {
+    onCreateMarcupUkrGriff();
+  });
 }
 
 function createMarcupGriffWitcher () {
