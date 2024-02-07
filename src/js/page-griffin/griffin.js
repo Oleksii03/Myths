@@ -6,7 +6,9 @@ import griffin1 from '../../images/beasts-main/item-mob-2.jpg';
 import griffin2 from '../../images/page-griffin/item-img-2.jpg';
 import griffin3 from '../../images/page-griffin/item-img-3.jpg';
 
-import griffinWihc from '../../images/beasts-witcher/grifon.jpg';
+import griffinWihc1 from '../../images/beasts-witcher/grifon.jpg';
+import griffinWihc2 from '../../images/page-griffin/item-img-witc.2.jpg';
+import griffinWihc3 from '../../images/page-griffin/item-img-witc.3.jpg';
 
 // ---------refs-------------------------------
 
@@ -140,7 +142,7 @@ function onCreateMarcupWitcherGriff (e) {
   mythBtnWitcherEl.classList.add('myth-btns__active');
 
   mainContentGriffin.innerHTML = createMarcupGriffWitcher();
-  galleryGriffin.innerHTML = '';
+  galleryGriffin.innerHTML = createGalleryGriffWitcher();
 }
 
 function createMarcupGriffWitcher () {
@@ -165,7 +167,7 @@ function createMarcupGriffWitcher () {
 
         <picture class="borovik-item__picture">
           <a href="#">
-            <img class="borovik-item__img borovik-item__img-witcher" src="${griffinWihc}" alt="spriggan"
+            <img class="borovik-item__img borovik-item__img-witcher" src="${griffinWihc1}" alt="spriggan"
               loading="lazy">
           </a>
         </picture>
@@ -250,20 +252,52 @@ function createMarcupGriffWitcher () {
         </h4>
 
         <p class="description-content__text">
-          Боровики — підвид лісовиків. Натрапити на них можна в недоступних безлюдних хащах. Якщо їх не злити, вони
-          можуть і не напасти, але в гніві ці істоти страшні. Боровик дуже кремезний, завдає величезної шкоди, а м’яса
-          зжерти може більше, ніж на доброму весіллі подають.
+          А так, напіворел, напівкіт, точно як у шляхтича на
+          гербі. Тільки в пазурах не берло ніс, а коров’ячу тушу.
+          — Невідомий свідок нападу грифона
         </p>
         <p class="description-content__text">
-          Кожний боровик панує над рослинами й нерозривно пов’язаний із ними. Якщо хтось нищить зелень у володіннях
-          боровика, потвора обов’язково прийде й покарає порушника спокою.
+          Колись грифони водилися лише високо в горах, де
+          ловили кіз та іншу гірську живність. Та згодом вони
+          збагнули, що на залюднених рівнинах легше знайти
+          щось їстівне: корову, вівцю, пастуха. Вони й досі
+          уникають битих шляхів і міст, але давно вже
+          перестали бути дивиною в королівствах Півночі.
+          Особливо небезпечні такі їхні різновиди, як
+          королівський грифон і архігрифон.
         </p>
         <p class="description-content__text">
-          У бою боровик управно користується своїми дужими кінцівками. Атакує він стрімко, що, беручи до уваги його
-          масивність, може спричинити клопіт. Подібна до кори тверда шкіра боровика витримує навіть сильні вдари мечем,
-          а сам він б’є так потужно, що ставити блок не варто й пробувати. Слід пильнувати коріння, яке боровик примушує
-          вилазити з-під землі й хапати ворога. Ця потвора вміє також телепортуватися, раптово з’являючись просто перед
-          супротивником. Бити його Знаком Аард марно, бо жодна сила цього монстра не повалить.
+          Грифони паруються на все життя й до загину
+          боронять свого партнера. Тому їх часто вважають
+          утіленням хоробрості, відданості та войовничості.
+          Бойового духу їм аж ніяк не бракує: якщо
+          спровокувати грифона, він не заспокоїться, доки
+          не розірве ворога на шмаття.
         </p>
       </div>`;
+};
+
+function createGalleryGriffWitcher () {
+  return `
+<div class="borovik__gallery-header gallery-borovik">
+<h2 class="gallery-borovik__title">Галерея</h2>
+<p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
+</div>
+
+<ul class="gallery-borovik__list js-gallery-borovik-wich">
+  <li class="gallery-borovik__item gallery-borovik__item-col">
+    <img data-id="1" class="gallery-borovik__img gallery-borovik__img-col gallery-borovik__img-wicher_col"
+      src="${griffinWihc1}" alt="spriggan">
+  </li>
+  <li class="gallery-borovik__item">
+    <img data-id="2" class="gallery-borovik__img gallery-borovik__img-wicher_row gallery-griffin__witcher_top"
+      src="${griffinWihc2}" alt="borovik-witcher-item-2">
+  </li>
+  <li class="gallery-borovik__item gallery-borovik__item-row">
+    <img data-id="3" class="gallery-borovik__img gallery-borovik__img-row gallery-borovik__img-wicher_row gallery-griffin__witcher"
+      src="${griffinWihc3}" alt="borovik-witcher-item-3">
+  </li>
+</ul>
+
+<button class="gallery-borovik__btn js-gallery-btn-ukr" type="button">В укр. міфології</button>`;
 };
