@@ -52,11 +52,14 @@ function onCreateMarcupUkr () {
   // -----------backdrop-logic-------------------
 
   const galleryBorovikUrk = document.querySelector('.js-gallery-borovik-urk');
+
   galleryBorovikUrk.addEventListener('click', (e) => {
     const { target } = e;
 
     if (target.tagName !== 'IMG') return;
+
     borovikGallery.classList.remove('backdrop-borovik-gallery--hidden');
+
     const wolfHeadImgBoxUrk = document.querySelector('.js-wolf-head-img-box-urk');
 
     const bigImgId = Number(target.dataset.id);

@@ -18,6 +18,15 @@ const mythBtnWitcherEl = document.querySelector('.js-myth-btn_witcher-griff');
 const mainContentGriffin = document.querySelector('.js-main-content-griffin');
 const galleryGriffin = document.querySelector('.js-gallery-griffin');
 
+const backdropGriffinGallery = document.querySelector('.js-backdrop-griffin-gallery');
+
+const griffinModalBigImg = document.querySelector('.js-griffin-modal-img');
+const griffinkGalleryBigVideo = document.querySelector('.js-griffin-modal-video');
+
+const griffinGalleryBtnClose = document.querySelector('.js-backdrop-close');
+
+console.log();
+
 // -------/-refs-------------------------------
 
 mythBtnUkrEl.addEventListener('click', onCreateMarcupUkrGriff);
@@ -35,7 +44,121 @@ function onCreateMarcupUkrGriff () {
   document.querySelector('.js-gallery-btn-witch').addEventListener('click', () => {
     onCreateMarcupWitcherGriff();
   });
+
+  // -----------backdrop-logic-------------------
+
+  const galleryGriffinUrk = document.querySelector('.js-gallery-griffin-urk');
+
+
+  galleryGriffinUrk.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.tagName !== 'IMG') return;
+
+    backdropGriffinGallery.classList.remove('backdrop-borovik-gallery--hidden');
+
+    const wolfHeadImgBoxUrk = document.querySelector('.js-wolf-head-img-box-urk');
+
+    const bigImgId = Number(target.dataset.id);
+    const wolfHeadImg = [...wolfHeadImgBoxUrk.children];
+
+    switch (bigImgId) {
+      case 1:
+        wolfHeadImg[0].hidden = false;
+        wolfHeadImg[1].hidden = true;
+        wolfHeadImg[2].hidden = true;
+        break;
+
+      case 2:
+        wolfHeadImg[0].hidden = true;
+        wolfHeadImg[1].hidden = false;
+        wolfHeadImg[2].hidden = true;
+        break;
+
+      case 3:
+        wolfHeadImg[0].hidden = true;
+        wolfHeadImg[1].hidden = true;
+        wolfHeadImg[2].hidden = false;
+        break;
+    };
+
+    if (bigImgId === 1) {
+      griffinModalBigImg.closest('picture').hidden = true;
+      griffinkGalleryBigVideo.hidden = false;
+    }
+
+    griffinModalBigImg.src = target.src;
+
+    // --------small-gallery-----------
+
+    const smallGalleryItem = document.querySelector('.js-small-gallery');
+
+    smallGalleryItem.addEventListener('click', (e) => {
+      const { target, currentTarget } = e;
+
+      if (target.tagName !== 'IMG') return;
+
+      const liItemId = Number(target.closest('LI').dataset.id);
+
+      switch (liItemId) {
+        case 1:
+          wolfHeadImg[0].hidden = false;
+          wolfHeadImg[1].hidden = true;
+          wolfHeadImg[2].hidden = true;
+          break;
+
+        case 2:
+          wolfHeadImg[0].hidden = true;
+          wolfHeadImg[1].hidden = false;
+          wolfHeadImg[2].hidden = true;
+          break;
+
+        case 3:
+          wolfHeadImg[0].hidden = true;
+          wolfHeadImg[1].hidden = true;
+          wolfHeadImg[2].hidden = false;
+          break;
+      };
+
+      if (liItemId === 1) {
+        griffinModalBigImg.closest('picture').hidden = true;
+        griffinkGalleryBigVideo.hidden = false;
+      } else {
+        griffinModalBigImg.closest('picture').hidden = false;
+        griffinkGalleryBigVideo.hidden = true;
+      }
+
+      griffinModalBigImg.src = target.src;
+
+      [...currentTarget.children].forEach((li) => {
+        if (li.classList.contains('small-img-active')) {
+          li.classList.remove('small-img-active');
+        }
+      });
+
+      target.closest('.small-gallery__item').classList.add('small-img-active');
+    });
+
+    [...smallGalleryItem.children].forEach((li) => {
+      const liId = Number(li.dataset.id);
+
+      if (li.classList.contains('small-img-active')) {
+        li.classList.remove('small-img-active');
+      }
+
+      if (liId === bigImgId) {
+        li.classList.add('small-img-active');
+      }
+    });
+
+  });
 }
+
+griffinGalleryBtnClose.addEventListener('click', (e) => {
+  griffinModalBigImg.closest('picture').hidden = false;
+  griffinkGalleryBigVideo.hidden = true;
+  backdropGriffinGallery.classList.add('backdrop-borovik-gallery--hidden');
+});
 
 
 function createMarcupGriffUkr () {
@@ -121,7 +244,7 @@ function createGalleryGriffinUkr () {
         <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
       </div>
 
-      <ul class="gallery-borovik__list js-gallery-borovik-urk">
+      <ul class="gallery-borovik__list js-gallery-griffin-urk">
 
         <li class="gallery-borovik__item gallery-borovik__item-col">
           <img data-id="1" class="gallery-borovik__img" src="${griffin1}" alt="griffin-1"
