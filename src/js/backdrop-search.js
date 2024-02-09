@@ -6,6 +6,7 @@ backdropSearch.addEventListener('click', onCloseBackdropSearch);
 
 function onOpenBackdropSearch (e) {
   backdropSearch.classList.remove('backdrop-search--hidden');
+  document.body.style.overflow = 'hidden';
 }
 
 function onCloseBackdropSearch (e) {
@@ -14,4 +15,5 @@ function onCloseBackdropSearch (e) {
   if (target !== currentTarget) return;
 
   backdropSearch.classList.add('backdrop-search--hidden');
+  document.body.style.overflow = '';
 }

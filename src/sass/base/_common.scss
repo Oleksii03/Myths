@@ -1,7 +1,11 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
-* {
-  overscroll-behavior: none;
+// * {
+//   overscroll-behavior: none;
+// }
+
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 @media (min-width: 1200px) {
