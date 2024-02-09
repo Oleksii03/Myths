@@ -60,6 +60,8 @@ function onCreateMarcupUkr () {
 
     borovikGallery.classList.remove('backdrop-borovik-gallery--hidden');
 
+    document.body.classList.add('is-freeze');
+
     const wolfHeadImgBoxUrk = document.querySelector('.js-wolf-head-img-box-urk');
 
     const bigImgId = Number(target.dataset.id);
@@ -159,7 +161,9 @@ function onCreateMarcupUkr () {
 borovikGalleryBtnclose.addEventListener('click', () => {
   borovikGalleryBigImg.closest('picture').hidden = false;
   borovikGalleryBigVideo.hidden = true;
+
   borovikGallery.classList.add('backdrop-borovik-gallery--hidden');
+  document.body.classList.remove('is-freeze');
 });
 
 // --------MarcupUkr----------------------
@@ -285,6 +289,9 @@ function onCreateMarcupWitcher (e) {
     if (target.tagName !== 'IMG') return;
 
     borovikGalleryWicher.classList.remove('backdrop-borovik-gallery--hidden');
+
+    document.body.classList.add('is-freeze');
+
     const wolfHeadImgBoxWitcher = document.querySelector('.js-wolf-head-img-box-witcher');
 
     const bigImgId = Number(target.dataset.id);
@@ -384,7 +391,9 @@ function onCreateMarcupWitcher (e) {
 borovikGalleryBtncloseWich.addEventListener('click', () => {
   borovikGalleryBigImgWich.closest('picture').hidden = false;
   borovikGalleryBigVideoWitcher.hidden = true;
+
   borovikGalleryWicher.classList.add('backdrop-borovik-gallery--hidden');
+  document.body.classList.remove('is-freeze');
 });
 
 function createMarcupWicher () {

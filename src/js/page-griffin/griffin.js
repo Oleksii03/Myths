@@ -19,13 +19,18 @@ const mainContentGriffin = document.querySelector('.js-main-content-griffin');
 const galleryGriffin = document.querySelector('.js-gallery-griffin');
 
 const backdropGriffinGallery = document.querySelector('.js-backdrop-griffin-gallery');
+const backdropGriffinGalleryWitcher = document.querySelector('.js-backdrop-griffin-gallery-witcher');
 
 const griffinModalBigImg = document.querySelector('.js-griffin-modal-img');
+const griffinModalBigImgWitcher = document.querySelector('.js-griffin-modal-img-witch');
+
 const griffinkGalleryBigVideo = document.querySelector('.js-griffin-modal-video');
+const griffinkGalleryBigVideoWitcher = document.querySelector('.js-griffin-modal-video-witcher');
+
 
 const griffinGalleryBtnClose = document.querySelector('.js-backdrop-close');
+const griffinGalleryBtnCloseWitcher = document.querySelector('.js-backdrop-close-witch');
 
-console.log();
 
 // -------/-refs-------------------------------
 
@@ -49,13 +54,14 @@ function onCreateMarcupUkrGriff () {
 
   const galleryGriffinUrk = document.querySelector('.js-gallery-griffin-urk');
 
-
   galleryGriffinUrk.addEventListener('click', (e) => {
     const { target } = e;
 
     if (target.tagName !== 'IMG') return;
 
     backdropGriffinGallery.classList.remove('backdrop-borovik-gallery--hidden');
+
+    document.body.classList.add('is-freeze');
 
     const wolfHeadImgBoxUrk = document.querySelector('.js-wolf-head-img-box-urk');
 
@@ -158,6 +164,7 @@ griffinGalleryBtnClose.addEventListener('click', (e) => {
   griffinModalBigImg.closest('picture').hidden = false;
   griffinkGalleryBigVideo.hidden = true;
   backdropGriffinGallery.classList.add('backdrop-borovik-gallery--hidden');
+  document.body.classList.remove('is-freeze');
 });
 
 
@@ -274,7 +281,125 @@ function onCreateMarcupWitcherGriff (e) {
   document.querySelector('.js-gallery-btn-ukr').addEventListener('click', () => {
     onCreateMarcupUkrGriff();
   });
+
+  // -----------backdrop-logic-------------------
+
+  const galleryGriffinWitcher = document.querySelector('.js-gallery-griffin-witch');
+
+
+  galleryGriffinWitcher.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.tagName !== 'IMG') return;
+
+    document.body.classList.add('is-freeze');
+
+    backdropGriffinGalleryWitcher.classList.remove('backdrop-borovik-gallery--hidden');
+
+    const wolfHeadImgBoxWitcher = document.querySelector('.js-wolf-head-img-box-witcher');
+
+    const bigImgId = Number(target.dataset.id);
+    const wolfHeadImg = [...wolfHeadImgBoxWitcher.children];
+
+    switch (bigImgId) {
+      case 1:
+        wolfHeadImg[0].hidden = false;
+        wolfHeadImg[1].hidden = true;
+        wolfHeadImg[2].hidden = true;
+        break;
+
+      case 2:
+        wolfHeadImg[0].hidden = true;
+        wolfHeadImg[1].hidden = false;
+        wolfHeadImg[2].hidden = true;
+        break;
+
+      case 3:
+        wolfHeadImg[0].hidden = true;
+        wolfHeadImg[1].hidden = true;
+        wolfHeadImg[2].hidden = false;
+        break;
+    };
+
+    if (bigImgId === 1) {
+      griffinModalBigImgWitcher.closest('picture').hidden = true;
+      griffinkGalleryBigVideoWitcher.hidden = false;
+    }
+
+    griffinModalBigImgWitcher.src = target.src;
+
+
+    // --------small-gallery-----------
+
+    const smallGalleryItem = document.querySelector('.js-small-gallery-witch');
+
+    smallGalleryItem.addEventListener('click', (e) => {
+      const { target, currentTarget } = e;
+
+      if (target.tagName !== 'IMG') return;
+
+      const liItemId = Number(target.closest('LI').dataset.id);
+
+      switch (liItemId) {
+        case 1:
+          wolfHeadImg[0].hidden = false;
+          wolfHeadImg[1].hidden = true;
+          wolfHeadImg[2].hidden = true;
+          break;
+
+        case 2:
+          wolfHeadImg[0].hidden = true;
+          wolfHeadImg[1].hidden = false;
+          wolfHeadImg[2].hidden = true;
+          break;
+
+        case 3:
+          wolfHeadImg[0].hidden = true;
+          wolfHeadImg[1].hidden = true;
+          wolfHeadImg[2].hidden = false;
+          break;
+      };
+
+      if (liItemId === 1) {
+        griffinModalBigImgWitcher.closest('picture').hidden = true;
+        griffinkGalleryBigVideoWitcher.hidden = false;
+      } else {
+        griffinModalBigImgWitcher.closest('picture').hidden = false;
+        griffinkGalleryBigVideoWitcher.hidden = true;
+      }
+
+      griffinModalBigImgWitcher.src = target.src;
+
+      [...currentTarget.children].forEach((li) => {
+        if (li.classList.contains('small-img-active')) {
+          li.classList.remove('small-img-active');
+        }
+      });
+
+      target.closest('.small-gallery__item').classList.add('small-img-active');
+    });
+
+    [...smallGalleryItem.children].forEach((li) => {
+      const liId = Number(li.dataset.id);
+
+      if (li.classList.contains('small-img-active')) {
+        li.classList.remove('small-img-active');
+      }
+
+      if (liId === bigImgId) {
+        li.classList.add('small-img-active');
+      }
+    });
+  });
 }
+
+griffinGalleryBtnCloseWitcher.addEventListener('click', () => {
+  griffinModalBigImgWitcher.closest('picture').hidden = false;
+  griffinkGalleryBigVideoWitcher.hidden = true;
+
+  backdropGriffinGalleryWitcher.classList.add('backdrop-borovik-gallery--hidden');
+  document.body.classList.remove('is-freeze');
+});
 
 function createMarcupGriffWitcher () {
   return `
@@ -415,7 +540,7 @@ function createGalleryGriffWitcher () {
 <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
 </div>
 
-<ul class="gallery-borovik__list js-gallery-borovik-wich">
+<ul class="gallery-borovik__list js-gallery-griffin-witch">
   <li class="gallery-borovik__item gallery-borovik__item-col">
     <img data-id="1" class="gallery-borovik__img gallery-borovik__img-col gallery-borovik__img-wicher_col"
       src="${griffinWihc1}" alt="spriggan">

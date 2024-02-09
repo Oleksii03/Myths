@@ -14,7 +14,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #a2a09a57;
+    background-color: #e2ae1057;
     border-radius: 16px;
     border: 5px solid var(--black-background-color);
   }
@@ -74,4 +74,8 @@ body {
   font-weight: 800;
   color: var(--white-base-color);
   letter-spacing: 0.15px;
+}
+
+.is-freeze {
+  overflow: hidden;
 }

@@ -24,6 +24,8 @@ tabMenu.addEventListener('click', (e) => {
   if (!mobMenu.classList.contains('is-hidden-mob-menu')) {
     mobMenu.classList.add('is-hidden-mob-menu');
     backdrop.classList.add('backdrop--hidden');
+    onTransformBtnClose();
+    document.body.classList.remove('is-freeze');
   }
 
   if (target.classList.contains('dropdown')) {
@@ -43,15 +45,18 @@ mobMenuBtn.addEventListener('click', onOpenMobMenu);
 mobMenuBtnClose.addEventListener('click', (e) => {
   onOpenMobMenu();
   onTransformBtnClose();
+  document.body.classList.remove('is-freeze');
 });
 
 backdrop.addEventListener('click', (e) => {
   onOpenMobMenu();
   onTransformBtnClose();
+  document.body.classList.remove('is-freeze');
 });
 
 
 function onOpenMobMenu (e) {
+  document.body.classList.toggle('is-freeze');
 
   mobMenu.classList.toggle('is-hidden-mob-menu');
   backdrop.classList.toggle('backdrop--hidden');
