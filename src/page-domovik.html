@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>goblin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Sofia+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./sass/bestiary.scss" />
+  <link rel="shortcut icon" href="./images/base/logo-footer-subscribe.png" type="image/x-icon">
+</head>
+
+<body>
+  <include src="./partials/bestiary/header-bestiary.html"></include>
+
+  <main class="main-borovik">
+    <include src="./partials/bestiary/page-borovik/nav-container.html"></include>
+    <include src="./partials/bestiary/page-domovik/domovik-section.html"></include>
+  </main>
+
+  <include src="./partials/bestiary/footer-bestiary.html"></include>
+
+  <!-- -------common-el------------------------------- -->
+
+  <!-- wolf-head -->
+  <img class="wolf-head" src="./images/base/wolf-head-borovik.png" alt="wolf-head">
+  <!--/ wolf-head -->
+
+  <!-- backdrop -->
+  <div class="backdrop js-backdrop backdrop--hidden"></div>
+  <!--/ backdrop -->
+
+  <!-- backdrop-search -->
+  <include src="./partials/backdrop-form-search.html"></include>
+  <!--/ backdrop-search -->
+
+  <!-- backdrop-gallery -->
+  <include src="./partials/bestiary/page-borovik/backdrop-gallery.html"></include>
+  <include src="./partials/bestiary/page-borovik/backdrop-gallery-wicher.html"></include>
+  <!--/ backdrop-gallery -->
+
+  <!-- ------/-common-el------------------------------- -->
+  <script type="module" src="./js/domovik/domovik.js"></script>
+</body>
+
+</html>

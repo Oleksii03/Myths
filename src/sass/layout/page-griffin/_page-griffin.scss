@@ -1,0 +1,25 @@
+// ---gallery-griffin ---
+
+.gallery--griffin {
+  object-position: center 0%;
+
+  @media (min-width: 580px) and (max-width: 1199px) {
+    object-position: center 15%;
+  }
+}
+
+.gallery-griffin__witcher {
+  @media (min-width: 580px) {
+    object-position: center 30%;
+  }
+
+  &_top {
+    @media (min-width: 1200px) {
+      object-position: center 70%;
+    }
+  }
+}
+
+.small-gallery__img_left {
+  object-position: left 0%;
+}

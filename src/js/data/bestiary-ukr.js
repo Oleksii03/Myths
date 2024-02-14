@@ -20,5 +20,6 @@ export const bestiaryUkr = [
     name: "Домовик",
     description: `Домовик  — у слов'янських народів домашній дух, міфологічний господар ...`,
     image: goblin,
+    ref: "./page-domovik.html",
   },
 ];
