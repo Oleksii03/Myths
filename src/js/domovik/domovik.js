@@ -7,6 +7,10 @@ import domovik from '../../images/beasts-main/item-mob-3.jpg';
 import domovik2 from '../../images/page-domovik/item-gall-2.jpg';
 import domovik3 from '../../images/page-domovik/item-gall-3.jpg';
 
+import grigg from '../../images/beasts-witcher/grigg.jpg';
+import grigg2 from '../../images/page-domovik/Grigg_2.png';
+import grigg3 from '../../images/page-domovik/item-gall-witcher-3.jpg';
+
 // -----refs-------------------------------
 
 const mythBtnUkrElDom = document.querySelector('.js-myth-btns_ukr');
@@ -29,6 +33,10 @@ function onCreateMarcupUkrDom () {
 
   mainContent.innerHTML = createMarcupUkr();
   galleryDomovikSection.innerHTML = createGalleryDomovikUkr();
+
+  document.querySelector('.js-gallery-btn-wich').addEventListener('click', () => {
+    onCreateMarcupWitcherDom();
+  });
 }
 
 function createMarcupUkr () {
@@ -129,4 +137,143 @@ function createGalleryDomovikUkr () {
 function onCreateMarcupWitcherDom (e) {
   mythBtnUkrElDom.classList.remove('myth-btns__active');
   mythBtnWitcherElDom.classList.add('myth-btns__active');
+
+  mainContent.innerHTML = createMarcupWicher();
+  galleryDomovikSection.innerHTML = createGalleryDomovikWicher();
+
+  document.querySelector('.js-gallery-btn-ukr').addEventListener('click', () => {
+    onCreateMarcupUkrDom();
+  });
 }
+
+function createMarcupWicher () {
+  return `
+  <div class="bestiary-list__item borovik-item">
+        <div class="borovik-item__heder">
+          <svg width="40" height="40" class="borovik-item__logo">
+            <use href="${svg + '#witcher-icon'}"></use>
+          </svg>
+
+          <div class="borovik-item__content">
+            <h3 class="borovik-item__title">Домовик (Гріг)</h3>
+            <h4 class="borovik-item__sub-title">Гра «Відьмак 3: Дикий Гін»</h4>
+          </div>
+
+          <a href="#" class="borovik-item__svg-more">
+            <svg width="18" height="18" class="borovik-body__logo">
+              <use href="${svg + '#more-vertical'}"></use>
+            </svg>
+          </a>
+        </div>
+
+        <picture class="borovik-item__picture">
+          <a href="#">
+            <img class="borovik-item__img borovik-item__img-witcher" src="${grigg}" alt="grigg"
+              loading="lazy">
+          </a>
+        </picture>
+
+        <div class="borovik-item__body borovik-body">
+
+          <div class="author-img">
+            <h5 class="author-img__title">Знімок з гри відьмак 3</h5>
+            <a class="author-img__link" href="#">Автор малюнку</a>
+          </div>
+
+          <a class="borovik-body__link-myth" href="#">
+            <svg width="18" height="18" class="borovik-body__logo">
+              <use href="${svg + '#leading'}"></use>
+            </svg>
+            Людиноподібні
+          </a>
+
+          <p class="borovik-body__text">
+          Домовик, гріг, або Імп, — це крихітний гуманоїд, відомий по обидва боки Яруги як пустотлива, але нешкідлива істота, що мешкає в сільській місцевості, лісах, а іноді й у підземних склепах.
+          </p>
+
+
+          <table class="borovik-witcher__table">
+            <tr class="borovik-witcher__row">
+              <td class="borovik-witcher__data">Клас</td>
+              <td class="borovik-witcher__data">Людиноподібні</td>
+            </tr>
+
+            <tr class="borovik-witcher__row">
+              <td class="borovik-witcher__data">Місце появи/
+                <br> Проживання
+              </td>
+              <td class="borovik-witcher__data">Ліси, луки та склепи</td>
+            </tr>
+
+            <tr class="borovik-witcher__row">
+              <td class="borovik-witcher__data">Тактика</td>
+              <td class="borovik-witcher__data">Сховатись</td>
+            </tr>
+
+            <tr class="borovik-witcher__row">
+              <td class="borovik-witcher__data">Особливості</td>
+              <td class="borovik-witcher__data">Гострі вуха<br>
+              Широкі носи та животи
+              Пискливий голос</td>
+            </tr>
+          </table>
+
+        </div>
+      </div>
+      
+      <ol class="main-content__list">
+        <li class="main-content__list-item">
+          <h3 class="main-content__list-title">Зміст</h3>
+        </li>
+        <li class="main-content__list-item">1. Опис, Запис у бестіарії</li>
+        <li class="main-content__list-item">2. Галерея</li>
+        <li class="main-content__list-item">3. Відео</li>
+      </ol>
+
+      <div class="main-content__description description-content">
+
+        <h4 class="description-content__title">Опис</h4>
+
+        <p class="description-content__text">
+          Грігґи, цілком ймовірно, найменша з визнаних рас. Стоячи поруч з людиною, вони в кращому випадку доходять йому до коліна, і через це некеровану дитину іноді називають «дурним грігом». Оскільки зріст не дозволяє їм сидіти на коні , вони сідають на котів.
+        </p>
+        <br>
+        <h4 class="description-content__title">Запис у бестіарії</h4>
+
+        <p class="description-content__text">
+          З’являється в доповненні «Кров та Вино»
+        </p>
+        <p class="description-content__text">
+          Село Ґрігг у «Країні тисячі байок» (ілюзія).
+          Вони безперервно збирають трави, гриби та копають землю.
+        </p>
+        <p class="description-content__text">
+          Село Грігг — це місце в ілюзії «Країна тисячі байок». Воно розташовано у темному лісі,  на північ від початкової локації персонажу, біля одного з відгалужень дороги з жовтої цегли. Тут живуть грігги. Але якщо підійти ближче, вони кричать від страху і біжать до своїх хатинок.
+        </p>
+      </div>`;
+};
+
+function createGalleryDomovikWicher () {
+  return `
+<div class="borovik__gallery-header gallery-borovik">
+<h2 class="gallery-borovik__title">Галерея</h2>
+<p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
+</div>
+
+<ul class="gallery-borovik__list js-gallery-borovik-wich">
+  <li class="gallery-borovik__item gallery-borovik__item-col">
+    <img data-id="1" class="gallery-borovik__img gallery-borovik__img-col gallery-borovik__img-wicher_col"
+      src="${grigg}" alt="domovik-witcher-item">
+  </li>
+  <li class="gallery-borovik__item">
+    <img data-id="2" class="gallery-borovik__img gallery-borovik__img-wicher_row gallery-static__domovik-witcher_second"
+      src="${grigg2}" alt="domovik-witcher-item-2">
+  </li>
+  <li class="gallery-borovik__item gallery-borovik__item-row">
+    <img data-id="3" class="gallery-borovik__img gallery-borovik__img-row gallery-static__domovik-witcher_last"
+      src="${grigg3}" alt="domovik-witcher-item-3">
+  </li>
+</ul>
+
+<button class="gallery-borovik__btn js-gallery-btn-ukr" type="button">В укр. міфології</button>`;
+};
