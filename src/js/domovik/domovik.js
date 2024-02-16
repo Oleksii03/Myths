@@ -19,6 +19,13 @@ const mythBtnWitcherElDom = document.querySelector('.js-myth-btn_witcher');
 const mainContent = document.querySelector('.js-main-content');
 const galleryDomovikSection = document.querySelector('.js-gallery-domovik-section');
 
+const backdropDomovikGallery = document.querySelector('.js-backdrop-domovik-gallery');
+
+const domovikModalBigImg = document.querySelector('.js-domovik-modal-img');
+
+const domovikGalleryBigVideo = document.querySelector('.js-domovik-modal-video');
+
+const domovikGalleryBtnClose = document.querySelector('.js-backdrop-close');
 
 // --/---refs-------------------------------
 
@@ -37,7 +44,123 @@ function onCreateMarcupUkrDom () {
   document.querySelector('.js-gallery-btn-wich').addEventListener('click', () => {
     onCreateMarcupWitcherDom();
   });
+
+  // -----------backdrop-logic-------------------
+
+  const galleryDomovikUrk = document.querySelector('.js-gallery-borovik-urk');
+
+  galleryDomovikUrk.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.tagName !== 'IMG') return;
+
+    backdropDomovikGallery.classList.remove('backdrop-borovik-gallery--hidden');
+
+    document.body.classList.add('is-freeze');
+
+    const wolfHeadImgBoxUrk = document.querySelector('.js-wolf-head-img-box-urk');
+
+    const bigImgId = Number(target.dataset.id);
+    const wolfHeadImg = [...wolfHeadImgBoxUrk.children];
+
+    switch (bigImgId) {
+      case 1:
+        wolfHeadImg[0].hidden = false;
+        wolfHeadImg[1].hidden = true;
+        wolfHeadImg[2].hidden = true;
+        break;
+
+      case 2:
+        wolfHeadImg[0].hidden = true;
+        wolfHeadImg[1].hidden = false;
+        wolfHeadImg[2].hidden = true;
+        break;
+
+      case 3:
+        wolfHeadImg[0].hidden = true;
+        wolfHeadImg[1].hidden = true;
+        wolfHeadImg[2].hidden = false;
+        break;
+    };
+
+    if (bigImgId === 1) {
+      domovikModalBigImg.closest('picture').hidden = true;
+      domovikGalleryBigVideo.hidden = false;
+    }
+
+    domovikModalBigImg.src = target.src;
+
+    // --------small-gallery-----------
+
+    const smallGalleryItem = document.querySelector('.js-small-gallery');
+
+    smallGalleryItem.addEventListener('click', (e) => {
+      const { target, currentTarget } = e;
+
+      if (target.tagName !== 'IMG') return;
+
+      const liItemId = Number(target.closest('LI').dataset.id);
+
+      switch (liItemId) {
+        case 1:
+          wolfHeadImg[0].hidden = false;
+          wolfHeadImg[1].hidden = true;
+          wolfHeadImg[2].hidden = true;
+          break;
+
+        case 2:
+          wolfHeadImg[0].hidden = true;
+          wolfHeadImg[1].hidden = false;
+          wolfHeadImg[2].hidden = true;
+          break;
+
+        case 3:
+          wolfHeadImg[0].hidden = true;
+          wolfHeadImg[1].hidden = true;
+          wolfHeadImg[2].hidden = false;
+          break;
+      };
+
+      if (liItemId === 1) {
+        domovikModalBigImg.closest('picture').hidden = true;
+        domovikGalleryBigVideo.hidden = false;
+      } else {
+        domovikModalBigImg.closest('picture').hidden = false;
+        domovikGalleryBigVideo.hidden = true;
+      }
+
+      domovikModalBigImg.src = target.src;
+
+      [...currentTarget.children].forEach((li) => {
+        if (li.classList.contains('small-img-active')) {
+          li.classList.remove('small-img-active');
+        }
+      });
+
+      target.closest('.small-gallery__item').classList.add('small-img-active');
+    });
+
+    [...smallGalleryItem.children].forEach((li) => {
+      const liId = Number(li.dataset.id);
+
+      if (li.classList.contains('small-img-active')) {
+        li.classList.remove('small-img-active');
+      }
+
+      if (liId === bigImgId) {
+        li.classList.add('small-img-active');
+      }
+    });
+  });
 }
+
+domovikGalleryBtnClose.addEventListener('click', (e) => {
+  domovikModalBigImg.closest('picture').hidden = false;
+  domovikGalleryBigVideo.hidden = true;
+
+  backdropDomovikGallery.classList.add('backdrop-borovik-gallery--hidden');
+  document.body.classList.remove('is-freeze');
+});
 
 function createMarcupUkr () {
   return `
