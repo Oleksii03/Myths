@@ -1,0 +1,29 @@
+.characters-btn-box__myth {
+  font-family: var(--secondary-font);
+  text-align: center;
+  @include flex;
+  border-bottom: 2px solid rgb(50, 53, 54);
+  ;
+  ;
+
+  &>button {
+    @include flex;
+    column-gap: 8px;
+
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+
+    color: #cdc4ce;
+    background: #101415;
+    padding: 12px 10px;
+  }
+}
+
+.characters-btn__witcher {}
+
+.characters-btn__ukr {}
+
+.characters__logo {
+  border-radius: 50%;
+}
