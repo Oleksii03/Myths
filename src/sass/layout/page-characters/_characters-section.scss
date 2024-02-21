@@ -3,27 +3,49 @@
   text-align: center;
   @include flex;
   border-bottom: 2px solid rgb(50, 53, 54);
-  ;
-  ;
 
   &>button {
+    position: relative;
     @include flex;
     column-gap: 8px;
 
     line-height: 150%;
     letter-spacing: 0.01em;
-    font-weight: 500;
 
     color: #cdc4ce;
     background: #101415;
     padding: 12px 10px;
+
+    @media (min-width: 790px) {
+      padding: 10px 16px;
+    }
   }
 }
 
-.characters-btn__witcher {}
+.characters-btn__witcher {
+  font-weight: 500;
+}
 
-.characters-btn__ukr {}
+.characters-btn__ukr {
+  font-weight: 500;
+}
 
 .characters__logo {
   border-radius: 50%;
+}
+
+.characters-btn__active {
+  font-weight: 700;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    height: 2px;
+    width: 100%;
+
+    background: rgb(173, 198, 255);
+  }
 }
