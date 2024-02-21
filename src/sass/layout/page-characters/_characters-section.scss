@@ -1,11 +1,12 @@
 .characters-btn-box__myth {
+  position: relative;
   font-family: var(--secondary-font);
   text-align: center;
   @include flex;
   border-bottom: 2px solid rgb(50, 53, 54);
 
   &>button {
-    position: relative;
+    // position: relative;
     @include flex;
     column-gap: 8px;
 
@@ -19,6 +20,23 @@
     @media (min-width: 790px) {
       padding: 10px 16px;
     }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+
+    transition: all 500ms;
+
+    bottom: 0;
+    left: 0;
+
+    transform: translateX(100%);
+
+    height: 2px;
+    width: 50%;
+
+    background: rgb(173, 198, 255);
   }
 }
 
@@ -34,18 +52,12 @@
   border-radius: 50%;
 }
 
+// -----btn-active------
+
 .characters-btn__active {
   font-weight: 700;
 
   &::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    height: 2px;
-    width: 100%;
-
-    background: rgb(173, 198, 255);
+    transform: translateX(0%);
   }
 }
