@@ -1,12 +1,12 @@
 .characters-btn-box__myth {
   position: relative;
+
   font-family: var(--secondary-font);
   text-align: center;
   @include flex;
   border-bottom: 2px solid rgb(50, 53, 54);
 
   &>button {
-    // position: relative;
     @include flex;
     column-gap: 8px;
 
