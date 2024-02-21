@@ -4,30 +4,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>main</title>
+  <title>characters</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Sofia+Sans:wght@400;500;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="./sass/index.scss" />
+  <link rel="stylesheet" href="./sass/characters.scss" />
   <link rel="shortcut icon" href="./images/base/logo-footer-subscribe.png" type="image/x-icon">
 </head>
 
 <body>
-  <include src="./partials/header.html"></include>
+  <include src="./partials/characters/header-characters.html"></include>
 
-  <main class="main">
-
-    <include src="./partials/hero.html"></include>
-    <include src="./partials/famous.html"></include>
-    <include src="./partials/beasts.html"></include>
-    <include src="./partials/beasts-witcher.html"></include>
-    <include src="./partials/famous-witcher.html"></include>
+  <main class="main main-characters">
 
   </main>
 
-  <include src="./partials/footer.html"></include>
+  <include src="./partials/characters/footer-characters.html"></include>
+
+  <!-- -------common-el------------------------------- -->
 
   <!-- wolf-head -->
   <img class="wolf-head" src="./images/base/wolf-head.png" alt="wolf-head">
@@ -37,10 +33,12 @@
   <div class="backdrop js-backdrop backdrop--hidden"></div>
   <!--/ backdrop -->
 
-  <!-- backdrop-form-search -->
+  <!--backdrop-search -->
   <include src="./partials/backdrop-form-search.html"></include>
-  <!--/ backdrop-form-search -->
-  <script type="module" src="./index.js"></script>
+  <!--/ backdrop-search -->
+
+  <!-- ------/-common-el------------------------------- -->
+  <script type="module" src="./characters-page.js"></script>
 </body>
 
 </html>

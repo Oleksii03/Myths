@@ -1,0 +1,20 @@
+@import './base/common';
+@import './base/container';
+
+@import './utils/variables';
+@import './utils/mixins';
+
+@import './components/woolf-head';
+@import './components/main-head';
+@import './components/backdrop';
+@import './components/backdrop-form-search';
+@import './components/btn-up';
+@import './components/nav-btn-container';
+@import './components/progress-bar';
+
+@import './layout/page-bestiary/header-bestiary';
+@import './layout/page-bestiary/mobile-menu-bestiary';
+
+@import './layout/page-main/main';
+
+@import './layout/page-bestiary/footer-bestiary';
