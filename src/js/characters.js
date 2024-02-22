@@ -1,8 +1,6 @@
 import { charactersUkr } from "./data/characters-ukr";
 import { charactersWitcher } from "./data/characters-ukr";
 
-console.log(charactersWitcher);
-
 import svg from '../images/sprite.svg';
 // -----refs ----------------------------
 const btnWitcher = document.querySelector('.characters-btn__witcher');
