@@ -1,0 +1,23 @@
+.gallery-character__list {
+  display: grid;
+  height: 320px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 70% 30%;
+  gap: 8px;
+
+  @media (min-width: 790px) {
+    height: 564px;
+    gap: 16px;
+  }
+}
+
+.gallery-character__item {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.gallery-character__img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
