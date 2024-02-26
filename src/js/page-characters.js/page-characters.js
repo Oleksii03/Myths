@@ -4,6 +4,9 @@ import '../backdrop-search';
 import svg from '../../images/sprite.svg';
 
 import kozak from '../../images/characters/ukrainskii-kozak-art-1_PC.jpg';
+import Sahaidachnyi from '../../images/characters/Petro-Sahaidachnyi.jpg';
+import Bohun from '../../images/characters/Ivan-Bohun.jpg';
+import kozakRepin from '../../images/characters/ukrainskii-kozak-Repin.jpg';
 
 // -----refs ----------------------------
 const btnWitcher = document.querySelector('.characters-btn__witcher');
@@ -32,8 +35,7 @@ function onCreateContentUkr (e) {
 
   charactersTitle.textContent = 'Козак-характерник';
   mainContent.innerHTML = createMarcupUkr();
-  // galleryImg.innerHTML = createGalleryUkr();
-
+  galleryImg.innerHTML = createGalleryUkr();
 }
 
 
@@ -81,12 +83,12 @@ function createMarcupUkr () {
 </div>
 
 <ol class="main-content__list">
-<li class="main-content__list-item">
-  <h3 class="main-content__list-title">Зміст</h3>
-</li>
-<li class="main-content__list-item">1. Опис, міфи та легенди</li>
-<li class="main-content__list-item">2. Галерея</li>
-<li class="main-content__list-item">3. Відомі козаки-характерники</li>
+  <li class="main-content__list-item">
+    <h3 class="main-content__list-title">Зміст</h3>
+  </li>
+  <li class="main-content__list-item">1. Опис, міфи та легенди</li>
+  <li class="main-content__list-item">2. Галерея</li>
+  <li class="main-content__list-item">3. Відомі козаки-характерники</li>
 </ol>
 
 <div class="main-content__description description-content">
@@ -131,9 +133,42 @@ function createGalleryUkr () {
       <div class="borovik__gallery-header gallery-borovik">
         <h2 class="gallery-borovik__title">Галерея</h2>
         <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
-      </div>`;
+      </div>
+      
+      <ul class="gallery-character__list js-gallery-character-urk">
 
+        <li class="gallery-character__item gallery-character__item-col">
+          <img data-id="1" class="gallery-character__img" src="${kozak}"
+            alt="ukrainskii-kozak">
+        </li>
 
+        <li class="gallery-character__item">
+          <img data-id="2" class="gallery-character__img" src="${Sahaidachnyi}"
+            alt="Petro-Sahaidachnyi">
+        </li>
+
+        <li class="gallery-character__item">
+          <img data-id="3" class="gallery-character__img" src="${Bohun}" alt="Ivan-Bohun">
+        </li>
+
+        <li class="gallery-character__item">
+          <img data-id="3" class="gallery-character__img" src="${kozakRepin}"
+            alt="ukrainskii-kozak-Repin">
+        </li>
+      </ul>
+
+      <div class="famous-cossacks">
+        <h3 class="famous-cossacks__title">Відомі Козаки-Характерники</h3>
+
+        <ol class="famous-cossacks__list">
+          <li class="famous-cossacks__list-item">1. Петро Сагайдачний</li>
+          <li class="famous-cossacks__list-item">2. Іван Богун</li>
+          <li class="famous-cossacks__list-item">3. Іван Сірко</li>
+        </ol>
+
+      </div>
+
+      <button class="gallery-borovik__btn js-gallery-btn-wich" type="button">У грі Відьмак</button>`;
 };
 
 
@@ -144,5 +179,6 @@ function onCreateContentWitcher (e) {
   btnWitcher.classList.add('characters-btn__active');
 
   charactersTitle.textContent = 'Відьмак, Ґеральт з Рівії';
-
+  mainContent.innerHTML = '';
+  galleryImg.innerHTML = '';
 };
