@@ -1,4 +1,4 @@
-import kozak from '../../images/characters/ukrainskii-kozak-1.jpeg';
+import kozak from '../../images/characters/ukrainskii-kozak-art-1_PC.jpg';
 import witch from '../../images/characters/white-whitch-1.png';
 
 import Geralt from '../../images/characters/Geralt.jpg';
@@ -10,7 +10,7 @@ export const charactersUkr = [
     genus: 'Козаки-характерники',
     img: kozak,
     description: `Відьма́к та Характе́рник (відьма́н) — персонаж слов'янської міфології, чаклун ...`,
-    ref: '#',
+    ref: './page-characters.html',
   },
   {
     name: 'Чародійки',
@@ -34,7 +34,7 @@ export const charactersWitcher = [
     name: 'Йеннефер',
     genus: 'Чародійка',
     img: Yennefer,
-    logo: '#icon-logo-yennefer',
+    logo: '#icon-Magic-center',
     description: `Йеннефер — одна з головних героїнь літературного циклу А.Сапковського ...`,
     ref: '#',
   },

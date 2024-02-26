@@ -87,8 +87,8 @@ function createCardMarkupWitcher (dataCard) {
   return dataCard.map(({ name, genus, img, description, ref, logo }) => {
     return `<li class="bestiary-list__item bestiary-item">
     <div class="bestiary-item__heder">
-        <svg width="40" height="40" class="bestiary-item__logo">
-          <use href="${svg + logo}"></use>
+        <svg width="40" height="40" class="characters-item__logo">
+          <use class="characters-item__logo_inner" href="${svg + logo}"></use>
         </svg> 
       <div class="bestiary-item__content">
         <h3 class="bestiary-item__title">${name}</h3>

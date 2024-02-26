@@ -69,3 +69,12 @@
     display: block;
   }
 }
+
+.characters-item__logo {
+  background-color: #000000;
+  border-radius: 50%;
+}
+
+.characters-item__logo_inner {
+  fill: rgba(255, 255, 255, 0.709);
+}
