@@ -8,6 +8,16 @@ const btnUkr = document.querySelector('.jscharacters-btn-ukr');
 const btnBox = document.querySelector('.js-characters-btn-box');
 
 const cardList = document.querySelector('.js-characters-section-list');
+
+
+const sortBtnFlphabet = document.querySelector('.js-sort-btns-alphabet');
+const sortDropMenu = document.querySelector('.js-sort-btns-menu');
+
+
+sortBtnFlphabet.addEventListener('click', (e) => {
+  console.log(e);
+  sortDropMenu.classList.toggle('is-hidden');
+});
 // ----/-refs ---------------------------
 
 btnUkr.addEventListener('click', onCreateContentUkr);

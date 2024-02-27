@@ -6,6 +6,13 @@ const bestiaryList = document.querySelector('.js-bestiary-section-list');
 const mythBtnUkr = document.querySelector('.js-myth-btn-ukr');
 const mythBtnWitcher = document.querySelector('.js-myth-btn-witcher');
 
+const sortBtnFlphabet = document.querySelector('.js-sort-btns-alphabet');
+const sortDropMenu = document.querySelector('.js-sort-btns-menu');
+
+
+sortBtnFlphabet.addEventListener('click', (e) => {
+  sortDropMenu.classList.toggle('is-hidden');
+});
 
 // ------onCreateMarkupUkr-----------------------
 

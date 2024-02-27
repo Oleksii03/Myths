@@ -25,7 +25,7 @@
         <button type="button" class="sort-btns__sort">
           Сортування
         </button>
-        <button type="button" class="sort-btns__alphabet">
+        <button type="button" class="sort-btns__alphabet js-sort-btns-alphabet">
           За алфавітом
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -36,6 +36,22 @@
               fill="#C4C7C7" />
           </svg>
         </button>
+
+        <ul class="sort-btns__menu js-sort-btns-menu is-hidden">
+          <li class="sort-btns__menu-item">
+            <svg>
+              <use href="./images/sprite.svg#icon-alphabet"></use>
+            </svg>
+            За алфавітом
+          </li>
+          <li class="sort-btns__menu-item">
+            <svg>
+              <use href="./images/sprite.svg#icon-class"></use>
+            </svg>
+            За класом
+          </li>
+        </ul>
+
       </div>
 
     </div>
