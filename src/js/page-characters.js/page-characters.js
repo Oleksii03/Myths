@@ -334,21 +334,21 @@ function createGalleryWitcher () {
   <ul class="gallery-character__list js-gallery-character-urk">
 
     <li class="gallery-character__item">
-      <img data-id="1" class="gallery-character__img-w" src="${Geralt}"
+      <img data-id="1" class="gallery-character__img" src="${Geralt}"
         alt="Geralt">
     </li>
 
     <li class="gallery-character__item">
-      <img data-id="2" class="gallery-character__img-w" src="${Geralt2}"
+      <img data-id="2" class="gallery-character__img gallery-character__img_w" src="${Geralt2}"
         alt="Geralt-item-2">
     </li>
 
     <li class="gallery-character__item">
-      <img data-id="3" class="gallery-character__img-w" src="${Geralt3}" alt="Geralt-item-3">
+      <img data-id="3" class="gallery-character__img gallery-character__img_w" src="${Geralt3}" alt="Geralt-item-3">
     </li>
 
     <li class="gallery-character__item">
-      <img data-id="4" class="gallery-character__img-w" src="${Geralt4}"
+      <img data-id="4" class="gallery-character__img gallery-character__img_fill" src="${Geralt4}"
         alt="Geralt-item-4">
     </li>
   </ul>

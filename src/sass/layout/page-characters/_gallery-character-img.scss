@@ -96,6 +96,10 @@
   margin-left: -20px;
 }
 
-// .gallery-character__img-w {
-//   object-position: bottom;
-// }
+.gallery-character__img_w {
+  object-fit: contain;
+}
+
+.gallery-character__img_fill {
+  object-position: center 15%;
+}
