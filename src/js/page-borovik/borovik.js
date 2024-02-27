@@ -513,10 +513,10 @@ function createMarcupWicher () {
 
 function createGalleryBorovikWicher () {
   return `
-<div class="borovik__gallery-header gallery-borovik">
-<h2 class="gallery-borovik__title">Галерея</h2>
-<p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
-</div>
+  <div class="borovik__gallery-header gallery-borovik">
+  <h2 class="gallery-borovik__title">Галерея</h2>
+  <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
+  </div>
 
 <ul class="gallery-borovik__list js-gallery-borovik-wich">
   <li class="gallery-borovik__item gallery-borovik__item-col">
