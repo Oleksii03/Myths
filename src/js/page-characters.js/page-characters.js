@@ -43,6 +43,10 @@ function onCreateContentUkr (e) {
   charactersTitle.textContent = 'Козак-характерник';
   mainContent.innerHTML = createMarcupUkr();
   galleryImg.innerHTML = createGalleryUkr();
+
+  document.querySelector('.js-gallery-btn-wich').addEventListener('click', () => {
+    onCreateContentWitcher();
+  });
 }
 
 
@@ -188,6 +192,10 @@ function onCreateContentWitcher (e) {
   charactersTitle.textContent = 'Відьмак, Ґеральт з Рівії';
   mainContent.innerHTML = createMarcupWitcher();
   galleryImg.innerHTML = createGalleryWitcher();
+
+  document.querySelector('.js-gallery-btn-ukr').addEventListener('click', () => {
+    onCreateContentUkr();
+  });
 
 };
 
