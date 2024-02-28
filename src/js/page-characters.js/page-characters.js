@@ -24,12 +24,18 @@ const mainContent = document.querySelector('.js-main-content');
 const galleryImg = document.querySelector('.js-gallery-character');
 
 const backdropGalleryKozak = document.querySelector('.js-backdrop-kozak-gallery');
+const backdropGalleryWitcher = document.querySelector('.js-backdrop-witcher-gallery');
 
 const kozakModalBigImg = document.querySelector('.js-kozak-modal-img');
+const witcherModalBigImg = document.querySelector('.js-witcher-modal-img');
 
 const kozakGalleryBigVideo = document.querySelector('.js-kozak-modal-video');
+const witcherGalleryBigVideo = document.querySelector('.js-witcher-modal-video');
 
 const kozakGalleryBtnClose = document.querySelector('.js-backdrop-close');
+const witcherGalleryBtnClose = document.querySelector('.js-backdrop-close-witch');
+
+console.log(backdropGalleryWitcher);
 // ----/-refs ---------------------------
 
 btnUkr.addEventListener('click', onCreateContentUkr);
@@ -273,7 +279,79 @@ function onCreateContentWitcher (e) {
     onCreateContentUkr();
   });
 
+  // -----------backdrop-logic-------------------
+
+  const galleryWitcher = document.querySelector('.js-gallery-witcher');
+
+  galleryWitcher.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.tagName !== 'IMG') return;
+
+    document.body.classList.add('is-freeze');
+
+    backdropGalleryWitcher.classList.remove('backdrop-borovik-gallery--hidden');
+
+    const bigImgId = Number(target.dataset.id);
+
+    if (bigImgId === 1) {
+      witcherModalBigImg.closest('picture').hidden = true;
+      witcherGalleryBigVideo.hidden = false;
+    }
+
+    witcherModalBigImg.src = target.src;
+
+    // --------small-gallery-----------
+
+    const smallGalleryItem = document.querySelector('.js-small-gallery-w');
+
+    smallGalleryItem.addEventListener('click', (e) => {
+      const { target, currentTarget } = e;
+
+      if (target.tagName !== 'IMG') return;
+
+      const liItemId = Number(target.closest('LI').dataset.id);
+
+      if (liItemId === 1) {
+        witcherModalBigImg.closest('picture').hidden = true;
+        witcherGalleryBigVideo.hidden = false;
+      } else {
+        witcherModalBigImg.closest('picture').hidden = false;
+        witcherGalleryBigVideo.hidden = true;
+      }
+
+      witcherModalBigImg.src = target.src;
+
+      [...currentTarget.children].forEach((li) => {
+        if (li.classList.contains('small-img-active')) {
+          li.classList.remove('small-img-active');
+        }
+      });
+
+      target.closest('.small-gallery__item').classList.add('small-img-active');
+    });
+
+    [...smallGalleryItem.children].forEach((li) => {
+      const liId = Number(li.dataset.id);
+
+      if (li.classList.contains('small-img-active')) {
+        li.classList.remove('small-img-active');
+      }
+
+      if (liId === bigImgId) {
+        li.classList.add('small-img-active');
+      }
+    });
+  });
 };
+
+witcherGalleryBtnClose.addEventListener('click', () => {
+  witcherModalBigImg.closest('picture').hidden = false;
+  witcherGalleryBigVideo.hidden = true;
+
+  backdropGalleryWitcher.classList.add('backdrop-borovik-gallery--hidden');
+  document.body.classList.remove('is-freeze');
+});
 
 function createMarcupWitcher () {
   return `
@@ -415,7 +493,7 @@ function createGalleryWitcher () {
     <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
   </div>
   
-  <ul class="gallery-character__list js-gallery-character-urk">
+  <ul class="gallery-character__list js-gallery-witcher">
 
     <li class="gallery-character__item">
       <img data-id="1" class="gallery-character__img" src="${Geralt}"
@@ -438,4 +516,4 @@ function createGalleryWitcher () {
   </ul>
 
   <button class="gallery-borovik__btn js-gallery-btn-ukr" type="button">В укр. міфології</button>`;
-}
+};
