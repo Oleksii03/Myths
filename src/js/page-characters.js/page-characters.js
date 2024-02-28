@@ -13,8 +13,6 @@ import Geralt2 from '../../images/characters/Witcher/Geralt-item-2.png';
 import Geralt3 from '../../images/characters/Witcher/Geralt-item-3.png';
 import Geralt4 from '../../images/characters/Witcher/Geralt-item-4.jpg';
 
-
-
 // -----refs ----------------------------
 const btnWitcher = document.querySelector('.characters-btn__witcher');
 const btnUkr = document.querySelector('.jscharacters-btn-ukr');
@@ -25,8 +23,13 @@ const charactersTitle = document.querySelector('.js-characters-title');
 const mainContent = document.querySelector('.js-main-content');
 const galleryImg = document.querySelector('.js-gallery-character');
 
-console.log(galleryImg);
+const backdropGalleryKozak = document.querySelector('.js-backdrop-kozak-gallery');
 
+const kozakModalBigImg = document.querySelector('.js-kozak-modal-img');
+
+const kozakGalleryBigVideo = document.querySelector('.js-kozak-modal-video');
+
+const kozakGalleryBtnClose = document.querySelector('.js-backdrop-close');
 // ----/-refs ---------------------------
 
 btnUkr.addEventListener('click', onCreateContentUkr);
@@ -47,7 +50,80 @@ function onCreateContentUkr (e) {
   document.querySelector('.js-gallery-btn-wich').addEventListener('click', () => {
     onCreateContentWitcher();
   });
+
+  // -----------backdrop-logic-------------------
+
+
+  const galleryKozak = document.querySelector('.js-gallery-character-urk');
+
+  galleryKozak.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.tagName !== 'IMG') return;
+
+    backdropGalleryKozak.classList.remove('backdrop-borovik-gallery--hidden');
+
+    document.body.classList.add('is-freeze');
+
+    const bigImgId = Number(target.dataset.id);
+
+    if (bigImgId === 1) {
+      kozakModalBigImg.closest('picture').hidden = true;
+      kozakGalleryBigVideo.hidden = false;
+    }
+
+    kozakModalBigImg.src = target.src;
+
+    // --------small-gallery-----------
+
+    const smallGalleryItem = document.querySelector('.js-small-gallery');
+
+    smallGalleryItem.addEventListener('click', (e) => {
+      const { target, currentTarget } = e;
+
+      if (target.tagName !== 'IMG') return;
+
+      const liItemId = Number(target.closest('LI').dataset.id);
+
+      if (liItemId === 1) {
+        kozakModalBigImg.closest('picture').hidden = true;
+        kozakGalleryBigVideo.hidden = false;
+      } else {
+        kozakModalBigImg.closest('picture').hidden = false;
+        kozakGalleryBigVideo.hidden = true;
+      }
+
+      kozakModalBigImg.src = target.src;
+
+      [...currentTarget.children].forEach((li) => {
+        if (li.classList.contains('small-img-active')) {
+          li.classList.remove('small-img-active');
+        }
+      });
+
+      target.closest('.small-gallery__item').classList.add('small-img-active');
+    });
+
+    [...smallGalleryItem.children].forEach((li) => {
+      const liId = Number(li.dataset.id);
+
+      if (li.classList.contains('small-img-active')) {
+        li.classList.remove('small-img-active');
+      }
+
+      if (liId === bigImgId) {
+        li.classList.add('small-img-active');
+      }
+    });
+  });
 }
+
+kozakGalleryBtnClose.addEventListener('click', (e) => {
+  kozakModalBigImg.closest('picture').hidden = false;
+  kozakGalleryBigVideo.hidden = true;
+  backdropGalleryKozak.classList.add('backdrop-borovik-gallery--hidden');
+  document.body.classList.remove('is-freeze');
+});
 
 
 function createMarcupUkr () {

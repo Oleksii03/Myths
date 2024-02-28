@@ -2,6 +2,7 @@ import '../header';
 import '../backdrop-search';
 
 import svg from '../../images/sprite.svg';
+
 import griffin1 from '../../images/beasts-main/item-mob-2.jpg';
 import griffin2 from '../../images/page-griffin/item-img-2.jpg';
 import griffin3 from '../../images/page-griffin/item-img-3.jpg';
