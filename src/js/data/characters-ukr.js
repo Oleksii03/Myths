@@ -17,7 +17,7 @@ export const charactersUkr = [
     genus: 'Чаклунки/Відьми',
     img: witch,
     description: `Ві́дьма, чаклу́нка (чародійка) — жінка, наділена чаклунськими здібностями ...`,
-    ref: '#',
+    ref: './page-characters-witch.html',
   },
 ];
 
@@ -28,7 +28,7 @@ export const charactersWitcher = [
     img: Geralt,
     logo: '#witcher-icon',
     description: `Ґеральт з Рівії, «Білий Вовк» — головний герой літературного циклу романів ...`,
-    ref: '#',
+    ref: './page-characters.html',
   },
   {
     name: 'Йеннефер',
@@ -36,6 +36,6 @@ export const charactersWitcher = [
     img: Yennefer,
     logo: '#icon-Magic-center',
     description: `Йеннефер — одна з головних героїнь літературного циклу А.Сапковського ...`,
-    ref: '#',
+    ref: './page-characters-witch.html',
   },
 ];
