@@ -141,7 +141,7 @@ function createMarcupYennefer () {
           </svg>
 
           <div class="borovik-item__content">
-            <h3 class="borovik-item__title">Відьмак, Ґеральт з Рівії</h3>
+            <h3 class="borovik-item__title">Йеннефер</h3>
             <h4 class="borovik-item__sub-title">Гра «Відьмак 3: Дикий Гін»</h4>
           </div>
 
@@ -205,7 +205,7 @@ function createMarcupYennefer () {
 
             <tr class="borovik-witcher__row">
               <td class="borovik-witcher__data">Належність</td>
-              <td class="borovik-witcher__data">Рада Чародіїв, Ложа Чародійок </td>
+              <td class="borovik-witcher__data">Рада Чародіїв Ложа, Чародійок</td>
             </tr>
 
             <tr class="borovik-witcher__row">
