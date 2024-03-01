@@ -59,7 +59,6 @@ function onCreateContentUkr (e) {
 
   // -----------backdrop-logic-------------------
 
-
   const galleryKozak = document.querySelector('.js-gallery-character-urk');
 
   galleryKozak.addEventListener('click', (e) => {

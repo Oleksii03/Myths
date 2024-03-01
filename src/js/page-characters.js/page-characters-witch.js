@@ -4,7 +4,15 @@ import '../backdrop-search';
 import svg from '../../images/sprite.svg';
 
 import whitch from '../../images/characters/white-whitch-1.png';
+import whitch2 from '../../images/characters/Witche/witch-img-2.jpg';
+import whitch3 from '../../images/characters/Witche/witch-img-3.jpg';
+import whitch4 from '../../images/characters/Witche/witch-img-4.jpg';
+
+
 import Yennefer from '../../images/characters/Yennefer.jpg';
+import Yennefer2 from '../../images/characters/Yennefer/Yennefer-img-2.jpg';
+import Yennefer3 from '../../images/characters/Yennefer/Yennefer-img-3.jpg';
+import Yennefer4 from '../../images/characters/Yennefer/Yennefer-img-4.png';
 
 // -----refs ----------------------------
 const btnWitcher = document.querySelector('.characters-btn__witcher');
@@ -12,8 +20,20 @@ const btnUkr = document.querySelector('.jscharacters-btn-ukr');
 const btnBox = document.querySelector('.js-characters-btn-box');
 
 const charactersTitle = document.querySelector('.js-characters-title');
-
 const mainContent = document.querySelector('.js-main-content');
+const galleryImg = document.querySelector('.js-gallery-character');
+
+const backdropGalleryWitche = document.querySelector('.js-backdrop-witche-gallery');
+const backdropGalleryYennefer = document.querySelector('.js-backdrop-yennefer-gallery');
+
+const galleryBigImgWitche = document.querySelector('.js-witche-modal-img');
+const galleryBigImgYennefer = document.querySelector('.js-yennefer-modal-img');
+
+const witcheGalleryBigVideo = document.querySelector('.js-witche-modal-video');
+const yenneferGalleryBigVideo = document.querySelector('.js-yennefer-modal-video');
+
+const witcheGalleryBtnClose = document.querySelector('.js-backdrop-close');
+const yenneferGalleryBtnClose = document.querySelector('.js-backdrop-close-yennefer');
 // ----/-refs ----------------------------
 
 btnUkr.addEventListener('click', onCreateContentUkr);
@@ -29,7 +49,84 @@ function onCreateContentUkr (e) {
 
   charactersTitle.textContent = 'Чародійки (Відьми)';
   mainContent.innerHTML = createMarcupUkr();
+  galleryImg.innerHTML = createGalleryUkr();
+
+  document.querySelector('.js-gallery-btn-wich').addEventListener('click', () => {
+    onCreateContentWitcher();
+  });
+
+  // -----------backdrop-logic-------------------
+
+  const galleryWhitch = document.querySelector('.js-gallery-whitch');
+
+  galleryWhitch.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.tagName !== 'IMG') return;
+
+    backdropGalleryWitche.classList.remove('backdrop-borovik-gallery--hidden');
+
+    document.body.classList.add('is-freeze');
+
+    const bigImgId = Number(target.dataset.id);
+
+    if (bigImgId === 1) {
+      galleryBigImgWitche.closest('picture').hidden = true;
+      witcheGalleryBigVideo.hidden = false;
+    }
+
+    galleryBigImgWitche.src = target.src;
+
+    // --------small-gallery-----------
+
+    const smallGalleryItem = document.querySelector('.js-small-gallery');
+
+    smallGalleryItem.addEventListener('click', (e) => {
+      const { target, currentTarget } = e;
+
+      if (target.tagName !== 'IMG') return;
+
+      const liItemId = Number(target.closest('LI').dataset.id);
+
+      if (liItemId === 1) {
+        galleryBigImgWitche.closest('picture').hidden = true;
+        witcheGalleryBigVideo.hidden = false;
+      } else {
+        galleryBigImgWitche.closest('picture').hidden = false;
+        witcheGalleryBigVideo.hidden = true;
+      }
+
+      galleryBigImgWitche.src = target.src;
+
+      [...currentTarget.children].forEach((li) => {
+        if (li.classList.contains('small-img-active')) {
+          li.classList.remove('small-img-active');
+        }
+      });
+
+      target.closest('.small-gallery__item').classList.add('small-img-active');
+    });
+
+    [...smallGalleryItem.children].forEach((li) => {
+      const liId = Number(li.dataset.id);
+
+      if (li.classList.contains('small-img-active')) {
+        li.classList.remove('small-img-active');
+      }
+
+      if (liId === bigImgId) {
+        li.classList.add('small-img-active');
+      }
+    });
+  });
 }
+
+witcheGalleryBtnClose.addEventListener('click', (e) => {
+  galleryBigImgWitche.closest('picture').hidden = false;
+  witcheGalleryBigVideo.hidden = true;
+  backdropGalleryWitche.classList.add('backdrop-borovik-gallery--hidden');
+  document.body.classList.remove('is-freeze');
+});
 
 function createMarcupUkr () {
   return `
@@ -122,6 +219,40 @@ function createMarcupUkr () {
 </div>`;
 };
 
+function createGalleryUkr () {
+  return `
+      <div class="borovik__gallery-header gallery-borovik">
+        <h2 class="gallery-borovik__title">Галерея</h2>
+        <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
+      </div>
+      
+      <ul class="gallery-character__list js-gallery-whitch">
+
+        <li class="gallery-character__item">
+          <img data-id="1" class="gallery-character__img" src="${whitch}"
+            alt="whitch-img">
+        </li>
+
+        <li class="gallery-character__item">
+          <img data-id="2" class="gallery-character__img gallery-whitch__img" src="${whitch2}"
+            alt="whitch-img-2">
+        </li>
+
+        <li class="gallery-character__item">
+          <img data-id="3" class="gallery-character__img gallery-whitch__img" src="${whitch3}" alt="whitch-img-3">
+        </li>
+
+        <li class="gallery-character__item">
+          <img data-id="4" class="gallery-character__img" src="${whitch4}"
+            alt="whitch-img-4">
+        </li>
+      </ul>
+
+      <button class="gallery-borovik__btn js-gallery-btn-wich" type="button">У грі Відьмак</button>`;
+};
+
+// --------Yennefer-----------------------------
+
 function onCreateContentWitcher (e) {
   btnBox.classList.add('characters-btn__active');
 
@@ -130,7 +261,85 @@ function onCreateContentWitcher (e) {
 
   charactersTitle.textContent = 'Чародійка, Йеннефер';
   mainContent.innerHTML = createMarcupYennefer();
+  galleryImg.innerHTML = createGalleryYennefer();
+
+  document.querySelector('.js-gallery-btn-ukr').addEventListener('click', () => {
+    onCreateContentUkr();
+  });
+
+  // -----------backdrop-logic-------------------
+
+  const galleryYennefer = document.querySelector('.js-gallery-yennefer');
+
+  galleryYennefer.addEventListener('click', (e) => {
+    const { target } = e;
+
+    if (target.tagName !== 'IMG') return;
+
+    document.body.classList.add('is-freeze');
+
+    backdropGalleryYennefer.classList.remove('backdrop-borovik-gallery--hidden');
+
+    const bigImgId = Number(target.dataset.id);
+
+    if (bigImgId === 1) {
+      galleryBigImgYennefer.closest('picture').hidden = true;
+      yenneferGalleryBigVideo.hidden = false;
+    }
+
+    galleryBigImgYennefer.src = target.src;
+
+    // --------small-gallery-----------
+
+    const smallGalleryItem = document.querySelector('.js-small-gallery-yennefer');
+
+    smallGalleryItem.addEventListener('click', (e) => {
+      const { target, currentTarget } = e;
+
+      if (target.tagName !== 'IMG') return;
+
+      const liItemId = Number(target.closest('LI').dataset.id);
+
+      if (liItemId === 1) {
+        galleryBigImgYennefer.closest('picture').hidden = true;
+        yenneferGalleryBigVideo.hidden = false;
+      } else {
+        galleryBigImgYennefer.closest('picture').hidden = false;
+        yenneferGalleryBigVideo.hidden = true;
+      }
+
+      galleryBigImgYennefer.src = target.src;
+
+      [...currentTarget.children].forEach((li) => {
+        if (li.classList.contains('small-img-active')) {
+          li.classList.remove('small-img-active');
+        }
+      });
+
+      target.closest('.small-gallery__item').classList.add('small-img-active');
+    });
+
+    [...smallGalleryItem.children].forEach((li) => {
+      const liId = Number(li.dataset.id);
+
+      if (li.classList.contains('small-img-active')) {
+        li.classList.remove('small-img-active');
+      }
+
+      if (liId === bigImgId) {
+        li.classList.add('small-img-active');
+      }
+    });
+  });
 }
+
+yenneferGalleryBtnClose.addEventListener('click', () => {
+  galleryBigImgYennefer.closest('picture').hidden = false;
+  yenneferGalleryBigVideo.hidden = true;
+
+  backdropGalleryYennefer.classList.add('backdrop-borovik-gallery--hidden');
+  document.body.classList.remove('is-freeze');
+});
 
 function createMarcupYennefer () {
   return `
@@ -258,3 +467,35 @@ function createMarcupYennefer () {
         </p>
       </div>`;
 }
+
+function createGalleryYennefer () {
+  return `
+  <div class="borovik__gallery-header gallery-borovik">
+    <h2 class="gallery-borovik__title">Галерея</h2>
+    <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
+  </div>
+  
+  <ul class="gallery-character__list js-gallery-yennefer">
+
+    <li class="gallery-character__item">
+      <img data-id="1" class="gallery-character__img" src="${Yennefer}"
+        alt="Yennefer">
+    </li>
+
+    <li class="gallery-character__item">
+      <img data-id="2" class="gallery-character__img gallery-character__img_w" src="${Yennefer2}"
+        alt="Yennefer-item-2">
+    </li>
+
+    <li class="gallery-character__item">
+      <img data-id="3" class="gallery-character__img gallery-character__img_w" src="${Yennefer3}" alt="Yennefer-item-3">
+    </li>
+
+    <li class="gallery-character__item">
+      <img data-id="4" class="gallery-character__img gallery-character__img_fill" src="${Yennefer4}"
+        alt="Yennefer-item-4">
+    </li>
+  </ul>
+
+  <button class="gallery-borovik__btn js-gallery-btn-ukr" type="button">В укр. міфології</button>`;
+};
