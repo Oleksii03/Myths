@@ -499,3 +499,39 @@ function createGalleryYennefer () {
 
   <button class="gallery-borovik__btn js-gallery-btn-ukr" type="button">В укр. міфології</button>`;
 };
+
+
+// --------------------------------------
+
+// const smallGallery = document.querySelector('.js-small-gallery');
+const modal = document.querySelector('.js-witche-modal');
+
+console.log(modal);
+
+const zoomBtnPlus = document.querySelector('.js-btn-plus');
+const zoomBtnMinus = document.querySelector('.js-btn-minus');
+
+zoomBtnPlus.addEventListener('click', zoomInc);
+zoomBtnMinus.addEventListener('click', zoomDec);
+
+// let margTop = 0;
+
+function zoomInc () {
+  let heightImg = galleryBigImgWitche.offsetHeight;
+
+  // margTop += 30;
+  heightImg += 30;
+
+  // console.log(smallGallery.style.marginTop = margTop + 'px');
+
+  console.log(galleryBigImgWitche.style.height = heightImg + 'px');
+}
+
+function zoomDec () {
+  let heightImg = galleryBigImgWitche.offsetHeight;
+
+  heightImg -= 30;
+
+
+  console.log(galleryBigImgWitche.style.height = heightImg + 'px');
+}
