@@ -520,7 +520,7 @@ function zoomInc () {
   let heightImg = galleryBigImgWitche.offsetHeight;
 
   // margTop += 30;
-  heightImg += 30;
+  heightImg += 50;
 
   // console.log(smallGallery.style.marginTop = margTop + 'px');
 
@@ -530,7 +530,7 @@ function zoomInc () {
 function zoomDec () {
   let heightImg = galleryBigImgWitche.offsetHeight;
 
-  heightImg -= 30;
+  heightImg -= 50;
 
 
   console.log(galleryBigImgWitche.style.height = heightImg + 'px');
