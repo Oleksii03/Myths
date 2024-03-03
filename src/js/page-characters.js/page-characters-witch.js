@@ -506,32 +506,25 @@ function createGalleryYennefer () {
 // const smallGallery = document.querySelector('.js-small-gallery');
 const modal = document.querySelector('.js-witche-modal');
 
-console.log(modal);
-
 const zoomBtnPlus = document.querySelector('.js-btn-plus');
 const zoomBtnMinus = document.querySelector('.js-btn-minus');
 
 zoomBtnPlus.addEventListener('click', zoomInc);
 zoomBtnMinus.addEventListener('click', zoomDec);
 
-// let margTop = 0;
 
 function zoomInc () {
-  let heightImg = galleryBigImgWitche.offsetHeight;
+  let heightImg = modal.offsetHeight;
 
-  // margTop += 30;
   heightImg += 50;
 
-  // console.log(smallGallery.style.marginTop = margTop + 'px');
-
-  console.log(galleryBigImgWitche.style.height = heightImg + 'px');
+  modal.style.height = heightImg + 'px';
 }
 
 function zoomDec () {
-  let heightImg = galleryBigImgWitche.offsetHeight;
+  let heightImg = modal.offsetHeight;
 
   heightImg -= 50;
 
-
-  console.log(galleryBigImgWitche.style.height = heightImg + 'px');
+  modal.style.height = heightImg + 'px';
 }
