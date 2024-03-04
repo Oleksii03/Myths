@@ -504,7 +504,7 @@ function createGalleryYennefer () {
 // --------------------------------------
 
 // const smallGallery = document.querySelector('.js-small-gallery');
-const modal = document.querySelector('.js-witche-modal');
+// const modal = document.querySelector('.js-witche-modal');
 
 const zoomBtnPlus = document.querySelector('.js-btn-plus');
 const zoomBtnMinus = document.querySelector('.js-btn-minus');
