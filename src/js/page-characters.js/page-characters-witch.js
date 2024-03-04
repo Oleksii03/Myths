@@ -512,19 +512,24 @@ const zoomBtnMinus = document.querySelector('.js-btn-minus');
 zoomBtnPlus.addEventListener('click', zoomInc);
 zoomBtnMinus.addEventListener('click', zoomDec);
 
-
 function zoomInc () {
-  let heightImg = modal.offsetHeight;
+  let heightImg = galleryBigImgWitche.offsetHeight;
+  let widthImg = galleryBigImgWitche.offsetWidth;
 
+  widthImg += 50;
   heightImg += 50;
 
-  modal.style.height = heightImg + 'px';
+  galleryBigImgWitche.style.height = heightImg + 'px';
+  galleryBigImgWitche.style.width = heightImg + 'px';
 }
 
 function zoomDec () {
-  let heightImg = modal.offsetHeight;
+  let heightImg = galleryBigImgWitche.offsetHeight;
+  let widthImg = galleryBigImgWitche.offsetWidth;
 
+  widthImg -= 50;
   heightImg -= 50;
 
-  modal.style.height = heightImg + 'px';
+  galleryBigImgWitche.style.height = heightImg + 'px';
+  galleryBigImgWitche.style.width = heightImg + 'px';
 }
