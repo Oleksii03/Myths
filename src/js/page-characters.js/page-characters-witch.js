@@ -516,39 +516,60 @@ const zoomBtnPlus = document.querySelector('.js-btn-plus');
 const zoomBtnMinus = document.querySelector('.js-btn-minus');
 
 zoomBtnPlus.addEventListener('click', zoomInc);
-zoomBtnMinus.addEventListener('click', zoomDec);
+// zoomBtnMinus.addEventListener('click', zoomDec);
 
 function zoomInc () {
-  let heightImg = galleryBigImgWitche.offsetHeight;
-  let widthImg = galleryBigImgWitche.offsetWidth;
 
-  widthImg += 10;
-  heightImg += 50;
+  zoom.increment();
 
-  galleryBigImgWitche.style.width = heightImg + 'px';
-  galleryBigImgWitche.style.height = heightImg + 'px';
+  // let heightImg = galleryBigImgWitche.offsetHeight;
+  // let widthImg = galleryBigImgWitche.offsetWidth;
+
+  // widthImg += 50;
+  // heightImg += 50;
+
+  // galleryBigImgWitche.style.width = heightImg + 'px';
+  // galleryBigImgWitche.style.height = heightImg + 'px';
 }
 
-function zoomDec () {
-  let heightImg = galleryBigImgWitche.offsetHeight;
-  let widthImg = galleryBigImgWitche.offsetWidth;
+// function zoomDec () {
+//   let heightImg = galleryBigImgWitche.offsetHeight;
+//   let widthImg = galleryBigImgWitche.offsetWidth;
 
-  widthImg -= 50;
-  heightImg -= 50;
+//   widthImg -= 50;
+//   heightImg -= 50;
 
-  galleryBigImgWitche.style.height = heightImg + 'px';
-  galleryBigImgWitche.style.width = heightImg + 'px';
-}
+//   galleryBigImgWitche.style.height = heightImg + 'px';
+//   galleryBigImgWitche.style.width = heightImg + 'px';
+// }
 
 class Zoom {
+
   constructor(width, height) {
     this.width = width;
     this.height = height;
   }
 
+  increment () {
+
+    // if (this.width <= 0) {
+    //   this.width = 100;
+    //   console.log(this.width);
+    // }
+
+    let widthtImg = this.width += 5;
+    let heightImg = this.height += 10;
+
+    galleryBigImgWitche.style.height = heightImg + '%';
+    galleryBigImgWitche.style.width = widthtImg + '%';
+
+    console.log(this.width);
+  }
+
+  decrement () {
+
+  }
 
 }
 
-let zoom = new Zoom(galleryBigImgWitche.offsetHeight, galleryBigImgWitche.offsetWidth);
-
-console.log(zoom);
+let zoom = new Zoom(100, 100);
