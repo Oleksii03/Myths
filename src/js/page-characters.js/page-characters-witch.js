@@ -522,7 +522,7 @@ function zoomInc () {
   let heightImg = galleryBigImgWitche.offsetHeight;
   let widthImg = galleryBigImgWitche.offsetWidth;
 
-  widthImg += 50;
+  widthImg += 10;
   heightImg += 50;
 
   galleryBigImgWitche.style.width = heightImg + 'px';
@@ -539,3 +539,16 @@ function zoomDec () {
   galleryBigImgWitche.style.height = heightImg + 'px';
   galleryBigImgWitche.style.width = heightImg + 'px';
 }
+
+class Zoom {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+
+}
+
+let zoom = new Zoom(galleryBigImgWitche.offsetHeight, galleryBigImgWitche.offsetWidth);
+
+console.log(zoom);
