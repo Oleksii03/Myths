@@ -105,6 +105,9 @@ function onCreateContentUkr (e) {
         zoomBtnMinus.classList.remove('is-hidden');
       }
 
+      galleryBigImgWitche.style.height = 100 + '%';
+      galleryBigImgWitche.style.width = 100 + '%';
+
       galleryBigImgWitche.src = target.src;
 
       [...currentTarget.children].forEach((li) => {
@@ -516,7 +519,7 @@ const zoomBtnPlus = document.querySelector('.js-btn-plus');
 const zoomBtnMinus = document.querySelector('.js-btn-minus');
 
 zoomBtnPlus.addEventListener('click', zoomInc);
-// zoomBtnMinus.addEventListener('click', zoomDec);
+zoomBtnMinus.addEventListener('click', zoomDec);
 
 function zoomInc () {
 
@@ -532,23 +535,28 @@ function zoomInc () {
   // galleryBigImgWitche.style.height = heightImg + 'px';
 }
 
-// function zoomDec () {
-//   let heightImg = galleryBigImgWitche.offsetHeight;
-//   let widthImg = galleryBigImgWitche.offsetWidth;
+function zoomDec () {
 
-//   widthImg -= 50;
-//   heightImg -= 50;
+  zoom.decrement();
+  // let heightImg = galleryBigImgWitche.offsetHeight;
+  // let widthImg = galleryBigImgWitche.offsetWidth;
 
-//   galleryBigImgWitche.style.height = heightImg + 'px';
-//   galleryBigImgWitche.style.width = heightImg + 'px';
-// }
+  // widthImg -= 50;
+  // heightImg -= 50;
+
+  // galleryBigImgWitche.style.height = heightImg + 'px';
+  // galleryBigImgWitche.style.width = heightImg + 'px';
+}
 
 class Zoom {
 
-  constructor(width, height) {
-    this.width = width;
-    this.height = height;
-  }
+  height = 100;
+  width = 100;
+
+  // constructor(width, height) {
+  //   this.width = width;
+  //   this.height = height;
+  // }
 
   increment () {
 
@@ -563,11 +571,19 @@ class Zoom {
     galleryBigImgWitche.style.height = heightImg + '%';
     galleryBigImgWitche.style.width = widthtImg + '%';
 
-    console.log(this.width);
+    galleryBigImgWitche.style.objectFit = 'cover';
+
+    console.log(widthtImg);
   }
 
   decrement () {
+    let widthtImg = this.width -= 5;
+    let heightImg = this.height -= 10;
 
+    galleryBigImgWitche.style.height = heightImg + '%';
+    galleryBigImgWitche.style.width = widthtImg + '%';
+
+    galleryBigImgWitche.style.objectFit = 'cover';
   }
 
 }
