@@ -522,70 +522,58 @@ zoomBtnPlus.addEventListener('click', zoomInc);
 zoomBtnMinus.addEventListener('click', zoomDec);
 
 function zoomInc () {
+  galleryBigImgWitche.style.objectFit = 'cover';
+  galleryBigImgWitche.style.objectPosition = 'top';
 
-  zoom.increment();
+  let heightImg = galleryBigImgWitche.offsetHeight;
+  let widthImg = galleryBigImgWitche.offsetWidth;
 
-  // let heightImg = galleryBigImgWitche.offsetHeight;
-  // let widthImg = galleryBigImgWitche.offsetWidth;
+  widthImg += 50;
+  heightImg += 50;
 
-  // widthImg += 50;
-  // heightImg += 50;
-
-  // galleryBigImgWitche.style.width = heightImg + 'px';
-  // galleryBigImgWitche.style.height = heightImg + 'px';
+  galleryBigImgWitche.style.width = widthImg + 'px';
+  galleryBigImgWitche.style.height = heightImg + 'px';
 }
 
 function zoomDec () {
+  let heightImg = galleryBigImgWitche.offsetHeight;
+  let widthImg = galleryBigImgWitche.offsetWidth;
 
-  zoom.decrement();
-  // let heightImg = galleryBigImgWitche.offsetHeight;
-  // let widthImg = galleryBigImgWitche.offsetWidth;
+  widthImg -= 50;
+  heightImg -= 50;
 
-  // widthImg -= 50;
-  // heightImg -= 50;
-
-  // galleryBigImgWitche.style.height = heightImg + 'px';
-  // galleryBigImgWitche.style.width = heightImg + 'px';
+  galleryBigImgWitche.style.width = widthImg + 'px';
+  galleryBigImgWitche.style.height = heightImg + 'px';
 }
 
-class Zoom {
 
-  height = 100;
-  width = 100;
+// class Zoom {
 
-  // constructor(width, height) {
-  //   this.width = width;
-  //   this.height = height;
-  // }
+//   height = 100;
+//   width = 100;
 
-  increment () {
+//   increment () {
 
-    // if (this.width <= 0) {
-    //   this.width = 100;
-    //   console.log(this.width);
-    // }
+//     // console.log(widthImg);
 
-    let widthtImg = this.width += 5;
-    let heightImg = this.height += 10;
+//     this.width += 5;
+//     this.height += 10;
 
-    galleryBigImgWitche.style.height = heightImg + '%';
-    galleryBigImgWitche.style.width = widthtImg + '%';
+//     galleryBigImgWitche.style.width = this.width + '%';
+//     galleryBigImgWitche.style.height = this.height + '%';
 
-    galleryBigImgWitche.style.objectFit = 'cover';
+//     galleryBigImgWitche.style.objectFit = 'cover';
+//   }
 
-    console.log(widthtImg);
-  }
+//   decrement () {
 
-  decrement () {
-    let widthtImg = this.width -= 5;
-    let heightImg = this.height -= 10;
+//     widthImg -= 50;
+//     heightImg -= 50;
 
-    galleryBigImgWitche.style.height = heightImg + '%';
-    galleryBigImgWitche.style.width = widthtImg + '%';
+//     galleryBigImgWitche.style.height = heightImg + 'px';
+//     galleryBigImgWitche.style.width = widthImg + 'px';
+//   }
 
-    galleryBigImgWitche.style.objectFit = 'cover';
-  }
+// }
 
-}
-
-let zoom = new Zoom(100, 100);
+// let zoom = new Zoom();
