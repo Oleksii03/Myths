@@ -536,6 +536,8 @@ function zoomInc () {
 }
 
 function zoomDec () {
+  galleryBigImgWitche.style.objectPosition = 'center';
+
   let heightImg = galleryBigImgWitche.offsetHeight;
   let widthImg = galleryBigImgWitche.offsetWidth;
 

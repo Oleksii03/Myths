@@ -76,9 +76,10 @@
 
 .borovik-modal__img {
   object-fit: contain;
-  object-position: center;
+  object-position: 50%;
   // object-position: center 35%;
   height: 100%;
+  margin: auto;
 }
 
 // ------backdrop-borovik-gallery-wicher----------
