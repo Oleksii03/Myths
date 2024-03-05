@@ -73,6 +73,11 @@ function onCreateContentUkr (e) {
     if (bigImgId === 1) {
       galleryBigImgWitche.closest('picture').hidden = true;
       witcheGalleryBigVideo.hidden = false;
+      zoomBtnPlus.classList.add('is-hidden');
+      zoomBtnMinus.classList.add('is-hidden');
+    } else {
+      zoomBtnPlus.classList.remove('is-hidden');
+      zoomBtnMinus.classList.remove('is-hidden');
     }
 
     galleryBigImgWitche.src = target.src;
@@ -91,9 +96,13 @@ function onCreateContentUkr (e) {
       if (liItemId === 1) {
         galleryBigImgWitche.closest('picture').hidden = true;
         witcheGalleryBigVideo.hidden = false;
+        zoomBtnPlus.classList.add('is-hidden');
+        zoomBtnMinus.classList.add('is-hidden');
       } else {
         galleryBigImgWitche.closest('picture').hidden = false;
         witcheGalleryBigVideo.hidden = true;
+        zoomBtnPlus.classList.remove('is-hidden');
+        zoomBtnMinus.classList.remove('is-hidden');
       }
 
       galleryBigImgWitche.src = target.src;
@@ -503,9 +512,6 @@ function createGalleryYennefer () {
 
 // --------------------------------------
 
-// const smallGallery = document.querySelector('.js-small-gallery');
-// const modal = document.querySelector('.js-witche-modal');
-
 const zoomBtnPlus = document.querySelector('.js-btn-plus');
 const zoomBtnMinus = document.querySelector('.js-btn-minus');
 
@@ -519,8 +525,8 @@ function zoomInc () {
   widthImg += 50;
   heightImg += 50;
 
-  galleryBigImgWitche.style.height = heightImg + 'px';
   galleryBigImgWitche.style.width = heightImg + 'px';
+  galleryBigImgWitche.style.height = heightImg + 'px';
 }
 
 function zoomDec () {

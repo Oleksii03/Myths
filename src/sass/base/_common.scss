@@ -1,7 +1,7 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
 * {
-overscroll-behavior: none;
+  overscroll-behavior: none;
 }
 
 ::-webkit-scrollbar {
@@ -53,13 +53,6 @@ img {
   width: 100%;
 }
 
-// .js-witche-modal {
-//   overflow: auto;
-// }
-
-.modal-wrapper {
-  overflow: auto;
-}
 
 button {
   cursor: pointer;
