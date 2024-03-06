@@ -91,6 +91,8 @@ function onCreateContentUkr (e) {
 
       if (target.tagName !== 'IMG') return;
 
+      galleryBigImgWitche.style.cssText = "width:100%; height:100%;";
+
       const liItemId = Number(target.closest('LI').dataset.id);
 
       if (liItemId === 1) {
@@ -104,9 +106,6 @@ function onCreateContentUkr (e) {
         zoomBtnPlus.classList.remove('is-hidden');
         zoomBtnMinus.classList.remove('is-hidden');
       }
-
-      galleryBigImgWitche.style.height = 100 + '%';
-      galleryBigImgWitche.style.width = 100 + '%';
 
       galleryBigImgWitche.src = target.src;
 
@@ -517,18 +516,23 @@ function createGalleryYennefer () {
 
 const zoomBtnPlus = document.querySelector('.js-btn-plus');
 const zoomBtnMinus = document.querySelector('.js-btn-minus');
+const container = document.querySelector('.backdrop-borovik__container');
 
 zoomBtnPlus.addEventListener('click', zoomInc);
 zoomBtnMinus.addEventListener('click', zoomDec);
 
 function zoomInc () {
-  galleryBigImgWitche.style.objectFit = 'cover';
-  galleryBigImgWitche.style.objectPosition = 'top';
+
+  if (container.offsetWidth <= 360) {
+    galleryBigImgWitche.style.objectFit = 'cover';
+    galleryBigImgWitche.style.objectPosition = 'top';
+    console.log('hello');
+  }
 
   let heightImg = galleryBigImgWitche.offsetHeight;
   let widthImg = galleryBigImgWitche.offsetWidth;
 
-  widthImg += 50;
+  widthImg += 25;
   heightImg += 50;
 
   galleryBigImgWitche.style.width = widthImg + 'px';
@@ -541,7 +545,7 @@ function zoomDec () {
   let heightImg = galleryBigImgWitche.offsetHeight;
   let widthImg = galleryBigImgWitche.offsetWidth;
 
-  widthImg -= 50;
+  widthImg -= 25;
   heightImg -= 50;
 
   galleryBigImgWitche.style.width = widthImg + 'px';
