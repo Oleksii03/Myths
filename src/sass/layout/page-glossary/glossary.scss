@@ -1,0 +1,78 @@
+.glossary-section__title {
+  color: var(--accent-text-color);
+  margin-bottom: 20px;
+  font-size: 28px;
+  line-height: 128%;
+
+  @media (min-width: 790px) {
+    margin-bottom: 24px;
+    font-size: 36px;
+    line-height: 122%;
+  }
+
+  @media (min-width: 1200px) {
+    margin-bottom: 22px;
+    font-size: 45px;
+    line-height: 115%;
+  }
+}
+
+.glossary-search__title {
+  margin-bottom: 20px;
+}
+
+// ----pagination-box------------
+
+.pagination-box {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 460px
+}
+
+.pagination__list {
+  @extend .pagination-box;
+  margin: 0 auto;
+  column-gap: 16px;
+}
+
+.pagination__item {
+  border: 1px solid var(--white-base-color);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 790px) {
+    width: 56px;
+  }
+}
+
+.pagination__link {
+  padding: 6px 12px 6px 12px;
+
+  &_book {
+    padding: 0;
+  }
+}
+
+.pagination__btn {
+  padding: 5px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid var(--white-base-color);
+}
+
+.pagination__svg-arrow-prev,
+.pagination__svg-arrow-next {
+  width: 30px;
+  height: 30px;
+}
+
+.pagination__svg-book {
+  display: block;
+  width: 34px;
+  height: 30px;
+}

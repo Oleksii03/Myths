@@ -1,11 +1,10 @@
 <section class="bestiary-section">
   <div class="bestiary-section__container container">
 
-    <h1 class="bestiary-section__title" style="padding: 0;">Глосарій</h1>
+    <h1 class="glossary-section__title">Глосарій</h1>
 
     <div>
-
-      <h2 class="backdrop-search__title" style="margin-bottom: 20px;">Пошук</h2>
+      <h2 class="glossary-search__title">Пошук</h2>
 
       <form class="backdrop-search__form form-search">
         <div class="form-search__wrapper">
@@ -37,9 +36,41 @@
       </form>
     </div>
 
+    <div class="pagination-box">
+      <button class="pagination__btn pagination__btn_prev" type="button">
+        <svg class="pagination__svg-arrow-prev">
+          <use href="./images/sprite.svg#icon-arrow-prev"></use>
+        </svg>
+      </button>
+      <ul class="pagination__list">
+        <li class="pagination__item">
+          <a class="pagination__link" href="#borovik">Б</a>
+        </li>
+        <li class="pagination__item">
+          <a class="pagination__link" href="#griffin">Г</a>
+        </li>
+        <li class="pagination__item">
+          <a class="pagination__link" href="#domovik">Д</a>
+        </li>
+        <li class="pagination__item">
+          <a class="pagination__link pagination__link_book" href="#">
+            <svg class="pagination__svg-book">
+              <use href="./images/sprite.svg#icon-book"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <button class="pagination__btn pagination__btn_next" type="button">
+        <svg class="pagination__svg-arrow-next">
+          <use href="./images/sprite.svg#icon-arrow-next"></use>
+        </svg>
+      </button>
+    </div>
+
+
     <!-- card list -->
     <ul class="bestiary-section__list">
-      <li class="bestiary-list__item bestiary-item">
+      <li id="borovik" class="bestiary-list__item bestiary-item">
         <div class="bestiary-item__heder">
           <svg width="40" height="40" class="bestiary-item__logo">
             <use href="./images/sprite.svg#icon-logo-ua"></use>
@@ -86,7 +117,7 @@
         </div>
       </li>
 
-      <li class="bestiary-list__item bestiary-item">
+      <li id="griffin" class="bestiary-list__item bestiary-item">
         <div class="bestiary-item__heder">
           <svg width="40" height="40" class="bestiary-item__logo">
             <use href="./images/sprite.svg#icon-logo-ua"></use>
@@ -133,7 +164,7 @@
         </div>
       </li>
 
-      <li class="bestiary-list__item bestiary-item">
+      <li id="domovik" class="bestiary-list__item bestiary-item">
         <div class="bestiary-item__heder">
           <svg width="40" height="40" class="bestiary-item__logo">
             <use href="./images/sprite.svg#icon-logo-ua"></use>
