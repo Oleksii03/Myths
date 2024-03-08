@@ -76,3 +76,75 @@
   width: 34px;
   height: 30px;
 }
+
+.glossary-item {
+  border-radius: 12px;
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+
+  @media (min-width: 790px) {
+    background-color: var(--dark-gray-color);
+    grid-template-columns: 55% 45%;
+    display: grid;
+    position: relative;
+  }
+}
+
+.bestiary-list__item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+// ----------------------
+.bestiary-item__sup-header {
+  margin-bottom: 20px;
+  color: rgb(225, 227, 227);
+}
+
+.sup-header__character {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 32px;
+}
+
+.sup-header__text {
+  margin-top: 16px;
+
+  font-family: var(--secondary-font);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+// ----used-sources----
+.used-sources {
+  padding-bottom: 104px;
+  color: rgb(225, 227, 227);
+
+  &__title {
+    font-size: 24px;
+    line-height: calc(32px / 24px);
+
+    margin-bottom: 16px;
+  }
+
+  &__sub-title {
+    font-family: var(--secondary-font);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: calc(40px / 22px);
+  }
+}
+
+.used-sources__list {
+  font-family: var(--secondary-font);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: calc(40px / 22px);
+}
+
+.used-sources__item>br {
+  @media (min-width: 580px) {
+    display: none;
+  }
+}
