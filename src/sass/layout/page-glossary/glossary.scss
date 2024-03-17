@@ -143,8 +143,20 @@
   line-height: calc(40px / 22px);
 }
 
-.used-sources__item>br {
+.used-sources__item a>br {
   @media (min-width: 580px) {
     display: none;
+  }
+}
+
+.used-sources__item {
+  &:nth-child(1) {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &:nth-child(2) {
+    text-decoration: underline;
+    cursor: pointer;
   }
 }
