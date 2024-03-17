@@ -8,7 +8,6 @@ import whitch2 from '../../images/characters/Witche/witch-img-2.jpg';
 import whitch3 from '../../images/characters/Witche/witch-img-3.jpg';
 import whitch4 from '../../images/characters/Witche/witch-img-4.jpg';
 
-
 import Yennefer from '../../images/characters/Yennefer.jpg';
 import Yennefer2 from '../../images/characters/Yennefer/Yennefer-img-2.jpg';
 import Yennefer3 from '../../images/characters/Yennefer/Yennefer-img-3.jpg';
@@ -296,6 +295,8 @@ function onCreateContentWitcher (e) {
     if (bigImgId === 1) {
       galleryBigImgYennefer.closest('picture').hidden = true;
       yenneferGalleryBigVideo.hidden = false;
+      zoomBtnPlusY.classList.add('is-hidden');
+      zoomBtnMinusY.classList.add('is-hidden');
     }
 
     galleryBigImgYennefer.src = target.src;
@@ -309,14 +310,20 @@ function onCreateContentWitcher (e) {
 
       if (target.tagName !== 'IMG') return;
 
+      galleryBigImgYennefer.style.cssText = "width:100%; height:100%;";
+
       const liItemId = Number(target.closest('LI').dataset.id);
 
       if (liItemId === 1) {
         galleryBigImgYennefer.closest('picture').hidden = true;
         yenneferGalleryBigVideo.hidden = false;
+        zoomBtnPlusY.classList.add('is-hidden');
+        zoomBtnMinusY.classList.add('is-hidden');
       } else {
         galleryBigImgYennefer.closest('picture').hidden = false;
         yenneferGalleryBigVideo.hidden = true;
+        zoomBtnPlusY.classList.remove('is-hidden');
+        zoomBtnMinusY.classList.remove('is-hidden');
       }
 
       galleryBigImgYennefer.src = target.src;
@@ -512,10 +519,11 @@ function createGalleryYennefer () {
 };
 
 
-// --------------------------------------
+// ------------ZOOM--------------------------
 
 const zoomBtnPlus = document.querySelector('.js-btn-plus');
 const zoomBtnMinus = document.querySelector('.js-btn-minus');
+
 const container = document.querySelector('.backdrop-borovik__container');
 
 zoomBtnPlus.addEventListener('click', zoomInc);
@@ -552,34 +560,41 @@ function zoomDec () {
   galleryBigImgWitche.style.height = heightImg + 'px';
 }
 
+// ----------Yennefer------------------------
 
-// class Zoom {
+const zoomBtnPlusY = document.querySelector('.js-btn-plus-y');
+const zoomBtnMinusY = document.querySelector('.js-btn-minus-y');
 
-//   height = 100;
-//   width = 100;
+zoomBtnPlusY.addEventListener('click', zoomIncY);
+zoomBtnMinusY.addEventListener('click', zoomDncY);
 
-//   increment () {
+function zoomIncY () {
 
-//     // console.log(widthImg);
+  if (container.offsetWidth <= 360) {
+    galleryBigImgYennefer.style.objectFit = 'cover';
+    galleryBigImgYennefer.style.objectPosition = 'top';
+    console.log('hello');
+  }
 
-//     this.width += 5;
-//     this.height += 10;
+  let heightImg = galleryBigImgYennefer.offsetHeight;
+  let widthImg = galleryBigImgYennefer.offsetWidth;
 
-//     galleryBigImgWitche.style.width = this.width + '%';
-//     galleryBigImgWitche.style.height = this.height + '%';
+  widthImg += 25;
+  heightImg += 50;
 
-//     galleryBigImgWitche.style.objectFit = 'cover';
-//   }
+  galleryBigImgYennefer.style.width = widthImg + 'px';
+  galleryBigImgYennefer.style.height = heightImg + 'px';
+}
 
-//   decrement () {
+function zoomDncY () {
+  galleryBigImgYennefer.style.objectPosition = 'center';
 
-//     widthImg -= 50;
-//     heightImg -= 50;
+  let heightImg = galleryBigImgYennefer.offsetHeight;
+  let widthImg = galleryBigImgYennefer.offsetWidth;
 
-//     galleryBigImgWitche.style.height = heightImg + 'px';
-//     galleryBigImgWitche.style.width = widthImg + 'px';
-//   }
+  widthImg -= 25;
+  heightImg -= 50;
 
-// }
-
-// let zoom = new Zoom();
+  galleryBigImgYennefer.style.width = widthImg + 'px';
+  galleryBigImgYennefer.style.height = heightImg + 'px';
+}
