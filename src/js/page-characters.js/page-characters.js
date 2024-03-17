@@ -75,6 +75,8 @@ function onCreateContentUkr (e) {
     if (bigImgId === 1) {
       kozakModalBigImg.closest('picture').hidden = true;
       kozakGalleryBigVideo.hidden = false;
+      zoomBtnPlus.classList.add('is-hidden');
+      zoomBtnMinus.classList.add('is-hidden');
     }
 
     kozakModalBigImg.src = target.src;
@@ -88,14 +90,20 @@ function onCreateContentUkr (e) {
 
       if (target.tagName !== 'IMG') return;
 
+      kozakModalBigImg.style.cssText = "width:100%; height:100%;";
+
       const liItemId = Number(target.closest('LI').dataset.id);
 
       if (liItemId === 1) {
         kozakModalBigImg.closest('picture').hidden = true;
         kozakGalleryBigVideo.hidden = false;
+        zoomBtnPlus.classList.add('is-hidden');
+        zoomBtnMinus.classList.add('is-hidden');
       } else {
         kozakModalBigImg.closest('picture').hidden = false;
         kozakGalleryBigVideo.hidden = true;
+        zoomBtnPlus.classList.remove('is-hidden');
+        zoomBtnMinus.classList.remove('is-hidden');
       }
 
       kozakModalBigImg.src = target.src;
@@ -263,6 +271,7 @@ function createGalleryUkr () {
       <button class="gallery-borovik__btn js-gallery-btn-wich" type="button">У грі Відьмак</button>`;
 };
 
+// -------Witcher---------------
 
 function onCreateContentWitcher (e) {
   btnBox.classList.add('characters-btn__active');
@@ -296,6 +305,8 @@ function onCreateContentWitcher (e) {
     if (bigImgId === 1) {
       witcherModalBigImg.closest('picture').hidden = true;
       witcherGalleryBigVideo.hidden = false;
+      zoomBtnPlusW.classList.add('is-hidden');
+      zoomBtnMinusW.classList.add('is-hidden');
     }
 
     witcherModalBigImg.src = target.src;
@@ -309,14 +320,20 @@ function onCreateContentWitcher (e) {
 
       if (target.tagName !== 'IMG') return;
 
+      witcherModalBigImg.style.cssText = "width:100%; height:100%;";
+
       const liItemId = Number(target.closest('LI').dataset.id);
 
       if (liItemId === 1) {
         witcherModalBigImg.closest('picture').hidden = true;
         witcherGalleryBigVideo.hidden = false;
+        zoomBtnPlusW.classList.add('is-hidden');
+        zoomBtnMinusW.classList.add('is-hidden');
       } else {
         witcherModalBigImg.closest('picture').hidden = false;
         witcherGalleryBigVideo.hidden = true;
+        zoomBtnPlusW.classList.remove('is-hidden');
+        zoomBtnMinusW.classList.remove('is-hidden');
       }
 
       witcherModalBigImg.src = target.src;
@@ -516,3 +533,84 @@ function createGalleryWitcher () {
 
   <button class="gallery-borovik__btn js-gallery-btn-ukr" type="button">В укр. міфології</button>`;
 };
+
+// ----------ZOOM-------------------
+
+const zoomBtnPlus = document.querySelector('.js-btn-plus');
+const zoomBtnMinus = document.querySelector('.js-btn-minus');
+
+console.log(zoomBtnPlus);
+
+const container = document.querySelector('.backdrop-borovik__container');
+
+zoomBtnPlus.addEventListener('click', zoomInc);
+zoomBtnMinus.addEventListener('click', zoomDec);
+
+function zoomInc () {
+
+  if (container.offsetWidth <= 360) {
+    kozakModalBigImg.style.objectFit = 'cover';
+    kozakModalBigImg.style.objectPosition = 'top';
+    console.log('hello');
+  }
+
+  let heightImg = kozakModalBigImg.offsetHeight;
+  let widthImg = kozakModalBigImg.offsetWidth;
+
+  widthImg += 25;
+  heightImg += 50;
+
+  kozakModalBigImg.style.width = widthImg + 'px';
+  kozakModalBigImg.style.height = heightImg + 'px';
+}
+
+function zoomDec () {
+  kozakModalBigImg.style.objectPosition = 'center';
+
+  let heightImg = kozakModalBigImg.offsetHeight;
+  let widthImg = kozakModalBigImg.offsetWidth;
+
+  widthImg -= 25;
+  heightImg -= 50;
+
+  kozakModalBigImg.style.width = widthImg + 'px';
+  kozakModalBigImg.style.height = heightImg + 'px';
+}
+
+// ------Witcher---------------------
+
+const zoomBtnPlusW = document.querySelector('.js-btn-plus-w');
+const zoomBtnMinusW = document.querySelector('.js-btn-minus-w');
+
+zoomBtnPlusW.addEventListener('click', zoomIncW);
+zoomBtnMinusW.addEventListener('click', zoomDncW);
+
+function zoomIncW () {
+  if (container.offsetWidth <= 360) {
+    witcherModalBigImg.style.objectFit = 'cover';
+    witcherModalBigImg.style.objectPosition = 'top';
+    console.log('hello');
+  }
+
+  let heightImg = witcherModalBigImg.offsetHeight;
+  let widthImg = witcherModalBigImg.offsetWidth;
+
+  widthImg += 25;
+  heightImg += 50;
+
+  witcherModalBigImg.style.width = widthImg + 'px';
+  witcherModalBigImg.style.height = heightImg + 'px';
+}
+
+function zoomDncW () {
+  witcherModalBigImg.style.objectPosition = 'center';
+
+  let heightImg = witcherModalBigImg.offsetHeight;
+  let widthImg = witcherModalBigImg.offsetWidth;
+
+  widthImg -= 25;
+  heightImg -= 50;
+
+  witcherModalBigImg.style.width = widthImg + 'px';
+  witcherModalBigImg.style.height = heightImg + 'px';
+}
