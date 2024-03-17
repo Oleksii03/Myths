@@ -152,7 +152,7 @@ function createMarcupUkr () {
   </div>
 
   <picture class="borovik-item__picture">
-    <a href="#">
+    <a href="#gallery-k">
       <img class="borovik-item__img borovik-item__img-ukr" src="${kozak}" alt="${kozak}"
         loading="lazy">
     </a>
@@ -227,7 +227,7 @@ function createGalleryUkr () {
         <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
       </div>
       
-      <ul class="gallery-character__list js-gallery-character-urk">
+      <ul id="gallery-k" class="gallery-character__list js-gallery-character-urk">
 
         <li class="gallery-character__item">
           <img data-id="1" class="gallery-character__img" src="${kozak}"
@@ -373,7 +373,7 @@ function createMarcupWitcher () {
         </div>
 
         <picture class="borovik-item__picture">
-          <a href="#">
+          <a href="#gallery-G">
             <img class="borovik-item__img borovik-item__img-witcher" src="${Geralt}" alt="Geralt"
               loading="lazy">
           </a>
@@ -492,7 +492,7 @@ function createGalleryWitcher () {
     <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
   </div>
   
-  <ul class="gallery-character__list js-gallery-witcher">
+  <ul id="gallery-G" class="gallery-character__list js-gallery-witcher">
 
     <li class="gallery-character__item">
       <img data-id="1" class="gallery-character__img" src="${Geralt}"

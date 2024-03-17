@@ -190,7 +190,7 @@ function createMarcupGriffUkr () {
   </div>
 
   <picture class="borovik-item__picture">
-    <a href="#">
+    <a href="#gallery">
       <img class="borovik-item__img borovik-item__img-ukr" src="${griffin1}" alt="#"
         loading="lazy">
     </a>
@@ -252,7 +252,7 @@ function createGalleryGriffinUkr () {
         <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
       </div>
 
-      <ul class="gallery-borovik__list js-gallery-griffin-urk">
+      <ul id="gallery" class="gallery-borovik__list js-gallery-griffin-urk">
 
         <li class="gallery-borovik__item gallery-borovik__item-col">
           <img data-id="1" class="gallery-borovik__img" src="${griffin1}" alt="griffin-1"
@@ -423,7 +423,7 @@ function createMarcupGriffWitcher () {
         </div>
 
         <picture class="borovik-item__picture">
-          <a href="#">
+          <a href="#gallery-w">
             <img class="borovik-item__img borovik-item__img-witcher" src="${griffinWihc1}" alt="spriggan"
               loading="lazy">
           </a>
@@ -541,7 +541,7 @@ function createGalleryGriffWitcher () {
 <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
 </div>
 
-<ul class="gallery-borovik__list js-gallery-griffin-witch">
+<ul id="gallery-w" class="gallery-borovik__list js-gallery-griffin-witch">
   <li class="gallery-borovik__item gallery-borovik__item-col">
     <img data-id="1" class="gallery-borovik__img gallery-borovik__img-col gallery-borovik__img-wicher_col"
       src="${griffinWihc1}" alt="spriggan">

@@ -187,7 +187,7 @@ function createMarcupUkr () {
   </div>
 
   <picture class="borovik-item__picture">
-    <a href="#">
+    <a href="#gallery">
       <img class="borovik-item__img borovik-item__img-ukr" src="${domovik}" alt="domovik"
         loading="lazy">
     </a>
@@ -241,7 +241,7 @@ function createGalleryDomovikUkr () {
         <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
       </div>
 
-      <ul class="gallery-borovik__list js-gallery-borovik-urk">
+      <ul id="gallery" class="gallery-borovik__list js-gallery-borovik-urk">
 
         <li class="gallery-borovik__item gallery-borovik__item-col">
           <img data-id="1" class="gallery-borovik__img" src="${domovik}" alt="domovik"
@@ -410,7 +410,7 @@ function createMarcupWicher () {
         </div>
 
         <picture class="borovik-item__picture">
-          <a href="#">
+          <a href="#gallery-w">
             <img class="borovik-item__img borovik-item__img-witcher" src="${grigg}" alt="grigg"
               loading="lazy">
           </a>
@@ -503,7 +503,7 @@ function createGalleryDomovikWicher () {
 <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
 </div>
 
-<ul class="gallery-borovik__list js-gallery-borovik-wich">
+<ul id="gallery-w" class="gallery-borovik__list js-gallery-borovik-wich">
   <li class="gallery-borovik__item gallery-borovik__item-col">
     <img data-id="1" class="gallery-borovik__img gallery-borovik__img-col gallery-borovik__img-wicher_col"
       src="${grigg}" alt="domovik-witcher-item">
