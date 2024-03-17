@@ -12,6 +12,13 @@ import grigg2 from '../../images/page-domovik/Grigg_2.png';
 import grigg3 from '../../images/page-domovik/item-gall-witcher-3.jpg';
 
 // -----refs-------------------------------
+const zoomBtnPlus = document.querySelector('.js-btn-plus');
+const zoomBtnMinus = document.querySelector('.js-btn-minus');
+
+const zoomBtnPlusW = document.querySelector('.js-btn-plus-w');
+const zoomBtnMinusW = document.querySelector('.js-btn-minus-w');
+
+const container = document.querySelector('.backdrop-borovik__container');
 
 const mythBtnUkrElDom = document.querySelector('.js-myth-btns_ukr');
 const mythBtnWitcherElDom = document.querySelector('.js-myth-btn_witcher');
@@ -90,6 +97,9 @@ function onCreateMarcupUkrDom () {
     if (bigImgId === 1) {
       domovikModalBigImg.closest('picture').hidden = true;
       domovikGalleryBigVideo.hidden = false;
+
+      zoomBtnPlus.classList.add('is-hidden');
+      zoomBtnMinus.classList.add('is-hidden');
     }
 
     domovikModalBigImg.src = target.src;
@@ -102,6 +112,8 @@ function onCreateMarcupUkrDom () {
       const { target, currentTarget } = e;
 
       if (target.tagName !== 'IMG') return;
+
+      domovikModalBigImg.style.cssText = "width:100%; height:100%;";
 
       const liItemId = Number(target.closest('LI').dataset.id);
 
@@ -128,9 +140,13 @@ function onCreateMarcupUkrDom () {
       if (liItemId === 1) {
         domovikModalBigImg.closest('picture').hidden = true;
         domovikGalleryBigVideo.hidden = false;
+        zoomBtnPlus.classList.add('is-hidden');
+        zoomBtnMinus.classList.add('is-hidden');
       } else {
         domovikModalBigImg.closest('picture').hidden = false;
         domovikGalleryBigVideo.hidden = true;
+        zoomBtnPlus.classList.remove('is-hidden');
+        zoomBtnMinus.classList.remove('is-hidden');
       }
 
       domovikModalBigImg.src = target.src;
@@ -313,6 +329,9 @@ function onCreateMarcupWitcherDom (e) {
     if (bigImgId === 1) {
       domovikModalBigImgWitcher.closest('picture').hidden = true;
       domovikGalleryBigVideoWitcher.hidden = false;
+
+      zoomBtnPlusW.classList.add('is-hidden');
+      zoomBtnMinusW.classList.add('is-hidden');
     }
 
     domovikModalBigImgWitcher.src = target.src;
@@ -325,6 +344,8 @@ function onCreateMarcupWitcherDom (e) {
       const { target, currentTarget } = e;
 
       if (target.tagName !== 'IMG') return;
+
+      domovikModalBigImgWitcher.style.cssText = "width:100%; height:100%;";
 
       const liItemId = Number(target.closest('LI').dataset.id);
 
@@ -351,9 +372,15 @@ function onCreateMarcupWitcherDom (e) {
       if (liItemId === 1) {
         domovikModalBigImgWitcher.closest('picture').hidden = true;
         domovikGalleryBigVideoWitcher.hidden = false;
+
+        zoomBtnPlusW.classList.add('is-hidden');
+        zoomBtnMinusW.classList.add('is-hidden');
       } else {
         domovikModalBigImgWitcher.closest('picture').hidden = false;
         domovikGalleryBigVideoWitcher.hidden = true;
+
+        zoomBtnPlusW.classList.remove('is-hidden');
+        zoomBtnMinusW.classList.remove('is-hidden');
       }
 
       domovikModalBigImgWitcher.src = target.src;
@@ -520,3 +547,73 @@ function createGalleryDomovikWicher () {
 
 <button class="gallery-borovik__btn js-gallery-btn-ukr" type="button">В укр. міфології</button>`;
 };
+
+// ----ZOOM------------
+
+zoomBtnPlus.addEventListener('click', zoomInc);
+zoomBtnMinus.addEventListener('click', zoomDec);
+
+function zoomInc () {
+  if (container.offsetWidth <= 360) {
+    domovikModalBigImg.style.objectFit = 'cover';
+    domovikModalBigImg.style.objectPosition = 'top';
+    console.log('hello');
+  }
+
+  let heightImg = domovikModalBigImg.offsetHeight;
+  let widthImg = domovikModalBigImg.offsetWidth;
+
+  widthImg += 25;
+  heightImg += 50;
+
+  domovikModalBigImg.style.width = widthImg + 'px';
+  domovikModalBigImg.style.height = heightImg + 'px';
+}
+
+function zoomDec () {
+  domovikModalBigImg.style.objectPosition = 'center';
+
+  let heightImg = domovikModalBigImg.offsetHeight;
+  let widthImg = domovikModalBigImg.offsetWidth;
+
+  widthImg -= 25;
+  heightImg -= 50;
+
+  domovikModalBigImg.style.width = widthImg + 'px';
+  domovikModalBigImg.style.height = heightImg + 'px';
+}
+
+// ------Witcher----------------
+
+zoomBtnPlusW.addEventListener('click', zoomIncW);
+zoomBtnMinusW.addEventListener('click', zoomDncW);
+
+function zoomIncW () {
+  if (container.offsetWidth <= 360) {
+    domovikModalBigImgWitcher.style.objectFit = 'cover';
+    domovikModalBigImgWitcher.style.objectPosition = 'top';
+    console.log('hello');
+  }
+
+  let heightImg = domovikModalBigImgWitcher.offsetHeight;
+  let widthImg = domovikModalBigImgWitcher.offsetWidth;
+
+  widthImg += 25;
+  heightImg += 50;
+
+  domovikModalBigImgWitcher.style.width = widthImg + 'px';
+  domovikModalBigImgWitcher.style.height = heightImg + 'px';
+}
+
+function zoomDncW () {
+  domovikModalBigImgWitcher.style.objectPosition = 'center';
+
+  let heightImg = domovikModalBigImgWitcher.offsetHeight;
+  let widthImg = domovikModalBigImgWitcher.offsetWidth;
+
+  widthImg -= 25;
+  heightImg -= 50;
+
+  domovikModalBigImgWitcher.style.width = widthImg + 'px';
+  domovikModalBigImgWitcher.style.height = heightImg + 'px';
+}

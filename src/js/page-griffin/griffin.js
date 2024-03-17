@@ -343,6 +343,8 @@ function onCreateMarcupWitcherGriff (e) {
     if (bigImgId === 1) {
       griffinModalBigImgWitcher.closest('picture').hidden = true;
       griffinkGalleryBigVideoWitcher.hidden = false;
+      zoomBtnPlusW.classList.add('is-hidden');
+      zoomBtnMinusW.classList.add('is-hidden');
     }
 
     griffinModalBigImgWitcher.src = target.src;
@@ -384,9 +386,13 @@ function onCreateMarcupWitcherGriff (e) {
       if (liItemId === 1) {
         griffinModalBigImgWitcher.closest('picture').hidden = true;
         griffinkGalleryBigVideoWitcher.hidden = false;
+        zoomBtnPlusW.classList.add('is-hidden');
+        zoomBtnMinusW.classList.add('is-hidden');
       } else {
         griffinModalBigImgWitcher.closest('picture').hidden = false;
         griffinkGalleryBigVideoWitcher.hidden = true;
+        zoomBtnPlusW.classList.remove('is-hidden');
+        zoomBtnMinusW.classList.remove('is-hidden');
       }
 
       griffinModalBigImgWitcher.src = target.src;
@@ -612,4 +618,39 @@ function zoomDec () {
 
   griffinModalBigImg.style.width = widthImg + 'px';
   griffinModalBigImg.style.height = heightImg + 'px';
+}
+
+// -------Witcher--------------------
+
+zoomBtnPlusW.addEventListener('click', zoomIncW);
+zoomBtnMinusW.addEventListener('click', zoomDncW);
+
+function zoomIncW () {
+  if (container.offsetWidth <= 360) {
+    griffinModalBigImgWitcher.style.objectFit = 'cover';
+    griffinModalBigImgWitcher.style.objectPosition = 'top';
+    console.log('hello');
+  }
+
+  let heightImg = griffinModalBigImgWitcher.offsetHeight;
+  let widthImg = griffinModalBigImgWitcher.offsetWidth;
+
+  widthImg += 25;
+  heightImg += 50;
+
+  griffinModalBigImgWitcher.style.width = widthImg + 'px';
+  griffinModalBigImgWitcher.style.height = heightImg + 'px';
+}
+
+function zoomDncW () {
+  griffinModalBigImgWitcher.style.objectPosition = 'center';
+
+  let heightImg = griffinModalBigImgWitcher.offsetHeight;
+  let widthImg = griffinModalBigImgWitcher.offsetWidth;
+
+  widthImg -= 25;
+  heightImg -= 50;
+
+  griffinModalBigImgWitcher.style.width = widthImg + 'px';
+  griffinModalBigImgWitcher.style.height = heightImg + 'px';
 }
