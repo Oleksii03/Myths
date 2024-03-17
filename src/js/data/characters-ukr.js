@@ -24,7 +24,7 @@ export const charactersUkr = [
 export const charactersWitcher = [
   {
     name: 'Ґеральт з Рівії',
-    genus: 'Відтмак',
+    genus: 'Відьмак',
     img: Geralt,
     logo: '#witcher-icon',
     description: `Ґеральт з Рівії, «Білий Вовк» — головний герой літературного циклу романів ...`,
