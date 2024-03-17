@@ -12,6 +12,15 @@ import griffinWihc2 from '../../images/page-griffin/item-img-witc.2.jpg';
 import griffinWihc3 from '../../images/page-griffin/item-img-witc.3.jpg';
 
 // ---------refs-------------------------------
+const zoomBtnPlus = document.querySelector('.js-btn-plus');
+const zoomBtnMinus = document.querySelector('.js-btn-minus');
+
+const zoomBtnPlusW = document.querySelector('.js-btn-plus-w');
+const zoomBtnMinusW = document.querySelector('.js-btn-minus-w');
+
+const container = document.querySelector('.backdrop-borovik__container');
+
+console.log(container);
 
 const mythBtnUkrEl = document.querySelector('.js-myth-btns_ukr-griff');
 const mythBtnWitcherEl = document.querySelector('.js-myth-btn_witcher-griff');
@@ -92,6 +101,9 @@ function onCreateMarcupUkrGriff () {
     if (bigImgId === 1) {
       griffinModalBigImg.closest('picture').hidden = true;
       griffinkGalleryBigVideo.hidden = false;
+
+      zoomBtnPlus.classList.add('is-hidden');
+      zoomBtnMinus.classList.add('is-hidden');
     }
 
     griffinModalBigImg.src = target.src;
@@ -104,6 +116,8 @@ function onCreateMarcupUkrGriff () {
       const { target, currentTarget } = e;
 
       if (target.tagName !== 'IMG') return;
+
+      griffinModalBigImg.style.cssText = "width:100%; height:100%;";
 
       const liItemId = Number(target.closest('LI').dataset.id);
 
@@ -130,9 +144,13 @@ function onCreateMarcupUkrGriff () {
       if (liItemId === 1) {
         griffinModalBigImg.closest('picture').hidden = true;
         griffinkGalleryBigVideo.hidden = false;
+        zoomBtnPlus.classList.add('is-hidden');
+        zoomBtnMinus.classList.add('is-hidden');
       } else {
         griffinModalBigImg.closest('picture').hidden = false;
         griffinkGalleryBigVideo.hidden = true;
+        zoomBtnPlus.classList.remove('is-hidden');
+        zoomBtnMinus.classList.remove('is-hidden');
       }
 
       griffinModalBigImg.src = target.src;
@@ -338,6 +356,8 @@ function onCreateMarcupWitcherGriff (e) {
       const { target, currentTarget } = e;
 
       if (target.tagName !== 'IMG') return;
+
+      griffinModalBigImgWitcher.style.cssText = "width:100%; height:100%;";
 
       const liItemId = Number(target.closest('LI').dataset.id);
 
@@ -558,3 +578,38 @@ function createGalleryGriffWitcher () {
 
 <button class="gallery-borovik__btn js-gallery-btn-ukr" type="button">В укр. міфології</button>`;
 };
+
+// ----ZOOM------------
+
+zoomBtnPlus.addEventListener('click', zoomInc);
+zoomBtnMinus.addEventListener('click', zoomDec);
+
+function zoomInc () {
+  if (container.offsetWidth <= 360) {
+    griffinModalBigImg.style.objectFit = 'cover';
+    griffinModalBigImg.style.objectPosition = 'top';
+    console.log('hello');
+  }
+
+  let heightImg = griffinModalBigImg.offsetHeight;
+  let widthImg = griffinModalBigImg.offsetWidth;
+
+  widthImg += 25;
+  heightImg += 50;
+
+  griffinModalBigImg.style.width = widthImg + 'px';
+  griffinModalBigImg.style.height = heightImg + 'px';
+}
+
+function zoomDec () {
+  griffinModalBigImg.style.objectPosition = 'center';
+
+  let heightImg = griffinModalBigImg.offsetHeight;
+  let widthImg = griffinModalBigImg.offsetWidth;
+
+  widthImg -= 25;
+  heightImg -= 50;
+
+  griffinModalBigImg.style.width = widthImg + 'px';
+  griffinModalBigImg.style.height = heightImg + 'px';
+}
