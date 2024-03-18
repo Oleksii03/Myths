@@ -71,6 +71,8 @@
       line-height: 127.273%;
       color: var(--accent-text-color);
 
+      transition: all 200ms linear;
+
       &_active {
         color: #fff;
       }
@@ -86,7 +88,7 @@
     width: 24px;
     height: 24px;
     fill: var(--accent-text-color);
-    transition: fill 250ms linear;
+    transition: fill 200ms linear;
 
     &_active {
       fill: #fff;
@@ -96,6 +98,14 @@
       width: 32px;
       height: 32px;
     }
+  }
+
+  &__link:hover>.nav-box__link-text {
+    color: #fff;
+  }
+
+  &__link:hover>.nav-box__icon {
+    fill: #fff;
   }
 }
 
