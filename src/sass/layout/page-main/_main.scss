@@ -1,27 +1,32 @@
 .main {
   min-height: 100vh;
-  background-image: radial-gradient(at center, rgb(123, 65, 27), rgb(24, 23, 23) 70%);
+  background-color: #000000;
+
   background-repeat: no-repeat;
-  background-position: 0 0;
+  background-position: center center;
   background-size: cover;
 
-  // animation-name: gradient;
-  // animation-duration: 7000ms;
-  // animation-timing-function: linear;
-  // animation-iteration-count: infinite;
-  // animation-direction: alternate;
+  animation-name: gradient;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
-// @keyframes gradient {
-//   0% {
+@keyframes gradient {
+  0% {
+    background-image: url(../images/background-gradient/Property-Default.png);
+  }
 
-//   }
+  33% {
+    background-image: url(../images/background-gradient/Property-Variant2.png);
+  }
 
-//   50% {
+  66% {
+    background-image: url(../images/background-gradient/Property-Variant3.png);
+  }
 
-//   }
-
-//   100% {
-
-//   }
-// }
+  100% {
+    background-image: url(../images/background-gradient/Property-Variant4.png);
+  }
+}
