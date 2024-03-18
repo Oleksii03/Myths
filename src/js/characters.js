@@ -2,6 +2,7 @@ import { charactersUkr } from "./data/characters-ukr";
 import { charactersWitcher } from "./data/characters-ukr";
 
 import svg from '../images/sprite.svg';
+
 // -----refs ----------------------------
 const btnWitcher = document.querySelector('.characters-btn__witcher');
 const btnUkr = document.querySelector('.jscharacters-btn-ukr');
@@ -13,7 +14,6 @@ const sortBtnFlphabet = document.querySelector('.js-sort-btns-alphabet');
 const sortDropMenu = document.querySelector('.js-sort-btns-menu');
 
 sortBtnFlphabet.addEventListener('click', (e) => {
-  console.log(e);
   sortDropMenu.classList.toggle('is-hidden');
 });
 // ----/-refs ---------------------------
