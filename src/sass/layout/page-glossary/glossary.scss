@@ -160,3 +160,100 @@
     cursor: pointer;
   }
 }
+
+// ----BUTTON-------------------------
+
+.btn-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 15px;
+
+  text-align: center;
+
+
+  @media (max-width: 790px) {
+    font-size: 14px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-top: auto;
+  }
+
+  &__active {
+    background-color: var(--accent-text-color);
+    border-radius: 20px;
+    color: #3A3000;
+
+    flex-grow: 1;
+
+    @media (max-width: 340px) {
+      width: 130px;
+      padding: 15px 13px;
+    }
+
+    @media (min-width: 341px) {
+      width: 130px;
+      padding: 15px 5px;
+    }
+
+    @media (min-width: 580px) and (max-width: 789px) {
+      padding: 15px 5px;
+    }
+
+    @media (min-width: 790px) {
+      width: 140px;
+    }
+
+    @media (min-width: 1200px) {
+      width: 160px;
+      padding: 15px 10px;
+    }
+  }
+
+  &__inactive {
+    background-color: transparent;
+    border-radius: 20px;
+    outline: 1px solid #968E98;
+    flex-grow: 1;
+
+    color: var(--accent-text-color);
+
+    @media (max-width: 340px) {
+      width: 130px;
+      padding: 15px 13px;
+    }
+
+    @media (min-width: 341px) {
+      width: 130px;
+      padding: 15px 5px;
+    }
+
+    @media (min-width: 580px) and (max-width: 789px) {
+      padding: 15px 5px;
+    }
+
+    @media (min-width: 790px) {
+      width: 140px;
+    }
+
+    @media (min-width: 1200px) {
+      width: 160px;
+      padding: 15px 10px;
+    }
+  }
+}
+
+.glossary-body__text {
+  margin-bottom: 20px !important;
+}
+
+.glossary-item__img {
+  height: 200px;
+  object-fit: cover;
+  object-position: center 40% !important;
+
+  @media (min-width: 790px) {
+    height: 224px;
+  }
+}
