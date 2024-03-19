@@ -43,7 +43,6 @@
   }
 }
 
-
 .borovik-item__heder {
   @include flex;
   column-gap: 16px;
@@ -490,7 +489,7 @@
 
   &:hover {
     border-color: var(--accent-text-color);
-    box-shadow: inset 0px 0px 20px 4px rgba(223, 12, 12, 0.5);
+    box-shadow: inset 0 0 20px 4px #3A3000;
   }
 }
 
@@ -499,7 +498,7 @@
 
   &:hover {
     border-color: var(--accent-text-color);
-    box-shadow: inset 0px 0px 20px 4px rgba(223, 12, 12, 0.5);
+    box-shadow: inset 0 0 20px 4px #3A3000;
   }
 }
 
