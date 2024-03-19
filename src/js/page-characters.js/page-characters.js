@@ -232,7 +232,7 @@ function createGalleryUkr () {
   return `
       <div class="borovik__gallery-header gallery-borovik">
         <h2 class="gallery-borovik__title">Галерея</h2>
-        <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
+        <p class="gallery-borovik__link">Подивитись всі</p>
       </div>
       
       <ul id="gallery-k" class="gallery-character__list js-gallery-character-urk">
@@ -506,7 +506,7 @@ function createGalleryWitcher () {
   return `
   <div class="borovik__gallery-header gallery-borovik">
     <h2 class="gallery-borovik__title">Галерея</h2>
-    <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
+    <p class="gallery-borovik__link">Подивитись всі</p>
   </div>
   
   <ul id="gallery-G" class="gallery-character__list js-gallery-witcher">

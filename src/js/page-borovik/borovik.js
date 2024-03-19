@@ -263,7 +263,7 @@ function createGalleryBorovikUkr () {
   return `
       <div class="borovik__gallery-header gallery-borovik">
         <h2 class="gallery-borovik__title">Галерея</h2>
-        <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
+        <p class="gallery-borovik__link">Подивитись всі</p>
       </div>
 
       <ul id="gallery" class="gallery-borovik__list js-gallery-borovik-urk">
@@ -542,7 +542,7 @@ function createGalleryBorovikWicher () {
   return `
   <div class="borovik__gallery-header gallery-borovik">
   <h2 class="gallery-borovik__title">Галерея</h2>
-  <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
+  <p class="gallery-borovik__link">Подивитись всі</p>
   </div>
 
 <ul id="gallery-w" class="gallery-borovik__list js-gallery-borovik-wich">

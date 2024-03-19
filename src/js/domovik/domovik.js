@@ -8,7 +8,7 @@ import domovik2 from '../../images/page-domovik/item-gall-2.jpg';
 import domovik3 from '../../images/page-domovik/item-gall-3.jpg';
 
 import grigg from '../../images/beasts-witcher/grigg.jpg';
-import grigg2 from '../../images/page-domovik/Grigg_2.png';
+import grigg2 from '../../images/page-domovik/Grigg_2.jpg';
 import grigg3 from '../../images/page-domovik/item-gall-witcher-3.jpg';
 
 // -----refs-------------------------------
@@ -254,7 +254,7 @@ function createGalleryDomovikUkr () {
   return `
       <div class="borovik__gallery-header gallery-borovik">
         <h2 class="gallery-borovik__title">Галерея</h2>
-        <p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
+        <p class="gallery-borovik__link">Подивитись всі</p>
       </div>
 
       <ul id="gallery" class="gallery-borovik__list js-gallery-borovik-urk">
@@ -527,7 +527,7 @@ function createGalleryDomovikWicher () {
   return `
 <div class="borovik__gallery-header gallery-borovik">
 <h2 class="gallery-borovik__title">Галерея</h2>
-<p><a class="gallery-borovik__link" href="#">Подивитись всі</a></p>
+<p class="gallery-borovik__link">Подивитись всі</p>
 </div>
 
 <ul id="gallery-w" class="gallery-borovik__list js-gallery-borovik-wich">
