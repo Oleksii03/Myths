@@ -6,7 +6,7 @@ export const bestiaryUkr = [
   {
     name: "Боровик",
     description: `Боровик — (за слов'янською міфологією) один
-    з лісових духів, господар борів та`,
+    з лісових духів, господар борів та...`,
     image: borovik,
     ref: "./page-borovik.html",
   },
