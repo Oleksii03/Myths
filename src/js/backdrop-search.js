@@ -73,6 +73,6 @@ function markupError () {
   return `<picture>
       <source srcset="${witcherPC404}" media="(min-width: 1200px)">
       <source srcset="${witcherTab404}" media="(min-width: 768px)">
-      <img src="${witcherMob404}" alt="">
+      <img src="${witcherMob404}" alt="witcher-error">
   </picture>`;
 }
