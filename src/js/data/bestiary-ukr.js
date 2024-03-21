@@ -5,6 +5,7 @@ import goblin from '../../images/beasts-main/item-mob-3.jpg';
 export const bestiaryUkr = [
   {
     name: "Боровик",
+    searchName: "Боровик",
     description: `Боровик — (за слов'янською міфологією) один
     з лісових духів, господар борів та...`,
     image: borovik,
@@ -12,12 +13,14 @@ export const bestiaryUkr = [
   },
   {
     name: "Грифон (Гриф)",
+    searchName: "Грифон",
     description: `Грифони — суперечливі істоти, які одночасно об'єднують Небо і Землю ...`,
     image: griffin,
     ref: "./page-griffin.html",
   },
   {
     name: "Домовик",
+    searchName: "Домовик",
     description: `Домовик  — у слов'янських народів домашній дух, міфологічний господар ...`,
     image: goblin,
     ref: "./page-domovik.html",

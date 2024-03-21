@@ -5,6 +5,7 @@ import goblin from '../../images/beasts-witcher/grigg.jpg';
 export const bestiaryWitcher = [
   {
     name: "Боровик",
+    searchName: "Боровик",
     description: `Боровик (пол. Borowy, англ. Spriggan) — бестія у всесвіті Відьмака ...`,
     image: borovik,
     genus: "Релікти",
@@ -12,6 +13,7 @@ export const bestiaryWitcher = [
   },
   {
     name: "Грифон",
+    searchName: "Грифон",
     description: `Грифон — це істота з тілом, задніми ногами та хвостом лева і головою ...`,
     image: griffin,
     genus: "Гібриди",
@@ -19,6 +21,7 @@ export const bestiaryWitcher = [
   },
   {
     name: "Домовик",
+    searchName: "Домовик",
     description: `Домовик, гріг — це крихітний гуманоїд, пустотлива, але нешкідлива істота ...`,
     image: goblin,
     genus: "Людиноподібні",
