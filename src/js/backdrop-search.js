@@ -25,10 +25,22 @@ inputEl.addEventListener('change', (e) => {
 
 
 btnGlass.addEventListener('click', createMarkup);
+backdropSearch.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    createMarkup();
+  }
+});
+
+function searchСharacters () {
+  return [...bestiaryUkr, ...bestiaryWitcher].filter(el => el.name.toLocaleLowerCase() === searchValue);
+}
 
 function createMarkup () {
-  [...bestiaryUkr, ...bestiaryWitcher].filter(el => el.name.toLocaleLowerCase() === searchValue).map(el => {
-    console.log(el);
-  });
+  const result = searchСharacters();
+
+  console.log(result);
+  // .map(el => {
+  //   console.log(el);
+  // });
 }
 
