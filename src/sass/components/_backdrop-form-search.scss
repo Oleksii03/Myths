@@ -148,3 +148,17 @@
 }
 
 // ------/-history-box--------
+
+.search__container {
+  height: 75dvh;
+  overflow: auto;
+}
+
+.history-box {
+  margin-bottom: 20px;
+}
+
+.erroe-photo {
+  height: 100%;
+  object-fit: contain;
+}

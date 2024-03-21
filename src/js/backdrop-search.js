@@ -29,7 +29,6 @@ function onOpenBackdropSearch (e) {
   document.body.style.overflow = document.body.style.overflow ? '' : 'hidden';
 }
 
-
 //----search-logic---------
 
 const allCharacters = [...bestiaryUkr, ...bestiaryWitcher];
@@ -71,11 +70,12 @@ function createMarkup () {
 function markupContent () {
 
 }
+
 function markupError () {
-  return `<picture>
+  return `<picture class="erroe-photo">
       <source srcset="${witcherPC404}" media="(min-width: 1200px)">
       <source srcset="${witcherTab404}" media="(min-width: 768px)">
-      <img src="${witcherMob404}" alt="witcher-error">
+      <img class="erroe-img" src="${witcherMob404}" alt="witcher-error">
   </picture>`;
 }
 
