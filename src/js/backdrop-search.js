@@ -5,8 +5,8 @@ const backdropSearch = document.querySelector('.js-backdrop-search');
 const btnSearch = document.querySelector('.js-search-icon');
 
 const searchList = document.querySelector('.js-search-list');
-
-console.log(searchList);
+const inputEl = document.querySelector('.js-search-input');
+const btnGlass = document.querySelector('.js-btn-search');
 
 btnSearch.addEventListener('click', onOpenBackdropSearch);
 
@@ -16,7 +16,19 @@ function onOpenBackdropSearch (e) {
   document.body.style.overflow = document.body.style.overflow ? '' : 'hidden';
 }
 
+// -------------------------
+let searchValue = '';
 
-const allСharacters = [...bestiaryUkr, ...bestiaryWitcher];
+inputEl.addEventListener('change', (e) => {
+  searchValue = e.target.value.toLocaleLowerCase().trim();
+});
 
-allСharacters.filter(el => el.name.toLocaleLowerCase() === 'боровик').map(el => console.log(el));
+
+btnGlass.addEventListener('click', createMarkup);
+
+function createMarkup () {
+  [...bestiaryUkr, ...bestiaryWitcher].filter(el => el.name.toLocaleLowerCase() === searchValue).map(el => {
+    console.log(el);
+  });
+}
+
