@@ -18,11 +18,13 @@ const searchList = document.querySelector('.js-search-list');
 const searchContainer = document.querySelector('.js-search-container');
 const inputEl = document.querySelector('.js-search-input');
 const btnGlass = document.querySelector('.js-btn-search');
+const historyBtnClose = document.querySelector('.js-history-close');
 
 btnSearch.addEventListener('click', onOpenBackdropSearch);
 
 function onOpenBackdropSearch (e) {
   backdropSearch.classList.toggle('backdrop-search--hidden');
+  searchContainer.innerHTML = '';
 
   document.body.style.overflow = document.body.style.overflow ? '' : 'hidden';
 }
@@ -76,3 +78,8 @@ function markupError () {
       <img src="${witcherMob404}" alt="witcher-error">
   </picture>`;
 }
+
+historyBtnClose.addEventListener('click', () => {
+  searchContainer.innerHTML = '';
+  searchList.innerHTML = '';
+});
