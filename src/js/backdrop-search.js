@@ -3,11 +3,9 @@ import { bestiaryWitcher } from "./data/bestiary-witcher";
 
 import svg from '../images/sprite.svg';
 
-import witcherMob404 from '../images/base/Content-404-mob.jpg';
-import witcherTab404 from '../images/base/Content-404-tab.jpg';
-import witcherPC404 from '../images/base/PC-404.jpg';
-
-console.log(witcherMob404);
+import witcherMob404 from '../images/error-404/Mobile-404.png';
+import witcherTab404 from '../images/error-404/Tab-404.png';
+import witcherPC404 from '../images/error-404/PC-404.png';
 
 // -----refs ----------------------------
 
@@ -15,16 +13,18 @@ const backdropSearch = document.querySelector('.js-backdrop-search');
 const btnSearch = document.querySelector('.js-search-icon');
 
 const searchList = document.querySelector('.js-search-list');
-const searchContainer = document.querySelector('.js-search-container');
+// const searchContainer = document.querySelector('.js-search-container');
 const inputEl = document.querySelector('.js-search-input');
 const btnGlass = document.querySelector('.js-btn-search');
 const historyBtnClose = document.querySelector('.js-history-close');
+
+// ----/-refs ----------------------------
 
 btnSearch.addEventListener('click', onOpenBackdropSearch);
 
 function onOpenBackdropSearch (e) {
   backdropSearch.classList.toggle('backdrop-search--hidden');
-  searchContainer.innerHTML = '';
+  // searchContainer.innerHTML = '';
 
   document.body.style.overflow = document.body.style.overflow ? '' : 'hidden';
 }
@@ -59,27 +59,71 @@ function createMarkup () {
   const result = searchСharacters();
 
   if (!result.length) {
-    searchContainer.innerHTML = markupError();
+    searchList.innerHTML = markupError();
     return;
   }
 
-  searchList.innerHTML = markupContent();
+  searchList.innerHTML = markupContent(result);
 
 }
 
-function markupContent () {
+function markupContent (result) {
+  return result.map(({ name, description, image, ref }) => {
+    return `<li class="bestiary-list__item bestiary-item">
+    <div class="bestiary-item__heder">
+        <svg width="40" height="40" class="bestiary-item__logo">
+          <use href="${svg + '#icon-logo-ua'}"></use>
+        </svg> 
 
+      <div class="bestiary-item__content">
+        <h3 class="bestiary-item__title">${name}</h3>
+        <h4 class="bestiary-item__sub-title">Українська міфологія</h4>
+      </div>
+
+      <a href="#" class="bestiary-item__svg-more">
+        <svg width="18" height="18" class="bestiary-body__logo">
+          <use href="${svg + '#more-vertical'}"></use>
+        </svg> 
+      </a>
+    </div>
+
+    <picture class="bestiary-item__picture">
+      <a href="${ref}">
+        <img class="bestiary-item__img bestiary-item__img-ukr" src="${image}" alt="${name}" loading="lazy">
+      </a>
+    </picture>
+
+    <div class="bestiary-item__body bestiary-body">
+
+      <a class="bestiary-body__link-myth" href="#">
+        <svg width="18" height="18" class="bestiary-body__logo">
+          <use href="${svg + '#icon-logo-ua'}"></use>
+        </svg> 
+        Міф
+      </a>
+
+      <p class="bestiary-body__text">${description}</p>
+
+      <a class="bestiary-body__link-btn" href="${ref}">
+        Читати далі
+        <svg width="19" height="18" class="bestiary-item__logo">
+          <use href="${svg + '#arrow-up-right'}"></use>
+        </svg> 
+      </a>
+    </div>
+  </li>`;
+  }).join('');
 }
 
 function markupError () {
-  return `<picture class="erroe-photo">
+  return `<li><picture class="erroe-photo">
       <source srcset="${witcherPC404}" media="(min-width: 1200px)">
       <source srcset="${witcherTab404}" media="(min-width: 768px)">
       <img class="erroe-img" src="${witcherMob404}" alt="witcher-error">
-  </picture>`;
+  </picture></li>`;
 }
 
 historyBtnClose.addEventListener('click', () => {
-  searchContainer.innerHTML = '';
+  searchValue = '';
   searchList.innerHTML = '';
 });
