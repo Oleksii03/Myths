@@ -92,7 +92,7 @@ function markupContent (result) {
 
 <picture class="bestiary-item__picture">
   <a href="${ref}">
-    <img class="bestiary-item__img bestiary-item__img-ukr" src="${img}" alt="${name}" loading="lazy">
+    <img class="bestiary-item__img search-item__img" src="${img}" alt="${name}" loading="lazy">
   </a>
 </picture>
 

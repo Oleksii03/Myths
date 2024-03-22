@@ -163,7 +163,7 @@
   object-fit: contain;
 }
 
-// -----------------------
+// -----search-list-content------------------
 
 .search-list__content {
   padding-top: 24px;
@@ -198,12 +198,13 @@
 
 .bestiary-item {
   &:nth-child(2) img {
-    object-position: center 20%;
+    object-position: center 0% !important;
   }
 }
 
 .bestiary-item__heder {
   display: flex;
+  align-items: center;
   column-gap: 16px;
 
   padding: 12px 16px;
@@ -265,20 +266,16 @@
 .bestiary-item__img {
   max-height: 200px;
   object-fit: cover;
-  object-position: center;
-
-  &-witcher {
-    object-position: top;
-  }
-
-  &-ukr {
-    object-position: center 40%;
-  }
+  object-position: center 30%;
 
   @media (min-width: 790px) {
     max-height: 332px;
   }
 }
+
+// .search-item__img {
+//   object-position: center 20%;
+// }
 
 .bestiary-body {
   background-color: var(--dark-gray-color);
