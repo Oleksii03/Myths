@@ -7,6 +7,7 @@ import Yennefer from '../../images/characters/Yennefer.jpg';
 export const charactersUkr = [
   {
     name: 'Козак-характерник',
+    searchName: "Козак",
     genus: 'Козаки-характерники',
     img: kozak,
     description: `Відьма́к та Характе́рник (відьма́н) — персонаж слов'янської міфології, чаклун ...`,
@@ -14,6 +15,7 @@ export const charactersUkr = [
   },
   {
     name: 'Чародійки',
+    searchName: "Чародійки",
     genus: 'Чаклунки/Відьми',
     img: witch,
     description: `Ві́дьма, чаклу́нка (чародійка) — жінка, наділена чаклунськими здібностями ...`,
@@ -24,6 +26,7 @@ export const charactersUkr = [
 export const charactersWitcher = [
   {
     name: 'Ґеральт з Рівії',
+    searchName: "Геральт",
     genus: 'Відьмак',
     img: Geralt,
     logo: '#witcher-icon',
@@ -32,6 +35,7 @@ export const charactersWitcher = [
   },
   {
     name: 'Йеннефер',
+    searchName: "Йеннефер",
     genus: 'Чародійка',
     img: Yennefer,
     logo: '#icon-Magic-center',

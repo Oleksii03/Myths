@@ -1,5 +1,6 @@
 import { bestiaryUkr } from "./data/bestiary-ukr";
 import { bestiaryWitcher } from "./data/bestiary-witcher";
+import { charactersUkr, charactersWitcher } from "./data/characters-ukr";
 
 import svg from '../images/sprite.svg';
 
@@ -31,7 +32,9 @@ function onOpenBackdropSearch (e) {
 
 //----search-logic---------
 
-const allCharacters = [...bestiaryUkr, ...bestiaryWitcher];
+const allCharacters = [...bestiaryUkr, ...bestiaryWitcher, ...charactersUkr, ...charactersWitcher];
+
+console.log(allCharacters);
 
 inputEl.addEventListener('change', getValue);
 btnGlass.addEventListener('click', createMarkup);
@@ -64,7 +67,6 @@ function createMarkup () {
   }
 
   searchList.innerHTML = markupContent(result);
-
 }
 
 function markupContent (result) {
@@ -86,32 +88,33 @@ function markupContent (result) {
         </svg> 
       </a>
     </div>
+  </div>
 
-    <picture class="bestiary-item__picture">
-      <a href="${ref}">
-        <img class="bestiary-item__img bestiary-item__img-ukr" src="${image}" alt="${name}" loading="lazy">
-      </a>
-    </picture>
+<picture class="bestiary-item__picture">
+  <a href="${ref}">
+    <img class="bestiary-item__img bestiary-item__img-ukr" src="${image}" alt="${name}" loading="lazy">
+  </a>
+</picture>
 
-    <div class="bestiary-item__body bestiary-body">
+<div class="bestiary-item__body bestiary-body">
 
-      <a class="bestiary-body__link-myth" href="#">
-        <svg width="18" height="18" class="bestiary-body__logo">
-          <use href="${svg + '#icon-logo-ua'}"></use>
-        </svg> 
-        Міф
-      </a>
+  <a class="bestiary-body__link-myth" href="#">
+    <svg width="18" height="18" class="bestiary-body__logo">
+      <use href="${svg + '#icon-logo-ua'}"></use>
+    </svg> 
+    Міф
+  </a>
 
-      <p class="bestiary-body__text">${description}</p>
+  <p class="bestiary-body__text">${description}</p>
 
-      <a class="bestiary-body__link-btn" href="${ref}">
-        Читати далі
-        <svg width="19" height="18" class="bestiary-item__logo">
-          <use href="${svg + '#arrow-up-right'}"></use>
-        </svg> 
-      </a>
-    </div>
-  </li>`;
+  <a class="bestiary-body__link-btn" href="${ref}">
+    Читати далі
+    <svg width="19" height="18" class="bestiary-item__logo">
+      <use href="${svg + '#arrow-up-right'}"></use>
+    </svg> 
+  </a>
+</div>
+</li>`;
   }).join('');
 }
 
