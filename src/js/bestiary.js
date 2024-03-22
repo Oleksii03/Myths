@@ -28,7 +28,7 @@ function onCreateMarkupUkr (e) {
 }
 
 function createMarkupBestiaryListUkr (data) {
-  return data.map(({ name, description, image, ref }) => {
+  return data.map(({ name, description, img, ref }) => {
     return `<li class="bestiary-list__item bestiary-item">
     <div class="bestiary-item__heder">
         <svg width="40" height="40" class="bestiary-item__logo">
@@ -49,7 +49,7 @@ function createMarkupBestiaryListUkr (data) {
 
     <picture class="bestiary-item__picture">
       <a href="${ref}">
-        <img class="bestiary-item__img bestiary-item__img-ukr" src="${image}" alt="${name}" loading="lazy">
+        <img class="bestiary-item__img bestiary-item__img-ukr" src="${img}" alt="${name}" loading="lazy">
       </a>
     </picture>
 
@@ -90,7 +90,7 @@ function onCreateMarkupWitcher (e) {
 
 
 function createMarkupBestiaryListWitcher (data) {
-  return data.map(({ name, description, image, genus, ref }) => {
+  return data.map(({ name, description, img, genus, ref }) => {
     return `<li class="bestiary-list__item bestiary-item">
     <div class="bestiary-item__heder">
         <svg width="40" height="40" class="bestiary-item__logo">
@@ -110,7 +110,7 @@ function createMarkupBestiaryListWitcher (data) {
 
     <picture class="bestiary-item__picture">
       <a href="${ref}">
-        <img class="bestiary-item__img bestiary-item__img-witcher js-bestiary-item-img-witcher" src="${image}" alt="${name}" loading="lazy">
+        <img class="bestiary-item__img bestiary-item__img-witcher js-bestiary-item-img-witcher" src="${img}" alt="${name}" loading="lazy">
       </a>
     </picture>
 

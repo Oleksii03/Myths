@@ -70,16 +70,16 @@ function createMarkup () {
 }
 
 function markupContent (result) {
-  return result.map(({ name, description, image, ref }) => {
+  return result.map(({ name, description, img, logo, genus, ref }) => {
     return `<li class="bestiary-list__item bestiary-item">
     <div class="bestiary-item__heder">
         <svg width="40" height="40" class="bestiary-item__logo">
-          <use href="${svg + '#icon-logo-ua'}"></use>
+          <use href="${svg + logo}"></use>
         </svg> 
 
       <div class="bestiary-item__content">
         <h3 class="bestiary-item__title">${name}</h3>
-        <h4 class="bestiary-item__sub-title">Українська міфологія</h4>
+        <h4 class="bestiary-item__sub-title">${genus}</h4>
       </div>
 
       <a href="#" class="bestiary-item__svg-more">
@@ -92,7 +92,7 @@ function markupContent (result) {
 
 <picture class="bestiary-item__picture">
   <a href="${ref}">
-    <img class="bestiary-item__img bestiary-item__img-ukr" src="${image}" alt="${name}" loading="lazy">
+    <img class="bestiary-item__img bestiary-item__img-ukr" src="${img}" alt="${name}" loading="lazy">
   </a>
 </picture>
 
@@ -100,9 +100,9 @@ function markupContent (result) {
 
   <a class="bestiary-body__link-myth" href="#">
     <svg width="18" height="18" class="bestiary-body__logo">
-      <use href="${svg + '#icon-logo-ua'}"></use>
+      <use href="${svg + logo}"></use>
     </svg> 
-    Міф
+    ${genus}
   </a>
 
   <p class="bestiary-body__text">${description}</p>
