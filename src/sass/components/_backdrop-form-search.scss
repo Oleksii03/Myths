@@ -222,8 +222,12 @@
 }
 
 .bestiary-item__logo {
-  background-color: transparent;
   border-radius: 50%;
+  fill: #CDC4CE;
+}
+
+.bestiary-body__logo {
+  fill: #CDC4CE;
 }
 
 .bestiary-item__svg-more {

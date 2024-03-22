@@ -73,7 +73,7 @@ function markupContent (result) {
   return result.map(({ name, description, img, logo, genus, ref }) => {
     return `<li class="bestiary-list__item bestiary-item">
     <div class="bestiary-item__heder">
-        <svg width="40" height="40" class="bestiary-item__logo">
+        <svg width="40" height="40" class="bestiary-item__logo bestiary-item__logo_accent">
           <use href="${svg + logo}"></use>
         </svg> 
 

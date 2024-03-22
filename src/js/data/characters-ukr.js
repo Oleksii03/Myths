@@ -32,7 +32,7 @@ export const charactersWitcher = [
     genus: 'Відьмак',
     img: Geralt,
     logo: '#witcher-icon',
-    description: `Ґеральт з Рівії, «Білий Вовк» — головний герой літературного циклу романів ...`,
+    description: `Ґеральт з Рівії, «Білий Вовк» — головний герой літературного ...`,
     ref: './page-characters.html',
   },
   {
